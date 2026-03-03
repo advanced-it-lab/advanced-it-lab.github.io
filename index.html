@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIT - Advanced Information Technology. Expert training in Ethical Hacking, Cyber Security, Hardware & Networking.">
+    <title>AIT | Advanced Information Technology</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { 
+            --bg-dark: #060a13; /* Deep Cyber Dark Background */
+            --ait-dark-blue: #09377a; 
+            --ait-red: #ff2a2a;      
+            --ait-cyan: #4df0ff;     
+            --text-white: #ffffff;
+            --card-bg: #0d131f; /* Solid background for text boxes */     
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-white); line-height: 1.6; overflow-x: hidden; background-color: transparent; }
+
+        /* FULL PAGE PARTICLE BACKGROUND */
+        #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-color: var(--bg-dark); }
+
+        /* Modals (Language & Details) */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 10, 19, 0.75); backdrop-filter: blur(3px); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        #langModal { display: flex; } /* Transparent background handled by overlay to show particles */
+        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 15px; text-align: center; border: 2px solid var(--ait-cyan); box-shadow: 0 0 40px rgba(77, 240, 255, 0.3); max-width: 600px; width: 100%; position: relative; }
+        
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--ait-red); cursor: pointer; transition: 0.3s; }
+        .close-btn:hover { color: var(--text-white); transform: scale(1.1); }
+        .detail-title { color: var(--text-white); font-family: 'Orbitron'; margin-bottom: 20px; border-bottom: 1px solid var(--ait-dark-blue); padding-bottom: 10px; font-size: 1.8rem; }
+        .detail-section { margin-bottom: 20px; text-align: left; background: #05080f; padding: 15px; border-radius: 8px; border-left: 4px solid var(--ait-red); }
+        .detail-section h4 { color: var(--ait-cyan); margin-bottom: 5px; font-size: 1.1rem; }
+        .detail-section p { color: #ccc; font-size: 0.95rem; }
+
+        .lang-btn { padding: 12px 35px; margin: 10px; cursor: pointer; border: 1px solid var(--ait-cyan); background: transparent; color: var(--text-white); border-radius: 5px; font-family: 'Orbitron'; transition: 0.3s; font-weight: bold; }
+        .lang-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 15px var(--ait-cyan); }
+
+        /* Navigation */
+        nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .logo { display: flex; align-items: center; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--ait-cyan); }
+
+        /* Hero Section */
+        header { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid var(--ait-dark-blue); z-index: 1; }
+        .header-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+        .tagline { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--ait-cyan); font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
+        .hero-desc { max-width: 800px; margin-bottom: 40px; font-size: 1.15rem; color: #d1d5db; line-height: 1.8; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
+
+        /* Sections Background Transparent so particles show */
+        section { padding: 90px 10%; position: relative; z-index: 1; background-color: transparent !important; }
+        .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--text-white); margin-bottom: 60px; text-transform: uppercase; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .section-title span { color: var(--ait-red); }
+
+        /* Solid Boxes for Text Readability */
+        .ai-box { background: var(--card-bg); border: 2px solid var(--ait-cyan); border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.8); position: relative; }
+        .ai-box i { font-size: 3.5rem; color: var(--ait-cyan); margin-bottom: 20px; }
+        .ai-box h3 { color: var(--text-white); font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 15px; }
+        .ai-box h3 span { color: var(--ait-red); }
+        .ai-box p { color: #d1d5db; font-size: 1.05rem; margin-bottom: 20px; line-height: 1.8; }
+        .ai-box .highlight-text { color: #fbbf24; font-weight: bold; font-style: italic; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid #1f2937; border-bottom: 3px solid var(--ait-dark-blue); transition: 0.4s; text-align: center; height: 100%; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
+        .card::after { content: 'Click for Details'; position: absolute; bottom: -30px; left: 0; width: 100%; background: var(--ait-cyan); color: #000; font-size: 0.8rem; font-weight: bold; padding: 5px 0; transition: 0.3s; }
+        .card:hover::after { bottom: 0; }
+        .card:hover { border-color: var(--ait-cyan); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(77, 240, 255, 0.15); }
+        
+        /* Mission and Vision card specific behavior (No Hover Text) */
+        .card.no-hover::after { display: none !important; }
+        .card.no-hover { cursor: default; }
+        .card.no-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
+
+        .card i { font-size: 3rem; color: var(--ait-cyan); margin-bottom: 20px; display: block; }
+        .card h3 { color: var(--text-white); margin-bottom: 15px; font-family: 'Orbitron'; letter-spacing: 1px; }
+        .card p { color: #a1a1a1; font-size: 0.95rem; line-height: 1.7; }
+
+        .faq-item { background: var(--card-bg); border-left: 4px solid var(--ait-red); margin-bottom: 20px; padding: 25px; border-radius: 5px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .faq-item h3 { color: var(--ait-cyan); font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 10px; }
+        .faq-item p { color: #ccc; font-size: 0.95rem; }
+
+        .contact-box { background: var(--card-bg); padding: 50px; border-radius: 15px; text-align: center; border: 1px solid var(--ait-dark-blue); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+
+        /* Buttons */
+        .btn { display: inline-block; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; background: var(--ait-red); color: var(--text-white); font-size: 0.9rem; transition: 0.3s; border: none; text-transform: uppercase; margin: 10px; box-shadow: 0 5px 15px rgba(255,42,42,0.3); }
+        .btn:hover { background: #d12020; transform: scale(1.05); }
+        .btn-outline { background: rgba(6,10,19,0.8); border: 2px solid var(--ait-cyan); color: var(--ait-cyan); box-shadow: 0 5px 15px rgba(77,240,255,0.1); }
+        .btn-outline:hover { background: var(--ait-cyan); color: #000; }
+
+        footer { padding: 50px 10%; background: rgba(6, 10, 19, 0.95); color: #9ca3af; font-size: 0.9rem; border-top: 2px solid var(--ait-dark-blue); text-align: center; position: relative; z-index: 2; backdrop-filter: blur(5px); }
+
+        @media (max-width: 768px) { nav ul { display: none; } section { padding: 60px 5%; } .logo img { height: 40px !important; } }
+    </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<div id="langModal" class="modal-overlay">
+    <div class="modal-content">
+        <h1 style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="AIT Logo" style="height: 100px; border-radius: 15px;">
+        </h1>
+        <p style="margin: 10px 0 30px; color: var(--ait-cyan); font-family: 'Orbitron';">Select Your Language / ભાષા પસંદ કરો</p>
+        <button class="lang-btn" onclick="setLanguage('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="setLanguage('gu')">ગુજરાતી</button>
+        <button class="lang-btn" onclick="setLanguage('hi')">हिन्दी</button>
+    </div>
+</div>
+
+<div id="detailModal" class="modal-overlay">
+    <div class="modal-content" style="border-color: var(--ait-red);">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div style="margin-bottom: 15px;">
+            <img src="logo.png" alt="AIT Logo" style="height: 40px; border-radius: 8px;">
+        </div>
+        <h2 class="detail-title" id="detailTitle">Service Name</h2>
+        
+        <div class="detail-section">
+            <h4 id="detailH1"><i class="fas fa-users" style="margin-right: 8px;"></i>Ideal For</h4>
+            <p id="detailP1">Details here</p>
+        </div>
+        
+        <div class="detail-section" style="border-left-color: var(--ait-cyan);">
+            <h4 id="detailH2" style="color: var(--ait-red);"><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Key Benefits</h4>
+            <p id="detailP2">Details here</p>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="https://wa.me/919327736999" class="btn" style="background-color: #25d366; color: white; width: 100%;"><i class="fab fa-whatsapp" style="font-size: 1.2rem; margin-right: 5px;"></i> INQUIRE ON WHATSAPP</a>
+        </div>
+    </div>
+</div>
+
+<nav>
+    <div class="logo">
+        <img src="logo.png" alt="AIT Logo" style="height: 50px; border-radius: 10px;">
+    </div>
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#courses">COURSES</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<header id="home">
+    <div class="header-content">
+        <img src="logo.png" alt="AIT Logo" style="height: 160px; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); border-radius: 20px;">
+        <div class="tagline" id="taglineText">Dominating the Digital Frontier</div>
+        <p class="hero-desc" id="heroText"></p>
+        <div>
+            <a href="#courses" class="btn">EXPLORE COURSES</a>
+            <a href="#contact" class="btn btn-outline">CONTACT US</a>
+        </div>
+    </div>
+</header>
+
+<section id="ai-future">
+    <div class="ai-box">
+        <i class="fas fa-robot"></i>
+        <h3 id="aiTitle">Future-Proof Your Career <span>Against AI</span></h3>
+        <p id="aiDesc"></p>
+        <p class="highlight-text" id="aiResearch"></p>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title" id="aboutT">Who <span>We Are</span></h2>
+    <div id="aboutC" style="text-align: center; max-width: 900px; margin: auto; font-size: 1.1rem; color: #d1d5db; margin-bottom: 50px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></div>
+    
+    <div class="grid">
+        <div class="card no-hover" style="padding: 30px; border-left: 4px solid var(--ait-red); border-bottom: none;">
+            <h3 id="missionT" style="color: var(--ait-red);"><i class="fas fa-bullseye"></i> Our Mission</h3>
+            <p id="missionC"></p>
+        </div>
+        <div class="card no-hover" style="padding: 30px; border-left: 4px solid var(--ait-cyan); border-bottom: none;">
+            <h3 id="visionT" style="color: var(--ait-cyan);"><i class="fas fa-eye"></i> Our Vision</h3>
+            <p id="visionC"></p>
+        </div>
+    </div>
+</section>
+
+<section id="courses">
+    <h2 class="section-title" id="courseT">Advanced <span>Courses</span></h2>
+    <div class="grid" id="courseG"></div>
+</section>
+
+<section id="services">
+    <h2 class="section-title" id="serviceT">Premium <span>IT Services</span></h2>
+    <div class="grid" id="serviceG"></div>
+</section>
+
+<section id="faq">
+    <h2 class="section-title" id="faqT">Frequently Asked <span>Questions</span></h2>
+    <div style="max-width: 900px; margin: auto;" id="faqG"></div>
+</section>
+
+<section id="contact">
+    <div class="contact-box" style="max-width: 800px; margin: auto;">
+        <h2 class="section-title" id="contactT" style="margin-bottom: 30px; font-size: 2rem;">Contact <span>Us</span></h2>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;"><i class="fas fa-map-marker-alt" style="color: var(--ait-red); margin-right: 15px;"></i> Bhavnagar, Gujarat, India</p>
+        <p style="font-size: 1.4rem; color: var(--text-white); margin-bottom: 20px; font-weight: bold;"><i class="fas fa-phone-alt" style="color: var(--ait-cyan); margin-right: 15px;"></i> +91 9327736999</p>
+        <p style="font-size: 1.2rem; margin-bottom: 40px;"><i class="fas fa-envelope" style="color: var(--ait-red); margin-right: 15px;"></i> aitconnectone@gmail.com</p>
+        
+        <a href="https://wa.me/919327736999" class="btn" style="background-color: #25d366; color: white; width: 100%;"><i class="fab fa-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> WHATSAPP CHAT</a>
+    </div>
+</section>
+
+<footer>
+    <p style="color: var(--ait-cyan); font-family: 'Orbitron'; margin-bottom: 10px; font-weight: bold;">Dominating the Digital Frontier</p>
+    <p>© 2026 Advanced Information Technology (AIT). All Rights Reserved.</p>
+</footer>
+
+<script>
+    /* --- FULL PAGE Particle Network Background Script --- */
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    
+    function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    setCanvasSize();
+
+    let particlesArray;
+    let mouse = { x: null, y: null, radius: 150 };
+
+    window.addEventListener('mousemove', function(event) {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+    });
+
+    window.addEventListener('mouseout', function() {
+        mouse.x = undefined;
+        mouse.y = undefined;
+    });
+
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x;
+            this.y = y;
+            this.directionX = directionX;
+            this.directionY = directionY;
+            this.size = size;
+            this.color = color;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+        update() {
+            if(this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+            if(this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+
+            if (mouse.x != null && mouse.y != null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                if (distance < mouse.radius) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 1;
+                    if (mouse.x > this.x && this.x > this.size * 10) this.x -= 1;
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 1;
+                    if (mouse.y > this.y && this.y > this.size * 10) this.y -= 1;
+                }
+            }
+            this.x += this.directionX;
+            this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    function initParticles() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        if(window.innerWidth < 768) numberOfParticles = 35; 
+        
+        for(let i=0; i<numberOfParticles; i++) {
+            let size = (Math.random() * 2) + 1;
+            let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * 1.5) - 0.75;
+            let directionY = (Math.random() * 1.5) - 0.75;
+            let color = (Math.random() > 0.5) ? '#4df0ff' : '#ff2a2a'; 
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    function connectParticles() {
+        for(let a=0; a<particlesArray.length; a++) {
+            for(let b=a; b<particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if(distance < (canvas.width/7) * (canvas.height/7)) {
+                    let opacityValue = 1 - (distance/20000);
+                    ctx.strokeStyle = 'rgba(77, 240, 255,' + opacityValue + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        for(let i=0; i<particlesArray.length; i++){
+            particlesArray[i].update();
+        }
+        connectParticles();
+    }
+
+    window.addEventListener('resize', function(){
+        setCanvasSize();
+        initParticles();
+    });
+    
+    initParticles();
+    animateParticles();
+
+    /* --- Language & Content Script --- */
+    let currentLang = 'en';
+
+    const data = {
+        en: {
+            hero: "Bhavnagar's leading technical hub. We provide 100% practical, hands-on training to make you industry-ready.",
+            aiTitle: "Future-Proof Your Career <span>in the AI Era</span>",
+            aiDesc: "Are you worried that AI will make it harder to get a job? The truth is, while AI is replacing routine tasks, it is creating thousands of new opportunities in Core Technical fields like Cyber Security, Cloud, and Networking to manage and secure these AI systems. AIT's technical courses prepare you for these future-proof careers.",
+            aiResearch: "We encourage you to research the current and future impact of AI on these careers. The market needs technical experts, and we build them.",
+            aboutT: "About <span>AIT Lab</span>",
+            aboutC: "Advanced Information Technology (AIT) is a premier institute focused on building the next generation of Cyber Security experts and IT Professionals.",
+            missionT: "Our Mission",
+            missionC: "To empower students with practical training in next-gen technologies, making them employable from day one.",
+            visionT: "Our Vision",
+            visionC: "To establish Bhavnagar as a central hub for Cyber Security and advanced IT networking.",
+            courseT: "Advanced <span>Courses</span>",
+            serviceT: "IT <span>Solutions</span>",
+            faqT: "Frequently Asked <span>Questions</span>",
+            contactT: "Get In <span>Touch</span>",
+            modalLabels: { serviceH1: "Ideal For (Who needs this?)", serviceH2: "Key Benefits" },
+            courses: [
+                {t: "Ethical Hacking", d: "Master Vulnerability Assessment, Penetration Testing, and Offensive Security.", i: "fa-user-secret", link: "ethicalhacking.ok.html"},
+                {t: "Cyber Security", d: "Deep dive into Data Protection, Cryptography, and Cyber Threat Intelligence.", i: "fa-shield-halved", link: "cybersecurity.ok.html"},
+                {t: "Hardware", d: "Learn PC architecture, assembling, and component-level troubleshooting.", i: "fa-microchip", link: "hardware.ok.html"},
+                {t: "Networking", d: "Master IP addressing, routing, switching, and building secure networks.", i: "fa-network-wired", link: "network.ok.html"},
+                {t: "CCNA", d: "Advanced Cisco Certified Network Associate training for enterprise configuration.", i: "fa-project-diagram", link: "ccna.ok.html"},
+                {t: "Microsoft Server", d: "Hands-on industrial training on Windows Server 2022 and Active Directory.", i: "fa-server", link: "msserver.ok.html"},
+                {t: "Cloud Computing", d: "Learn to design, deploy, and manage secure cloud architectures using AWS.", i: "fa-cloud", link: "cloud.ok.html"},
+                {t: "CCC & MS Office", d: "Build a strong foundation in digital literacy, advanced Excel, and Word.", i: "fa-laptop-code", link: "ccc.msoffice.html"},
+                {t: "NodeJS", d: "Master backend development, REST APIs, and server-side programming.", i: "fa-code", link: "nodejs.ok.html"},
+                {t: "DevOps", d: "Bridge development and operations with CI/CD pipelines, Docker, and Kubernetes.", i: "fa-infinity", link: "devops.ok.html"}
+            ],
+            services: [
+                {t: "Chip-Level Repairing", d: "Expert hardware diagnosis and repairing for laptops and desktops.", i: "fa-tools", e: "Individuals or businesses facing motherboard, screen, or dead PC issues.", c: "Quick resolution, data safety, and cost-effective repairing with warranty."},
+                {t: "Enterprise Networking", d: "End-to-end design and configuration of secure LAN/WAN networks.", i: "fa-wifi", e: "Schools, Colleges, Corporate Offices, and large home setups.", c: "High-speed internet, secure data sharing, zero downtime, and CCTV integration."},
+                {t: "OS & Software Setup", d: "Installation and optimization of Genuine Windows, Linux, and software.", i: "fa-compact-disc", e: "Anyone buying a new PC or facing slow performance/virus issues.", c: "Super-fast PC performance, virus removal, and original software activation."}
+            ],
+            faq: [
+                {q: "Do I need prior coding knowledge to join Ethical Hacking?", a: "No, you do not need advanced coding skills. We teach you the fundamentals from scratch."},
+                {q: "Will I get a certificate after completing the course?", a: "Yes, upon successful completion, you will receive an industry-recognized certification from AIT."},
+                {q: "Is the training purely theoretical or practical?", a: "At AIT, we believe in a 100% practical approach. You will practice on live labs and real hardware."}
+            ]
+        },
+        gu: {
+            hero: "એથિકલ હેકિંગ અને નેટવર્કિંગ માટે ભાવનગરનું અગ્રણી ટેકનિકલ હબ. અમે ૧૦૦% પ્રેક્ટિકલ તાલીમ આપીને તમને ઇન્ડસ્ટ્રી માટે તૈયાર કરીએ છીએ.",
+            aiTitle: "AI ના યુગમાં તમારું <span>કેરિયર સુરક્ષિત કરો</span>",
+            aiDesc: "શું તમને ડર છે કે AI ના કારણે જોબ મેળવવામાં મુશ્કેલી પડશે? સાચી વાત એ છે કે AI સામાન્ય નોકરીઓનું સ્થાન લઈ રહ્યું છે, પરંતુ તેને ચલાવવા અને સુરક્ષિત રાખવા માટે સાયબર સિક્યોરિટી, ક્લાઉડ અને નેટવર્કિંગ જેવા ટેકનિકલ ફિલ્ડમાં હજારો નવી તકો ઉભી થઈ રહી છે. AIT ના કોર્સ તમને આ બદલાતા ભવિષ્ય માટે તૈયાર કરે છે.",
+            aiResearch: "અમે ઇચ્છીએ છીએ કે તમે જાતે જ રિસર્ચ કરો કે વર્તમાન અને ભવિષ્યમાં આ ટેકનિકલ કોર્સની કેટલી ડિમાન્ડ છે. માર્કેટમાં એક્સપર્ટ્સની જરૂર છે, અને AIT તમને એ જ બનાવશે.",
+            aboutT: "AIT લેબ <span>વિશે</span>",
+            aboutC: "એડવાન્સ્ડ ઇન્ફોર્મેશન ટેકનોલોજી (AIT) એ સાયબર સિક્યોરિટી નિષ્ણાતો અને IT પ્રોફેશનલ્સ તૈયાર કરતી પ્રીમિયર સંસ્થા છે.",
+            missionT: "અમારું લક્ષ્ય",
+            missionC: "વિદ્યાર્થીઓને લેટેસ્ટ ટેકનોલોજીમાં પ્રેક્ટિકલ તાલીમ આપીને તેમને પહેલા જ દિવસથી નોકરી માટે સક્ષમ બનાવવા.",
+            visionT: "અમારી દ્રષ્ટિ",
+            visionC: "ભાવનગરને સાયબર સિક્યોરિટી અને એડવાન્સ્ડ IT નેટવર્કિંગનું મુખ્ય કેન્દ્ર બનાવવું.",
+            courseT: "એડવાન્સ્ડ <span>કોર્સ</span>",
+            serviceT: "આઈટી <span>સર્વિસ</span>",
+            faqT: "સામાન્ય <span>પ્રશ્નો (FAQ)</span>",
+            contactT: "સંપર્ક <span>કરો</span>",
+            modalLabels: { serviceH1: "આ સર્વિસ કોના માટે છે?", serviceH2: "તમને શું ફાયદો થશે?" },
+            courses: [
+                {t: "એથિકલ હેકિંગ", d: "કાલી લિનક્સ અને એડવાન્સ ટૂલ્સનો ઉપયોગ કરીને સિસ્ટમ હેકિંગમાં નિષ્ણાત બનો.", i: "fa-user-secret", link: "ethicalhacking.ok.html"},
+                {t: "સાયબર સિક્યોરિટી", d: "ડેટા પ્રોટેક્શન, ક્રિપ્ટોગ્રાફી અને નેટવર્ક સ્નિફિંગની ઊંડાણપૂર્વક તાલીમ.", i: "fa-shield-halved", link: "cybersecurity.ok.html"},
+                {t: "હાર્ડવેર", d: "PC આર્કિટેક્ચર, એસેમ્બલિંગ અને કમ્પોનન્ટ લેવલ ટ્રબલશૂટિંગ શીખો.", i: "fa-microchip", link: "hardware.ok.html"},
+                {t: "નેટવર્કિંગ", d: "IP એડ્રેસિંગ, રાઉટિંગ, સ્વિચિંગ અને સુરક્ષિત નેટવર્ક બનાવતા શીખો.", i: "fa-network-wired", link: "network.ok.html"},
+                {t: "CCNA", d: "એન્ટરપ્રાઇઝ-લેવલ નેટવર્ક કન્ફિગરેશન માટે એડવાન્સ સિસ્કો (Cisco) CCNA તાલીમ.", i: "fa-project-diagram", link: "ccna.ok.html"},
+                {t: "માઈક્રોસોફ્ટ સર્વર", d: "વિન્ડોઝ સર્વર 2022 એડમિનિસ્ટ્રેશન અને એક્ટિવ ડિરેક્ટરી સેટઅપ.", i: "fa-server", link: "msserver.ok.html"},
+                {t: "ક્લાઉડ કમ્પ્યુટિંગ", d: "AWS નો ઉપયોગ કરીને સુરક્ષિત ક્લાઉડ ઇન્ફ્રાસ્ટ્રક્ચર ડિઝાઇન કરતા શીખો.", i: "fa-cloud", link: "cloud.ok.html"},
+                {t: "CCC અને MS Office", d: "ડિજિટલ લિટરસી, એડવાન્સ એક્સેલ, વર્ડ અને પાવરપોઇન્ટનું જ્ઞાન.", i: "fa-laptop-code", link: "ccc.msoffice.html"},
+                {t: "NodeJS", d: "બેકએન્ડ ડેવલપમેન્ટ, REST APIs અને સર્વર-સાઇડ પ્રોગ્રામિંગ શીખો.", i: "fa-code", link: "nodejs.ok.html"},
+                {t: "DevOps", d: "CI/CD પાઇપલાઇન્સ, ડોકર, અને ઓટોમેશન સાથે ડેવલપમેન્ટ અને ઓપરેશન્સ શીખો.", i: "fa-infinity", link: "devops.ok.html"}
+            ],
+            services: [
+                {t: "ચિપ-લેવલ રીપેરીંગ", d: "તમામ લેપટોપ અને ડેસ્કટોપ બ્રાન્ડ્સ માટે એક્સપર્ટ હાર્ડવેર નિદાન.", i: "fa-tools", e: "જેમનું લેપટોપ ડેડ (બંધ) થઈ ગયું હોય, સ્ક્રીન તૂટી હોય કે મધરબોર્ડ ખરાબ હોય.", c: "ઓછા ખર્ચે ઝડપી રિપેરિંગ, ડેટાની 100% સુરક્ષા અને વોરંટી સાથે કામ."},
+                {t: "એન્ટરપ્રાઇઝ નેટવર્કિંગ", d: "ઓફિસો માટે હાઇ-સ્પીડ, સુરક્ષિત LAN/WAN નેટવર્કની ડિઝાઇન.", i: "fa-wifi", e: "નવી ઓફિસ, શાળાઓ, કોલેજો અને મોટા ઘર માટે જ્યાં સારું ઇન્ટરનેટ જોઈતું હોય.", c: "કેબલિંગ, વાઇફાઇ સેટઅપ, પ્રિન્ટર શેરિંગ અને સર્વરનું ઝડપી કામ."},
+                {t: "OS અને સોફ્ટવેર સેટઅપ", d: "જેન્યુઈન વિન્ડોઝ, લિનક્સ (ઉબુન્ટુ/કાલી) નું ઇન્સ્ટોલેશન.", i: "fa-compact-disc", e: "નવું PC લીધું હોય અથવા જૂનું PC વાયરસના કારણે ધીમું ચાલતું હોય.", c: "કમ્પ્યુટરની સ્પીડ નવી જેવી, વાયરસથી મુક્તિ અને અસલી સોફ્ટવેરનું સેટઅપ."}
+            ],
+            faq: [
+                {q: "શું એથિકલ હેકિંગ શીખવા માટે કોડિંગ આવડવું જરૂરી છે?", a: "ના, એડવાન્સ કોડિંગની જરૂર નથી. અમે તમને પાયાથી બધું શીખવીશું."},
+                {q: "શું કોર્સ પૂરો થયા પછી મને સર્ટિફિકેટ મળશે?", a: "હા, સફળતાપૂર્વક કોર્સ પૂર્ણ કર્યા પછી, તમને AIT તરફથી ઇન્ડસ્ટ્રી-માન્ય સર્ટિફિકેટ મળશે."},
+                {q: "શું તાલીમ થીયરીકલ હશે કે પ્રેક્ટિકલ?", a: "અમે ૧૦૦% પ્રેક્ટિકલ અભિગમમાં માનીએ છીએ. તમે લાઈવ લેબ અને અસલી હાર્ડવેર પર પ્રેક્ટિસ કરશો."}
+            ]
+        },
+        hi: {
+            hero: "एथिकल हैकिंग और नेटवर्किंग के लिए भावनगर का प्रमुख तकनीकी केंद्र। हम १००% प्रैक्टिकल प्रशिक्षण प्रदान करते हैं।",
+            aiTitle: "AI के युग में <span>अपना करियर सुरक्षित करें</span>",
+            aiDesc: "क्या आपको डर है कि AI के कारण जॉब मिलने में मुश्किल होगी? सच तो यह है कि जबकि AI सामान्य नौकरियों की जगह ले रहा है, इसे मैनेज और सुरक्षित करने के लिए साइबर सुरक्षा, क्लाउड और नेटवर्किंग में हजारों नए अवसर पैदा हो रहे हैं। AIT के तकनीकी पाठ्यक्रम आपको इस बदलते भविष्य के लिए तैयार करते हैं।",
+            aiResearch: "हम आपको प्रोत्साहित करते हैं कि आप खुद रिसर्च करें कि वर्तमान और भविष्य में इन तकनीकी कोर्सेज की कितनी डिमांड है। बाजार को विशेषज्ञों की जरूरत है, और AIT आपको वही बनाता है।",
+            aboutT: "AIT लैब <span>के बारे में</span>",
+            aboutC: "एडवांस्ड इंफॉर्मेशन टेक्नोलॉजी (AIT) साइबर सुरक्षा विशेषज्ञों और आईटी पेशेवरों को तैयार करने पर केंद्रित एक प्रमुख संस्थान है।",
+            missionT: "हमारा लक्ष्य",
+            missionC: "छात्रों को नवीनतम तकनीकों में व्यावहारिक प्रशिक्षण के साथ सशक्त बनाना।",
+            visionT: "हमारा दृष्टिकोण",
+            visionC: "भावनगर को साइबर सुरक्षा और उन्नत आईटी नेटवर्किंग का प्रमुख केंद्र बनाना।",
+            courseT: "एडवांस्ड <span>पाठ्यक्रम</span>",
+            serviceT: "आईटी <span>समाधान</span>",
+            faqT: "सामान्य <span>प्रश्न (FAQ)</span>",
+            contactT: "संपर्क <span>करें</span>",
+            modalLabels: { serviceH1: "यह किसके लिए है?", serviceH2: "क्या फायदे होंगे?" },
+            courses: [
+                {t: "एथिकल हैकिंग", d: "काली लिनक्स का उपयोग करके वीएपीटी और सिस्टम हैकिंग में महारत हासिल करें।", i: "fa-user-secret", link: "ethicalhacking.ok.html"},
+                {t: "साइबर सुरक्षा", d: "डेटा सुरक्षा, क्रिप्टोग्राफी और साइबर खतरे की खुफिया जानकारी।", i: "fa-shield-halved", link: "cybersecurity.ok.html"},
+                {t: "हार्डवेयर", d: "पीसी आर्किटेक्चर, असेंबलिंग और कंपोनेंट लेवल ट्रबलशूटिंग सीखें।", i: "fa-microchip", link: "hardware.ok.html"},
+                {t: "नेटवर्किंग", d: "आईपी एड्रेसिंग, राउटिंग, स्विचिंग और सुरक्षित नेटवर्क बनाना सीखें।", i: "fa-network-wired", link: "network.ok.html"},
+                {t: "CCNA", d: "एंटरप्राइज-लेवल नेटवर्क कॉन्फ़िगरेशन के लिए एडवांस सिस्को (Cisco) CCNA प्रशिक्षण।", i: "fa-project-diagram", link: "ccna.ok.html"},
+                {t: "माइक्रोसॉफ्ट सर्वर", d: "विंडोज सर्वर 2022 एडमिनिस्ट्रेशन और एक्टिव डायरेक्टरी सेटअप।", i: "fa-server", link: "msserver.ok.html"},
+                {t: "क्लाउड कंप्यूटिंग", d: "AWS का उपयोग करके सुरक्षित क्लाउड इन्फ्रास्ट्रक्चर डिजाइन करना सीखें।", i: "fa-cloud", link: "cloud.ok.html"},
+                {t: "CCC और MS Office", d: "डिजिटल साक्षरता, एडवांस एक्सेल, वर्ड और पावरपॉइंट।", i: "fa-laptop-code", link: "ccc.msoffice.html"},
+                {t: "NodeJS", d: "बैकएंड डेवलपमेंट, REST APIs और सर्वर-साइड प्रोग्रामिंग सीखें।", i: "fa-code", link: "nodejs.ok.html"},
+                {t: "DevOps", d: "CI/CD पाइपलाइन, डॉकर और ऑटोमेशन के साथ विकास और संचालन सीखें।", i: "fa-infinity", link: "devops.ok.html"}
+            ],
+            services: [
+                {t: "चिप-लेवल रिपेयरिंग", d: "हार्डवेयर निदान और चिप-लेवल मदरबोर्ड रिपेयरिंग।", i: "fa-tools", e: "डेड लैपटॉप या टूटी स्क्रीन वाले व्यक्ति या व्यवसाय।", c: "डेटा सुरक्षा और वारंटी के साथ तेज़ और सस्ता रिपेयरिंग।"},
+                {t: "एंटरप्राइज नेटवर्किंग", d: "कार्यालयों और घरों के लिए हाई-स्पीड लैन/वैन नेटवर्क।", i: "fa-wifi", e: "नए कार्यालय, स्कूल या घर जहाँ तेज़ इंटरनेट चाहिए।", c: "हाई-स्पीड इंटरनेट, सुरक्षित डेटा शेयरिंग और जीरो डाउनटाइम।"},
+                {t: "OS और सॉफ्टवेयर सेटअप", d: "विंडोज, लिनक्स (काली) और सॉफ्टवेयर पैकेजों की स्थापना।", i: "fa-compact-disc", e: "नया पीसी लेने वाले या स्लो पीसी से परेशान लोग।", c: "पीसी की सुपर-फास्ट स्पीड और वायरस हटाना।"}
+            ],
+            faq: [
+                {q: "क्या मुझे एथिकल हैकिंग में शामिल होने के लिए कोडिंग ज्ञान की आवश्यकता है?", a: "नहीं, हम आपको बुनियादी बातों से सिखाते हैं।"},
+                {q: "क्या मुझे कोर्स पूरा करने के बाद सर्टिफिकेट मिलेगा?", a: "हाँ, सफलतापूर्वक कोर्स पूरा करने पर, आपको AIT से उद्योग-मान्यता प्राप्त प्रमाणन प्राप्त होगा।"},
+                {q: "क्या प्रशिक्षण सैद्धांतिक है या व्यावहारिक?", a: "हम १००% व्यावहारिक दृष्टिकोण में विश्वास करते हैं। आप लाइव लैब और असली हार्डवेयर पर अभ्यास करेंगे।"}
+            ]
+        }
+    };
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.getElementById('langModal').style.display = 'none';
+        
+        document.getElementById('heroText').innerText = data[lang].hero;
+        
+        // AI Section Text
+        document.getElementById('aiTitle').innerHTML = data[lang].aiTitle;
+        document.getElementById('aiDesc').innerText = data[lang].aiDesc;
+        document.getElementById('aiResearch').innerText = data[lang].aiResearch;
+
+        document.getElementById('aboutT').innerHTML = data[lang].aboutT;
+        document.getElementById('aboutC').innerText = data[lang].aboutC;
+        document.getElementById('missionT').innerHTML = `<i class="fas fa-bullseye" style="margin-right: 10px; color: var(--ait-red);"></i>${data[lang].missionT}`;
+        document.getElementById('missionC').innerText = data[lang].missionC;
+        document.getElementById('visionT').innerHTML = `<i class="fas fa-eye" style="margin-right: 10px; color: var(--ait-cyan);"></i>${data[lang].visionT}`;
+        document.getElementById('visionC').innerText = data[lang].visionC;
+        
+        document.getElementById('courseT').innerHTML = data[lang].courseT;
+        document.getElementById('serviceT').innerHTML = data[lang].serviceT;
+        document.getElementById('contactT').innerHTML = data[lang].contactT;
+
+        const renderGrid = (id, items, type) => {
+            const grid = document.getElementById(id);
+            grid.innerHTML = '';
+            items.forEach((item, index) => {
+                if(type === 'course') {
+                    // કોર્સ પર ક્લિક કરવાથી તમે આપેલી લિંક ખુલશે
+                    grid.innerHTML += `<div class="card" onclick="window.location.href='${item.link}'"><i class="fas ${item.i}"></i><h3>${item.t}</h3><p>${item.d}</p></div>`;
+                } else {
+                    // સર્વિસ પર ક્લિક કરવાથી પોપ-અપ ખુલશે
+                    grid.innerHTML += `<div class="card" onclick="openModal('${type}', ${index})"><i class="fas ${item.i}"></i><h3>${item.t}</h3><p>${item.d}</p></div>`;
+                }
+            });
+        };
+
+        renderGrid('courseG', data[lang].courses, 'course');
+        renderGrid('serviceG', data[lang].services, 'service');
+
+        // Render FAQs
+        document.getElementById('faqT').innerHTML = data[lang].faqT;
+        const faqGrid = document.getElementById('faqG');
+        faqGrid.innerHTML = '';
+        data[lang].faq.forEach(f => {
+            faqGrid.innerHTML += `<div class="faq-item"><h3><i class="fas fa-question-circle" style="color: var(--ait-red); margin-right: 10px;"></i>${f.q}</h3><p>${f.a}</p></div>`;
+        });
+    }
+
+    function openModal(type, index) {
+        // હવે આ મોડલ ફક્ત Services માટે જ ઉપયોગમાં લેવાશે
+        const item = data[currentLang][type + 's'][index];
+        const labels = data[currentLang].modalLabels;
+        
+        document.getElementById('detailTitle').innerText = item.t;
+        
+        document.getElementById('detailH1').innerHTML = `<i class="fas fa-users" style="margin-right: 8px;"></i>${labels.serviceH1}`;
+        document.getElementById('detailH2').innerHTML = `<i class="fas fa-check-circle" style="margin-right: 8px;"></i>${labels.serviceH2}`;
+        
+        document.getElementById('detailP1').innerText = item.e; 
+        document.getElementById('detailP2').innerText = item.c; 
+        
+        document.getElementById('detailModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('detailModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('detailModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

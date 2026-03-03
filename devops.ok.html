@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIT | DevOps Engineering Masterclass Brochure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --bg-dark: #060a13;
+            --ait-red: #ff2a2a;      
+            --ait-cyan: #4df0ff;     
+            --card-bg: #0d131f;
+            --text-white: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        #particleCanvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background-color: var(--bg-dark);
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+
+        header { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; 
+            padding-bottom: 30px; 
+            border-bottom: 2px solid var(--ait-red);
+            margin-bottom: 40px;
+        }
+        .logo-img { height: 90px; margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--ait-cyan)); }
+        .logo-text { font-family: 'Orbitron'; font-size: 2.2rem; color: var(--ait-cyan); letter-spacing: 3px; }
+        .logo-text span { color: var(--ait-red); }
+
+        .hero-banner { text-align: center; margin-bottom: 50px; }
+        .hero-banner h1 {
+            font-family: 'Orbitron';
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: var(--text-white);
+            text-shadow: 0 0 20px var(--ait-cyan);
+            margin-bottom: 15px;
+        }
+        .hero-banner h1 span { color: var(--ait-red); }
+        
+        .quote-box {
+            background: rgba(77, 240, 255, 0.1) !important;
+            border-left: 4px solid var(--ait-red);
+            padding: 20px;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--ait-cyan);
+            text-align: center;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .section-title { 
+            font-family: 'Orbitron'; 
+            color: var(--ait-cyan); 
+            font-size: 1.5rem; 
+            margin: 30px 0 20px; 
+            border-left: 5px solid var(--ait-red);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        .modules-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 15px; 
+        }
+        .module-card { 
+            background: var(--card-bg) !important; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border: 1px solid rgba(77, 240, 255, 0.1) !important;
+            transition: 0.3s;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .module-card:hover { transform: translateY(-5px); border-color: var(--ait-red) !important; box-shadow: 0 0 15px rgba(77, 240, 255, 0.2); }
+        .module-card h3 { color: var(--ait-cyan); font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .module-card ul { list-style: none; }
+        .module-card li { font-size: 0.85rem; color: #ccc; margin-bottom: 5px; display: flex; align-items: flex-start; }
+        .module-card li i { color: var(--ait-red); margin-right: 10px; margin-top: 5px; font-size: 0.7rem; }
+
+        .cta-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px;
+            border: 2px solid var(--ait-red) !important;
+            background: var(--card-bg) !important;
+            border-radius: 15px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .btn-wa {
+            display: inline-block;
+            background: var(--ait-red) !important;
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            margin-top: 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #555; }
+
+        @media print {
+            body { background-color: #060a13 !important; }
+            #particleCanvas { display: none; }
+            .module-card, .cta-section, .quote-box { background-color: #0d131f !important; border-color: #4df0ff !important; color: white !important; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<div class="container">
+    <header>
+        <img src="logo.png" alt="AIT Logo" class="logo-img">
+        <div class="logo-text">AIT<span>.LAB</span></div>
+    </header>
+
+    <div class="hero-banner">
+        <h1>DEVOPS <span>ENGINEERING</span></h1>
+        <div class="quote-box">
+             "Automation is the ultimate leverage. Code, Build, Deploy, and Repeat with Excellence."
+        </div>
+        <p style="color: #ccc; max-width: 850px; margin: 0 auto;">
+            Master the bridge between Development and Operations. Learn to build automated delivery pipelines using industry-standard tools like Jenkins, Docker, Kubernetes, and Ansible.
+        </p>
+    </div>
+
+    <h2 class="section-title">Professional Roadmap</h2>
+    
+    <div class="modules-grid">
+        <div class="module-card">
+            <h3>🚀 Introduction to DevOps</h3>
+            <ul>
+                <li><i class="fas fa-cog"></i> DevOps Principles & Delivery Pipelines</li>
+                <li><i class="fas fa-cog"></i> Market Trends & Technical Challenges</li>
+                <li><i class="fas fa-cog"></i> Essential Tools & DevOps Engineer Skills</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>☁️ DevOps on Cloud (AWS)</h3>
+            <ul>
+                <li><i class="fas fa-cloud"></i> Cloud & Virtualization Architecture</li>
+                <li><i class="fas fa-cloud"></i> Essentials of Cloud Computing</li>
+                <li><i class="fas fa-cloud"></i> Introduction to Amazon Web Services</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>📂 GIT - Version Control</h3>
+            <ul>
+                <li><i class="fas fa-code-branch"></i> CLI, Setup & Repository Management</li>
+                <li><i class="fas fa-code-branch"></i> Branching, Merging & Rebasing</li>
+                <li><i class="fas fa-code-branch"></i> Remote Repositories & Workflows</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>🐳 Docker - Containerization</h3>
+            <ul>
+                <li><i class="fas fa-box"></i> Docker Images, Containers & Networking</li>
+                <li><i class="fas fa-box"></i> Docker Compose & Container Life Cycle</li>
+                <li><i class="fas fa-box"></i> Docker Swarm & Cluster Management</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>🤖 Ansible - Configuration</h3>
+            <ul>
+                <li><i class="fas fa-terminal"></i> Inventory & Ad-hoc Commands</li>
+                <li><i class="fas fa-terminal"></i> YAML Scripts & Ansible Playbooks</li>
+                <li><i class="fas fa-terminal"></i> Roles, Ansible Galaxy & Privilege Escalation</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2 style="font-family: 'Orbitron';">AUTOMATE THE FUTURE</h2>
+        <p style="margin-top: 10px; color: var(--ait-cyan);">Join AIT Lab and become a Certified DevOps Specialist.</p>
+        <a href="https://wa.me/919327736999" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> INQUIRE ON WHATSAPP
+        </a>
+        <div style="margin-top: 20px; font-weight: bold; color: var(--ait-cyan);">
+            +91 93277 36999 | Bhavnagar, Gujarat
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Advance Information Technology. All Rights Reserved.
+    </footer>
+</div>
+
+<script>
+    /* Particle Network Logic - AIT signature animation */
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particlesArray = [];
+
+    class Particle {
+        constructor(x, y, dx, dy, size, color) {
+            this.x = x; this.y = y; this.dx = dx; this.dy = dy;
+            this.size = size; this.color = color;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+        update() {
+            if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
+            if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
+            this.x += this.dx; this.y += this.dy;
+            this.draw();
+        }
+    }
+
+    function init() {
+        particlesArray = [];
+        for (let i = 0; i < 70; i++) {
+            let size = Math.random() * 2 + 1;
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            let dx = (Math.random() * 1) - 0.5;
+            let dy = (Math.random() * 1) - 0.5;
+            let color = Math.random() > 0.5 ? '#4df0ff' : '#ff2a2a';
+            particlesArray.push(new Particle(x, y, dx, dy, size, color));
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(p => p.update());
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let dist = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
+                if (dist < 18000) {
+                    ctx.strokeStyle = `rgba(77, 240, 255, ${1 - dist/18000})`;
+                    ctx.beginPath(); ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
+                }
+            }
+        }
+    }
+    init(); animate();
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
+</script>
+
+</body>
+</html>
