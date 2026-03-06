@@ -3,32 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AIT - Advanced Information Technology. Expert training in Ethical Hacking, Cyber Security, Hardware & Networking.">
-    <title>AIT | Advanced Information Technology</title>
+    
+    <meta name="description" content="AIT is Bhavnagar's top institute for 100% practical training in Ethical Hacking, Cyber Security, CCNA, Cloud Computing, DevOps, and NodeJS. We also provide premium IT solutions like Data Recovery, Chip-Level Repairing, and Enterprise Networking.">
+    <meta name="keywords" content="Computer training institute in Bhavnagar, Ethical Hacking course Bhavnagar, Cyber security classes Bhavnagar, Hardware and Networking course, CCNA training Gujarat, Microsoft Server setup, Cloud Computing AWS training, CCC and MS Office classes, NodeJS backend development, DevOps training Bhavnagar, Data recovery service Bhavnagar, Chip-Level repairing, Enterprise Networking setup, OS installation, AIT Lab Bhavnagar, Advanced Information Technology">
+    <meta name="author" content="Advanced Information Technology (AIT)">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="AIT | Best IT Institute & Tech Services in Bhavnagar">
+    <meta property="og:description" content="Master Ethical Hacking, Cyber Security, Cloud & Networking. Plus, get expert IT solutions like Data Recovery and Network Setup in Bhavnagar.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://advanced-it-lab.github.io/">
+    <meta property="og:type" content="website">
+
+    <title>AIT | Best Computer Training & IT Services in Bhavnagar</title>
     
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Advanced Information Technology (AIT)",
+          "url": "https://advanced-it-lab.github.io/",
+          "logo": "https://advanced-it-lab.github.io/logo.png",
+          "description": "Bhavnagar's leading technical hub for Ethical Hacking, Cyber Security, Hardware, Networking, CCNA, Microsoft Server, Cloud Computing (AWS), NodeJS, and DevOps training.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bhavnagar",
+            "addressRegion": "Gujarat",
+            "addressCountry": "IN"
+          },
+          "telephone": "+91-9327736999",
+          "email": "aitconnectone@gmail.com",
+          "sameAs": ["https://advanced-it-lab.github.io/"]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "AIT IT Solutions & Data Recovery",
+          "url": "https://advanced-it-lab.github.io/",
+          "image": "https://advanced-it-lab.github.io/logo.png",
+          "description": "Premium IT services in Bhavnagar including Professional Data Recovery, Chip-Level Repairing for Laptops/Desktops, Enterprise Networking (LAN/WAN), and OS & Software Setup.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bhavnagar",
+            "addressRegion": "Gujarat",
+            "addressCountry": "IN"
+          },
+          "telephone": "+91-9327736999",
+          "priceRange": "$$"
+        }
+      ]
+    }
+    </script>
+
     <style>
         :root { 
-            --bg-dark: #060a13; /* Deep Cyber Dark Background */
+            --bg-dark: #060a13; 
             --ait-dark-blue: #09377a; 
             --ait-red: #ff2a2a;      
             --ait-cyan: #4df0ff;     
             --text-white: #ffffff;
-            --card-bg: #0d131f; /* Solid background for text boxes */     
+            --card-bg: #0d131f; 
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; color: var(--text-white); line-height: 1.6; overflow-x: hidden; background-color: transparent; }
 
-        /* FULL PAGE PARTICLE BACKGROUND */
         #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-color: var(--bg-dark); }
 
-        /* Modals (Language & Details) */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 10, 19, 0.75); backdrop-filter: blur(3px); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
-        #langModal { display: flex; } /* Transparent background handled by overlay to show particles */
+        #langModal { display: flex; } 
         .modal-content { background: var(--card-bg); padding: 40px; border-radius: 15px; text-align: center; border: 2px solid var(--ait-cyan); box-shadow: 0 0 40px rgba(77, 240, 255, 0.3); max-width: 600px; width: 100%; position: relative; }
         
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--ait-red); cursor: pointer; transition: 0.3s; }
@@ -41,7 +89,6 @@
         .lang-btn { padding: 12px 35px; margin: 10px; cursor: pointer; border: 1px solid var(--ait-cyan); background: transparent; color: var(--text-white); border-radius: 5px; font-family: 'Orbitron'; transition: 0.3s; font-weight: bold; }
         .lang-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 15px var(--ait-cyan); }
 
-        /* Navigation */
         nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .logo { display: flex; align-items: center; }
         nav ul { display: flex; list-style: none; }
@@ -49,18 +96,15 @@
         nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--ait-cyan); }
 
-        /* Hero Section */
         header { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid var(--ait-dark-blue); z-index: 1; }
         .header-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
         .tagline { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--ait-cyan); font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
         .hero-desc { max-width: 800px; margin-bottom: 40px; font-size: 1.15rem; color: #d1d5db; line-height: 1.8; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
 
-        /* Sections Background Transparent so particles show */
         section { padding: 90px 10%; position: relative; z-index: 1; background-color: transparent !important; }
         .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--text-white); margin-bottom: 60px; text-transform: uppercase; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .section-title span { color: var(--ait-red); }
 
-        /* Solid Boxes for Text Readability */
         .ai-box { background: var(--card-bg); border: 2px solid var(--ait-cyan); border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.8); position: relative; }
         .ai-box i { font-size: 3.5rem; color: var(--ait-cyan); margin-bottom: 20px; }
         .ai-box h3 { color: var(--text-white); font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 15px; }
@@ -74,7 +118,6 @@
         .card:hover::after { bottom: 0; }
         .card:hover { border-color: var(--ait-cyan); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(77, 240, 255, 0.15); }
         
-        /* Mission and Vision card specific behavior (No Hover Text) */
         .card.no-hover::after { display: none !important; }
         .card.no-hover { cursor: default; }
         .card.no-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
@@ -89,7 +132,6 @@
 
         .contact-box { background: var(--card-bg); padding: 50px; border-radius: 15px; text-align: center; border: 1px solid var(--ait-dark-blue); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
 
-        /* Buttons */
         .btn { display: inline-block; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; background: var(--ait-red); color: var(--text-white); font-size: 0.9rem; transition: 0.3s; border: none; text-transform: uppercase; margin: 10px; box-shadow: 0 5px 15px rgba(255,42,42,0.3); }
         .btn:hover { background: #d12020; transform: scale(1.05); }
         .btn-outline { background: rgba(6,10,19,0.8); border: 2px solid var(--ait-cyan); color: var(--ait-cyan); box-shadow: 0 5px 15px rgba(77,240,255,0.1); }
@@ -464,7 +506,6 @@
         
         document.getElementById('heroText').innerText = data[lang].hero;
         
-        // AI Section Text
         document.getElementById('aiTitle').innerHTML = data[lang].aiTitle;
         document.getElementById('aiDesc').innerText = data[lang].aiDesc;
         document.getElementById('aiResearch').innerText = data[lang].aiResearch;
@@ -485,10 +526,8 @@
             grid.innerHTML = '';
             items.forEach((item, index) => {
                 if(type === 'course') {
-                    // કોર્સ પર ક્લિક કરવાથી તમે આપેલી લિંક ખુલશે
                     grid.innerHTML += `<div class="card" onclick="window.location.href='${item.link}'"><i class="fas ${item.i}"></i><h3>${item.t}</h3><p>${item.d}</p></div>`;
                 } else {
-                    // સર્વિસ પર ક્લિક કરવાથી પોપ-અપ ખુલશે
                     grid.innerHTML += `<div class="card" onclick="openModal('${type}', ${index})"><i class="fas ${item.i}"></i><h3>${item.t}</h3><p>${item.d}</p></div>`;
                 }
             });
@@ -497,7 +536,6 @@
         renderGrid('courseG', data[lang].courses, 'course');
         renderGrid('serviceG', data[lang].services, 'service');
 
-        // Render FAQs
         document.getElementById('faqT').innerHTML = data[lang].faqT;
         const faqGrid = document.getElementById('faqG');
         faqGrid.innerHTML = '';
@@ -507,15 +545,12 @@
     }
 
     function openModal(type, index) {
-        // હવે આ મોડલ ફક્ત Services માટે જ ઉપયોગમાં લેવાશે
         const item = data[currentLang][type + 's'][index];
         const labels = data[currentLang].modalLabels;
         
         document.getElementById('detailTitle').innerText = item.t;
-        
         document.getElementById('detailH1').innerHTML = `<i class="fas fa-users" style="margin-right: 8px;"></i>${labels.serviceH1}`;
         document.getElementById('detailH2').innerHTML = `<i class="fas fa-check-circle" style="margin-right: 8px;"></i>${labels.serviceH2}`;
-        
         document.getElementById('detailP1').innerText = item.e; 
         document.getElementById('detailP2').innerText = item.c; 
         
