@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="AIT is Bhavnagar's top institute for 100% practical training in Ethical Hacking, Cyber Security, CCNA, Cloud Computing, DevOps, and NodeJS. We also provide premium IT solutions like Data Recovery, Chip-Level Repairing, and Enterprise Networking.">
+    <meta name="keywords" content="Computer training institute in Bhavnagar, Ethical Hacking course Bhavnagar, Cyber security classes Bhavnagar, Hardware and Networking course, CCNA training Gujarat, Microsoft Server setup, Cloud Computing AWS training, CCC and MS Office classes, NodeJS backend development, DevOps training Bhavnagar, Data recovery service Bhavnagar, Chip-Level repairing, Enterprise Networking setup, OS installation, AIT Lab Bhavnagar, Advanced Information Technology">
+    <meta name="author" content="Advanced Information Technology (AIT)">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="AIT | Best IT Institute & Tech Services in Bhavnagar">
+    <meta property="og:description" content="Master Ethical Hacking, Cyber Security, Cloud & Networking. Plus, get expert IT solutions like Data Recovery and Network Setup in Bhavnagar.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://advanced-it-lab.github.io/">
+    <meta property="og:type" content="website">
+
+    <title>AIT | Best Computer Training & IT Services in Bhavnagar</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Advanced Information Technology (AIT)",
+          "url": "https://advanced-it-lab.github.io/",
+          "logo": "https://advanced-it-lab.github.io/logo.png",
+          "description": "Bhavnagar's leading technical hub for Ethical Hacking, Cyber Security, Hardware, Networking, CCNA, Microsoft Server, Cloud Computing (AWS), NodeJS, and DevOps training.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. 90, 2nd Floor, Arav Complex, Opp. rammantra Mandir",
+            "addressLocality": "Bhavnagar",
+            "addressRegion": "Gujarat",
+            "addressCountry": "IN"
+          },
+          "telephone": "+91-9327736999",
+          "email": "aitconnectone@gmail.com",
+          "sameAs": ["https://advanced-it-lab.github.io/"]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root { 
+            --bg-dark: #060a13; 
+            --ait-dark-blue: #09377a; 
+            --ait-red: #ff2a2a;      
+            --ait-cyan: #4df0ff;     
+            --text-white: #ffffff;
+            --card-bg: #0d131f; 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-white); line-height: 1.6; overflow-x: hidden; background-color: transparent; }
+
+        #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-color: var(--bg-dark); }
+
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 10, 19, 0.75); backdrop-filter: blur(3px); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        #langModal { display: flex; } 
+        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 15px; text-align: center; border: 2px solid var(--ait-cyan); box-shadow: 0 0 40px rgba(77, 240, 255, 0.3); max-width: 600px; width: 100%; position: relative; }
+        
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--ait-red); cursor: pointer; transition: 0.3s; }
+        .close-btn:hover { color: var(--text-white); transform: scale(1.1); }
+        .detail-title { color: var(--text-white); font-family: 'Orbitron'; margin-bottom: 20px; border-bottom: 1px solid var(--ait-dark-blue); padding-bottom: 10px; font-size: 1.8rem; }
+        .detail-section { margin-bottom: 20px; text-align: left; background: #05080f; padding: 15px; border-radius: 8px; border-left: 4px solid var(--ait-red); }
+        .detail-section h4 { color: var(--ait-cyan); margin-bottom: 5px; font-size: 1.1rem; }
+        .detail-section p { color: #ccc; font-size: 0.95rem; }
+
+        .lang-btn { padding: 12px 35px; margin: 10px; cursor: pointer; border: 1px solid var(--ait-cyan); background: transparent; color: var(--text-white); border-radius: 5px; font-family: 'Orbitron'; transition: 0.3s; font-weight: bold; }
+        .lang-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 15px var(--ait-cyan); }
+
+        nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .logo { display: flex; align-items: center; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--ait-cyan); }
+
+        header { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid var(--ait-dark-blue); z-index: 1; }
+        .header-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+        .tagline { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--ait-cyan); font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
+        .hero-desc { max-width: 800px; margin-bottom: 40px; font-size: 1.15rem; color: #d1d5db; line-height: 1.8; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
+
+        section { padding: 90px 10%; position: relative; z-index: 1; background-color: transparent !important; }
+        .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--text-white); margin-bottom: 60px; text-transform: uppercase; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .section-title span { color: var(--ait-red); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid #1f2937; border-bottom: 3px solid var(--ait-dark-blue); transition: 0.4s; text-align: center; height: 100%; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
+        .card::after { content: 'Click for Details'; position: absolute; bottom: -30px; left: 0; width: 100%; background: var(--ait-cyan); color: #000; font-size: 0.8rem; font-weight: bold; padding: 5px 0; transition: 0.3s; }
+        .card:hover::after { bottom: 0; }
+        .card:hover { border-color: var(--ait-cyan); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(77, 240, 255, 0.15); }
+        
+        /* --- Contact Grid with Map --- */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: auto; }
+        .contact-box { background: var(--card-bg); padding: 40px; border-radius: 15px; text-align: left; border: 1px solid var(--ait-dark-blue); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+        .map-container { width: 100%; height: 100%; min-height: 400px; border-radius: 15px; overflow: hidden; border: 2px solid var(--ait-cyan); }
+
+        .btn { display: inline-block; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; background: var(--ait-red); color: var(--text-white); font-size: 0.9rem; transition: 0.3s; border: none; text-transform: uppercase; margin: 10px 0; width: 100%; text-align: center; }
+        .btn:hover { background: #d12020; transform: scale(1.02); }
+        .btn-outline { background: rgba(6,10,19,0.8); border: 2px solid var(--ait-cyan); color: var(--ait-cyan); }
+        .btn-visit { background: #fbbf24; color: #000; } /* Visit Button */
+
+        footer { padding: 50px 10%; background: rgba(6, 10, 19, 0.95); text-align: center; border-top: 2px solid var(--ait-dark-blue); }
+
+        @media (max-width: 850px) { .contact-wrapper { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<div id="langModal" class="modal-overlay">
+    <div class="modal-content">
+        <h1><img src="logo.png" alt="AIT Logo" style="height: 100px; border-radius: 15px;"></h1>
+        <p style="margin: 10px 0 30px; color: var(--ait-cyan); font-family: 'Orbitron';">Select Your Language / ભાષા પસંદ કરો</p>
+        <button class="lang-btn" onclick="setLanguage('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="setLanguage('gu')">ગુજરાતી</button>
+        <button class="lang-btn" onclick="setLanguage('hi')">हिन्दी</button>
+    </div>
+</div>
+
+<div id="detailModal" class="modal-overlay">
+    <div class="modal-content" style="border-color: var(--ait-red);">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 class="detail-title" id="detailTitle">Service Name</h2>
+        <div class="detail-section"><h4 id="detailH1">Ideal For</h4><p id="detailP1"></p></div>
+        <div class="detail-section" style="border-left-color: var(--ait-cyan);"><h4 id="detailH2">Key Benefits</h4><p id="detailP2"></p></div>
+        <a href="https://wa.me/919327736999" class="btn" style="background-color: #25d366;"><i class="fab fa-whatsapp"></i> INQUIRE ON WHATSAPP</a>
+    </div>
+</div>
+
+<nav>
+    <div class="logo"><img src="logo.png" alt="AIT Logo" style="height: 50px; border-radius: 10px;"></div>
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#courses">COURSES</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<header id="home">
+    <div class="header-content">
+        <img src="logo.png" alt="AIT Logo" style="height: 160px; margin-bottom: 20px; border-radius: 20px;">
+        <div class="tagline">Dominating the Digital Frontier</div>
+        <p class="hero-desc" id="heroText"></p>
+        <div style="display: flex; gap: 10px;">
+            <a href="#courses" class="btn" style="width: auto;">EXPLORE COURSES</a>
+            <a href="#contact" class="btn btn-outline" style="width: auto;">CONTACT US</a>
+        </div>
+    </div>
+</header>
+
+<section id="courses">
+    <h2 class="section-title" id="courseT">Advanced <span>Courses</span></h2>
+    <div class="grid" id="courseG"></div>
+</section>
+
+<section id="services">
+    <h2 class="section-title" id="serviceT">Premium <span>IT Services</span></h2>
+    <div class="grid" id="serviceG"></div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title" id="contactT">Get In <span>Touch</span></h2>
+    <div class="contact-wrapper">
+        <div class="contact-box">
+            <p style="font-size: 1.1rem; margin-bottom: 20px;"><i class="fas fa-map-marker-alt" style="color: var(--ait-red); margin-right: 15px;"></i> Plot No. 90, 2nd Floor, Arav Complex, Opp. rammantra Mandir, Bhavnagar</p>
+            <p style="font-size: 1.3rem; margin-bottom: 20px; font-weight: bold;"><i class="fas fa-phone-alt" style="color: var(--ait-cyan); margin-right: 15px;"></i> +91 9327736999</p>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;"><i class="fas fa-envelope" style="color: var(--ait-red); margin-right: 15px;"></i> aitconnectone@gmail.com</p>
+            
+            <a href="visit.html" class="btn btn-visit"><i class="fas fa-external-link-alt"></i> VISIT OUR HUB</a>
+            <a href="https://wa.me/919327736999" class="btn" style="background-color: #25d366;"><i class="fab fa-whatsapp"></i> WHATSAPP CHAT</a>
+        </div>
+        
+        <div class="map-container">
+            <iframe 
+                src="http://googleusercontent.com/maps.google.com/7" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p style="color: var(--ait-cyan); font-family: 'Orbitron'; margin-bottom: 10px;">Dominating the Digital Frontier</p>
+    <p>© 2026 Advanced Information Technology (AIT). All Rights Reserved.</p>
+</footer>
+
+<script>
+    /* --- Particle Background --- */
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.onresize = resize; resize();
+    let dots = [];
+    for(let i=0; i<60; i++) dots.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2});
+    function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        dots.forEach(d => {
+            d.x+=d.vx; d.y+=d.vy;
+            if(d.x<0||d.x>canvas.width) d.vx*=-1; if(d.y<0||d.y>canvas.height) d.vy*=-1;
+            ctx.beginPath(); ctx.arc(d.x, d.y, 2, 0, Math.PI*2); ctx.fillStyle = '#4df0ff'; ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+
+    /* --- Language Logic (Original) --- */
+    const data = {
+        en: {
+            hero: "Bhavnagar's leading technical hub. We provide 100% practical training.",
+            courseT: "Advanced <span>Courses</span>",
+            serviceT: "IT <span>Solutions</span>",
+            contactT: "Get In <span>Touch</span>",
+            courses: [
+                {t: "Ethical Hacking", d: "Master Vulnerability Assessment.", i: "fa-user-secret", link: "ethicalhacking.ok.html"},
+                {t: "Cyber Security", d: "Deep dive into Data Protection.", i: "fa-shield-halved", link: "cybersecurity.ok.html"}
+            ],
+            services: [
+                {t: "Data Recovery", d: "Professional recovery from hard drives.", i: "fa-database", e: "Damaged disks", c: "High success rate"}
+            ]
+        },
+        gu: {
+            hero: "ભાવનગરનું અગ્રણી ટેકનિકલ હબ. અમે ૧૦૦% પ્રેક્ટિકલ તાલીમ આપીએ છીએ.",
+            courseT: "એડવાન્સ્ડ <span>કોર્સ</span>",
+            serviceT: "આઈટી <span>સર્વિસ</span>",
+            contactT: "સંપર્ક <span>કરો</span>",
+            courses: [
+                {t: "એથિકલ હેકિંગ", d: "સિસ્ટમ હેકિંગમાં નિષ્ણાત બનો.", i: "fa-user-secret", link: "ethicalhacking.ok.html"},
+                {t: "સાયબર સિક્યોરિટી", d: "સાયબર સુરક્ષાની ઊંડાણપૂર્વક તાલીમ.", i: "fa-shield-halved", link: "cybersecurity.ok.html"}
+            ],
+            services: [
+                {t: "ડેટા રિકવરી", d: "હાર્ડ ડ્રાઈવમાંથી ડેટા પાછો મેળવો.", i: "fa-database", e: "બગડેલી ડિસ્ક", c: "સફળતાનો ઊંચો દર"}
+            ]
+        }
+    };
+
+    function setLanguage(lang) {
+        document.getElementById('langModal').style.display = 'none';
+        document.getElementById('heroText').innerText = data[lang].hero;
+        document.getElementById('courseT').innerHTML = data[lang].courseT;
+        document.getElementById('serviceT').innerHTML = data[lang].serviceT;
+        document.getElementById('contactT').innerHTML = data[lang].contactT;
+        
+        const cg = document.getElementById('courseG'); cg.innerHTML = '';
+        data[lang].courses.forEach(c => cg.innerHTML += `<div class="card" onclick="location.href='${c.link}'"><i class="fas ${c.i}" style="font-size:3rem;color:var(--ait-cyan)"></i><h3>${c.t}</h3><p>${c.d}</p></div>`);
+        
+        const sg = document.getElementById('serviceG'); sg.innerHTML = '';
+        data[lang].services.forEach((s, i) => sg.innerHTML += `<div class="card" onclick="openModal('${lang}', ${i})"><i class="fas ${s.i}" style="font-size:3rem;color:var(--ait-cyan)"></i><h3>${s.t}</h3><p>${s.d}</p></div>`);
+    }
+
+    function openModal(lang, i) {
+        const s = data[lang].services[i];
+        document.getElementById('detailTitle').innerText = s.t;
+        document.getElementById('detailP1').innerText = s.e;
+        document.getElementById('detailP2').innerText = s.c;
+        document.getElementById('detailModal').style.display = 'flex';
+    }
+    function closeModal() { document.getElementById('detailModal').style.display = 'none'; }
+</script>
+
+</body>
+</html>

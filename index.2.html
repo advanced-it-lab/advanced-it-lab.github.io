@@ -33,6 +33,7 @@
           "description": "Bhavnagar's leading technical hub for Ethical Hacking, Cyber Security, Hardware, Networking, CCNA, Microsoft Server, Cloud Computing (AWS), NodeJS, and DevOps training.",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Plot No. 90, 2nd Floor, Arav Complex, Opp. rammantra Mandir",
             "addressLocality": "Bhavnagar",
             "addressRegion": "Gujarat",
             "addressCountry": "IN"
@@ -76,6 +77,7 @@
         #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-color: var(--bg-dark); }
 
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 10, 19, 0.75); backdrop-filter: blur(3px); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        #langModal { display: flex; } 
         .modal-content { background: var(--card-bg); padding: 40px; border-radius: 15px; text-align: center; border: 2px solid var(--ait-cyan); box-shadow: 0 0 40px rgba(77, 240, 255, 0.3); max-width: 600px; width: 100%; position: relative; }
         
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--ait-red); cursor: pointer; transition: 0.3s; }
@@ -85,17 +87,15 @@
         .detail-section h4 { color: var(--ait-cyan); margin-bottom: 5px; font-size: 1.1rem; }
         .detail-section p { color: #ccc; font-size: 0.95rem; }
 
+        .lang-btn { padding: 12px 35px; margin: 10px; cursor: pointer; border: 1px solid var(--ait-cyan); background: transparent; color: var(--text-white); border-radius: 5px; font-family: 'Orbitron'; transition: 0.3s; font-weight: bold; }
+        .lang-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 15px var(--ait-cyan); }
+
         nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .logo { display: flex; align-items: center; }
-        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 20px; }
         nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--ait-cyan); }
-
-        /* --- New CSS for Language Switcher in Nav --- */
-        .lang-switcher { display: flex; gap: 8px; margin-left: 25px !important; border-left: 1px solid #333; padding-left: 25px; }
-        .lang-nav-btn { background: transparent; border: 1px solid var(--ait-cyan); color: var(--ait-cyan); padding: 5px 12px; font-size: 0.75rem; cursor: pointer; border-radius: 4px; transition: 0.3s; font-family: 'Orbitron'; font-weight: bold; }
-        .lang-nav-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 10px var(--ait-cyan); }
 
         header { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 1px solid var(--ait-dark-blue); z-index: 1; }
         .header-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
@@ -131,33 +131,37 @@
         .faq-item h3 { color: var(--ait-cyan); font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 10px; }
         .faq-item p { color: #ccc; font-size: 0.95rem; }
 
+        .contact-box { background: var(--card-bg); padding: 50px; border-radius: 15px; text-align: center; border: 1px solid var(--ait-dark-blue); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+
         .btn { display: inline-block; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; background: var(--ait-red); color: var(--text-white); font-size: 0.9rem; transition: 0.3s; border: none; text-transform: uppercase; margin: 10px; box-shadow: 0 5px 15px rgba(255,42,42,0.3); }
         .btn:hover { background: #d12020; transform: scale(1.05); }
         .btn-outline { background: rgba(6,10,19,0.8); border: 2px solid var(--ait-cyan); color: var(--ait-cyan); box-shadow: 0 5px 15px rgba(77,240,255,0.1); }
         .btn-outline:hover { background: var(--ait-cyan); color: #000; }
 
-        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 30px; max-width: 1100px; margin: auto; justify-content: center; }
-        .contact-info-box { flex: 1; min-width: 300px; background: var(--card-bg); padding: 40px; border-radius: 15px; text-align: left; border: 1px solid var(--ait-dark-blue); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
-        .map-box { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; border: 2px solid var(--ait-cyan); box-shadow: 0 15px 40px rgba(0,0,0,0.8); min-height: 350px; }
-        .btn-visit { background: #fbbf24; color: #000; }
-        .btn-visit:hover { background: #d97706; color: #fff; }
-
         footer { padding: 50px 10%; background: rgba(6, 10, 19, 0.95); color: #9ca3af; font-size: 0.9rem; border-top: 2px solid var(--ait-dark-blue); text-align: center; position: relative; z-index: 2; backdrop-filter: blur(5px); }
 
-        @media (max-width: 900px) { 
-            nav ul { display: none; } /* On mobile, you might want to add a hamburger menu later */
-            section { padding: 60px 5%; } 
-            .logo img { height: 40px !important; } 
-        }
+        @media (max-width: 768px) { nav ul { display: none; } section { padding: 60px 5%; } .logo img { height: 40px !important; } }
     </style>
 </head>
 <body>
 
 <canvas id="particleCanvas"></canvas>
 
+<div id="langModal" class="modal-overlay">
+    <div class="modal-content">
+        <h1 style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="AIT Logo" style="height: 100px; border-radius: 15px;">
+        </h1>
+        <p style="margin: 10px 0 30px; color: var(--ait-cyan); font-family: 'Orbitron';">Select Your Language / ભાષા પસંદ કરો</p>
+        <button class="lang-btn" onclick="setLanguage('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="setLanguage('gu')">ગુજરાતી</button>
+        <button class="lang-btn" onclick="setLanguage('hi')">हिन्दी</button>
+    </div>
+</div>
+
 <div id="detailModal" class="modal-overlay">
     <div class="modal-content" style="border-color: var(--ait-red);">
-        <span class="close-btn" onclick="closeModal()">×</span>
+        <span class="close-btn" onclick="closeModal()">&times;</span>
         <div style="margin-bottom: 15px;">
             <img src="logo.png" alt="AIT Logo" style="height: 40px; border-radius: 8px;">
         </div>
@@ -190,11 +194,6 @@
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li class="lang-switcher">
-            <button onclick="setLanguage('en')" class="lang-nav-btn">EN</button>
-            <button onclick="setLanguage('gu')" class="lang-nav-btn">GUJ</button>
-            <button onclick="setLanguage('hi')" class="lang-nav-btn">HIN</button>
-        </li>
     </ul>
 </nav>
 
@@ -251,35 +250,33 @@
 </section>
 
 <section id="contact">
-    <h2 class="section-title" id="contactT" style="margin-bottom: 40px; font-size: 2rem;">Contact <span>Us</span></h2>
-    
-    <div class="contact-wrapper">
-        <div class="contact-info-box">
-            <p style="font-size: 1.15rem; margin-bottom: 20px; line-height: 1.6;">
+    <div class="contact-box" style="max-width: 800px; margin: auto;">
+        <h2 class="section-title" id="contactT" style="margin-bottom: 30px; font-size: 2rem;">Get In <span>Touch</span></h2>
+        
+        <p style="font-size: 1.15rem; margin-bottom: 25px; line-height: 1.6;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Arav+Complex+Bhavnagar+Rammantra+Mandir" target="_blank" style="text-decoration: none; color: inherit;">
                 <i class="fas fa-map-marker-alt" style="color: var(--ait-red); margin-right: 15px;"></i> 
-                Plot No. 90, 2nd Floor, Arav Complex,<br>Opp. Rammantra Mandir, Bhavnagar
-            </p>
-            <p style="font-size: 1.4rem; color: var(--text-white); margin-bottom: 20px; font-weight: bold;">
-                <i class="fas fa-phone-alt" style="color: var(--ait-cyan); margin-right: 15px;"></i> +91 9327736999
-            </p>
-            <p style="font-size: 1.2rem; margin-bottom: 40px;">
-                <i class="fas fa-envelope" style="color: var(--ait-red); margin-right: 15px;"></i> aitconnectone@gmail.com
-            </p>
-            
-            <a href="visit.html" class="btn btn-visit" style="width: 100%; margin: 0 0 15px 0; text-align: center; display: block;">
-                <i class="fas fa-walking" style="margin-right: 10px;"></i> VISIT OUR HUB
+                Plot No. 90, 2nd Floor, Arav Complex,<br>
+                Opp. Rammantra Mandir, Bhavnagar, Gujarat.
             </a>
-            
-            <a href="https://wa.me/919327736999" class="btn" style="background-color: #25d366; color: white; width: 100%; margin: 0; text-align: center; display: block;">
+        </p>
+
+        <p style="font-size: 1.4rem; color: var(--text-white); margin-bottom: 20px; font-weight: bold;">
+            <i class="fas fa-phone-alt" style="color: var(--ait-cyan); margin-right: 15px;"></i> +91 9327736999
+        </p>
+        
+        <p style="font-size: 1.2rem; margin-bottom: 35px;">
+            <i class="fas fa-envelope" style="color: var(--ait-red); margin-right: 15px;"></i> aitconnectone@gmail.com
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Arav+Complex+Bhavnagar+Rammantra+Mandir" target="_blank" class="btn btn-outline" style="width: 100%; margin: 0;">
+                <i class="fas fa-location-arrow" style="margin-right: 10px;"></i> GET DIRECTIONS ON MAP
+            </a>
+
+            <a href="https://wa.me/919327736999" class="btn" style="background-color: #25d366; color: white; width: 100%; margin: 0;">
                 <i class="fab fa-whatsapp" style="font-size: 1.2rem; margin-right: 10px;"></i> WHATSAPP CHAT
             </a>
-        </div>
-
-        <div class="map-box">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.9015531797513!2d72.14600471000888!3d21.745341980006383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f5bc5fa507169%3A0x17b41a0e5362b74f!2sAdvance%20Information%20Technology!5e0!3m2!1sen!2sin!4v1773307640292!5m2!1sen!2sin" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
         </div>
     </div>
 </section>
@@ -503,7 +500,7 @@
                 {t: "एथिकल हैकिंग", d: "काली लिनक्स का उपयोग करके वीएपीटी और सिस्टम हैकिंग में महारत हासिल करें।", i: "fa-user-secret", link: "ethicalhacking.ok.html"},
                 {t: "साइबर सुरक्षा", d: "डेटा सुरक्षा, क्रिप्टोग्राफी और साइबर खतरे की खुफिया जानकारी।", i: "fa-shield-halved", link: "cybersecurity.ok.html"},
                 {t: "हार्डवेयर", d: "पीसी आर्किटेक्चर, असेंबलिंग और कंपोनेंट लेवल ट्रबलशूटिंग सीखें।", i: "fa-microchip", link: "hardware.ok.html"},
-                {t: "नेटवर्किंग", d: "आईपी एड्रेसिंग, राउटिंग, स्विचिंग और सुरक्षित नेटवर्क बनाना सीखें।", i: "fa-network-wired", link: "network.ok.html"},
+                {t: "नेटवर्किंग", d: "आईपी एड्रेसिंग, राउटिंग, स्विचિંગ और सुरक्षित नेटवर्क बनाना सीखें।", i: "fa-network-wired", link: "network.ok.html"},
                 {t: "CCNA", d: "एंटरप्राइज-लेवल नेटवर्क कॉन्फ़िगरेशन के लिए एडवांस सिस्को (Cisco) CCNA प्रशिक्षण।", i: "fa-project-diagram", link: "ccna.ok.html"},
                 {t: "माइक्रोसॉफ्ट सर्वर", d: "विंडोज सर्वर 2022 एडमिनिस्ट्रेशन और एक्टिव डायरेक्टरी सेटअप।", i: "fa-server", link: "msserver.ok.html"},
                 {t: "क्लाउड कंप्यूटिंग", d: "AWS का उपयोग करके सुरक्षित क्लाउड इन्फ्रास्ट्रक्चर डिजाइन करना सीखें।", i: "fa-cloud", link: "cloud.ok.html"},
@@ -513,7 +510,7 @@
             ],
             services: [
                 {t: "चिप-लेवल रिपेयरिंग", d: "हार्डवेयर निदान और चिप-लेवल मदरबोर्ड रिपेयरिंग।", i: "fa-tools", e: "डेड लैपटॉप या टूटी स्क्रीन वाले व्यक्ति या व्यवसाय।", c: "डेटा सुरक्षा और वारंटी के साथ तेज़ और सस्ता रिपेयरिंग।"},
-                {t: "एंटरप्राइज नेटवर्किंग", d: "कार्यालयों और घरों के लिए हाई-स्पीड लैन/वैन नेटवर्क।", i: "fa-wifi", e: "नए कार्यालय, स्कूल या घर जहाँ तेज़ इंटरनेट चाहिए।", c: "हाई-स्पीड इंटरनेट, सुरक्षित secure डेटा शेयरिंग और जीरो डाउनटाइम।"},
+                {t: "एंटरप्राइज नेटवर्किंग", d: "कार्यालयों और घरों के लिए हाई-स्पीड लैन/वैन नेटवर्क।", i: "fa-wifi", e: "नए कार्यालय, स्कूल या घर जहाँ तेज़ इंटरनेट चाहिए।", c: "हाई-स्पीड इंटरनेट, सुरक्षित डेटा शेयरिंग और जीरो डाउनटाइम।"},
                 {t: "OS और सॉफ्टवेयर सेटअप", d: "विंडोज, लिनक्स (काली) और सॉफ्टवेयर पैकेजों की स्थापना।", i: "fa-compact-disc", e: "नया पीसी लेने वाले या स्लो पीसी से परेशान लोग।", c: "पीसी की सुपर-फास्ट स्पीड और वायरस हटाना।"},
                 {t: "डेटा रिकवरी", d: "हार्ड ड्राइव और SSD से डिलीट, खोया या करप्ट हुआ डेटा सुरक्षित रूप से वापस पाएं।", i: "fa-database", e: "वे लोग या व्यवसाय जिनकी महत्वपूर्ण फाइलें गलती से डिलीट हो गई हैं या हार्ड ड्राइव खराब हो गई है।", c: "उच्च सफलता दर, 100% सुरक्षित डेटा गोपनीयता और तेज़ रिकवरी सर्विस।"}
             ],
@@ -527,6 +524,7 @@
 
     function setLanguage(lang) {
         currentLang = lang;
+        document.getElementById('langModal').style.display = 'none';
         
         document.getElementById('heroText').innerText = data[lang].hero;
         
@@ -591,11 +589,6 @@
             modal.style.display = "none";
         }
     }
-
-    /* --- Set Default English on Load --- */
-    window.onload = function() {
-        setLanguage('en');
-    };
 </script>
 
 </body>
