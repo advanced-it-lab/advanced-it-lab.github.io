@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | AIT Bhavnagar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- AIT Theme Core Variables --- */
+        :root { 
+            --bg-dark: #060a13; 
+            --ait-dark-blue: #09377a; 
+            --ait-red: #ff2a2a;      
+            --ait-cyan: #4df0ff;     
+            --text-white: #ffffff;
+            --card-bg: #0d131f; 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-white); line-height: 1.6; overflow-x: hidden; background-color: transparent; }
+
+        /* Background Canvas */
+        #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-color: var(--bg-dark); }
+
+        /* Navbar */
+        nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .logo img { height: 50px; border-radius: 10px; }
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--ait-cyan); }
+
+        /* Section Styling */
+        section { padding: 120px 10% 60px; position: relative; z-index: 1; }
+        .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--text-white); margin-bottom: 60px; text-transform: uppercase; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .section-title span { color: var(--ait-red); }
+
+        /* Team Profile Card (Detailed for Founder) */
+        .founder-card {
+            background: var(--card-bg);
+            border: 2px solid var(--ait-cyan);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            position: relative;
+        }
+        .founder-card::before {
+            content: ''; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border: 1px dashed var(--ait-dark-blue); border-radius: 20px; z-index: -1;
+        }
+        .founder-img-box {
+            flex-shrink: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid var(--ait-red);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 42, 42, 0.4);
+        }
+        .founder-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .founder-info {
+            text-align: left;
+        }
+        .founder-info h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: var(--ait-cyan);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .founder-info h4 {
+            color: var(--ait-red);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .founder-desc {
+            color: #d1d5db;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+            border-left: 3px solid var(--ait-dark-blue);
+            padding-left: 15px;
+        }
+        .founder-skills span {
+            display: inline-block;
+            background: rgba(77, 240, 255, 0.1);
+            color: var(--ait-cyan);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--ait-cyan);
+            margin: 5px 5px 0 0;
+        }
+        .social-links { margin-top: 20px; }
+        .social-links a {
+            color: var(--text-white);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: var(--ait-cyan); transform: translateY(-3px); }
+
+        /* Future Team Members Grid (Placeholder) */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Footer */
+        footer { padding: 40px 10%; background: rgba(6, 10, 19, 0.95); color: #9ca3af; font-size: 0.9rem; border-top: 2px solid var(--ait-dark-blue); text-align: center; position: relative; z-index: 2; backdrop-filter: blur(5px); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .founder-card { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .founder-desc { border-left: none; padding-left: 0; text-align: justify; }
+            nav ul { display: none; } /* Kept simple for now, can add toggle script back if needed */
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<nav>
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="AIT Logo"></a>
+    </div>
+    <ul id="navMenu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="team.html" class="active">OUR TEAM</a></li>
+        <li><a href="index.html#courses">COURSES</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<section id="team">
+    <h2 class="section-title">Meet Our <span>Experts</span></h2>
+
+    <div class="founder-card">
+        <div class="founder-img-box">
+            <img src="dipalsir.jpg" alt="Dipalsir Profile"> 
+        </div>
+        
+        <div class="founder-info">
+            <h2>Dipalsir</h2>
+            <h4>Founder & Senior Cyber Security Faculty</h4>
+            
+            <div class="founder-desc">
+                "નમસ્કાર! હું દીપલ સર છું. છેલ્લા ૧૨ કરતાં વધુ વર્ષોથી (૨૦૧૨ થી), મેં કમ્પ્યુટર હાર્ડવેર, નેટવર્કિંગ અને સાયબર સિક્યોરિટીના ક્ષેત્રમાં હજારો વિદ્યાર્થીઓને માર્ગદર્શન આપ્યું છે. એક 'Certified Ethical Hacking Expert (R-11)' તરીકે, મારો મુખ્ય ઉદ્દેશ્ય માત્ર બુકીશ જ્ઞાન આપવાનો નથી, પરંતુ તમને ૧૦૦% પ્રેક્ટિકલ ટ્રેનિંગ આપીને IT ઇન્ડસ્ટ્રીના પડકારો માટે તૈયાર કરવાનો છે. બગ બાઉન્ટી હન્ટિંગ હોય, સર્વર મેનેજમેન્ટ હોય કે સિસ્ટમ હેકિંગ, મારો પ્રયાસ હંમેશા એ જ રહે છે કે હું મારા ફિલ્ડ-લેવલના અનુભવનો પૂરેપૂરો લાભ તમને આપું. હું માનું છું કે સાચું શિક્ષણ એ છે જે તમને નવી વસ્તુઓ શીખવા માટે પ્રેરિત કરે. તો ચાલો, સાથે મળીને તમારા ઉજ્જવળ IT કરિયરની શરૂઆત કરીએ અને ડિજિટલ દુનિયામાં એક નવી ઓળખ બનાવીએ." [cite: 1, 11, 13, 15, 26, 27]
+            </div>
+
+            <div class="founder-skills">
+                <span><i class="fas fa-shield-alt"></i> Ethical Hacking</span>
+                <span><i class="fas fa-network-wired"></i> Networking</span>
+                <span><i class="fas fa-microchip"></i> Hardware</span>
+                <span><i class="fas fa-server"></i> Server Admin</span>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/dipal-boricha-36922a142" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:borichadipal@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+<footer>
+    <p style="color: var(--ait-cyan); font-family: 'Orbitron'; margin-bottom: 10px; font-weight: bold;">Dominating the Digital Frontier</p>
+    <p>© 2026 Advanced Information Technology (AIT). All Rights Reserved.</p>
+</footer>
+
+<script>
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    
+    function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    setCanvasSize();
+
+    let particlesArray = [];
+    
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color;
+        }
+        draw() {
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color; ctx.fill();
+        }
+        update() {
+            if(this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+            if(this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+            this.x += this.directionX; this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    function initParticles() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        if(window.innerWidth < 768) numberOfParticles = 35; 
+        
+        for(let i=0; i<numberOfParticles; i++) {
+            let size = (Math.random() * 2) + 1;
+            let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * 1.5) - 0.75;
+            let directionY = (Math.random() * 1.5) - 0.75;
+            let color = (Math.random() > 0.5) ? '#4df0ff' : '#ff2a2a'; 
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    function connectParticles() {
+        for(let a=0; a<particlesArray.length; a++) {
+            for(let b=a; b<particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if(distance < (canvas.width/7) * (canvas.height/7)) {
+                    let opacityValue = 1 - (distance/20000);
+                    ctx.strokeStyle = 'rgba(77, 240, 255,' + opacityValue + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        for(let i=0; i<particlesArray.length; i++){
+            particlesArray[i].update();
+        }
+        connectParticles();
+    }
+
+    window.addEventListener('resize', function(){
+        setCanvasSize();
+        initParticles();
+    });
+    
+    initParticles();
+    animateParticles();
+</script>
+
+</body>
+</html>

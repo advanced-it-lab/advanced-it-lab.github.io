@@ -87,16 +87,12 @@
 
         nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .logo { display: flex; align-items: center; }
-        
-        /* Mobile Menu Toggle Icon */
-        .menu-toggle { display: none; color: var(--text-white); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
-        .menu-toggle:hover { color: var(--ait-cyan); }
-
         nav ul { display: flex; list-style: none; align-items: center; }
         nav ul li { margin-left: 20px; }
         nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--ait-cyan); }
 
+        /* --- New CSS for Language Switcher in Nav --- */
         .lang-switcher { display: flex; gap: 8px; margin-left: 25px !important; border-left: 1px solid #333; padding-left: 25px; }
         .lang-nav-btn { background: transparent; border: 1px solid var(--ait-cyan); color: var(--ait-cyan); padding: 5px 12px; font-size: 0.75rem; cursor: pointer; border-radius: 4px; transition: 0.3s; font-family: 'Orbitron'; font-weight: bold; }
         .lang-nav-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 10px var(--ait-cyan); }
@@ -148,27 +144,8 @@
 
         footer { padding: 50px 10%; background: rgba(6, 10, 19, 0.95); color: #9ca3af; font-size: 0.9rem; border-top: 2px solid var(--ait-dark-blue); text-align: center; position: relative; z-index: 2; backdrop-filter: blur(5px); }
 
-        /* --- Mobile Responsive & Navbar Fix --- */
         @media (max-width: 900px) { 
-            .menu-toggle { display: block; }
-            
-            nav ul { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: rgba(6, 10, 19, 0.98); 
-                padding: 20px 0; 
-                border-bottom: 2px solid var(--ait-red);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.8);
-            }
-            nav ul.active { display: flex; } 
-            
-            nav ul li { margin: 15px 0; text-align: center; }
-            .lang-switcher { margin: 15px auto !important; border-left: none; padding-left: 0; justify-content: center; }
-            
+            nav ul { display: none; } /* On mobile, you might want to add a hamburger menu later */
             section { padding: 60px 5%; } 
             .logo img { height: 40px !important; } 
         }
@@ -206,15 +183,9 @@
     <div class="logo">
         <img src="logo.png" alt="AIT Logo" style="height: 50px; border-radius: 10px;">
     </div>
-    
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <ul id="navMenu">
+    <ul>
         <li><a href="#home">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="team.html" id="navTeamBtn">OUR TEAM</a></li>
         <li><a href="#courses">COURSES</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -261,43 +232,6 @@
             <h3 id="visionT" style="color: var(--ait-cyan);"><i class="fas fa-eye"></i> Our Vision</h3>
             <p id="visionC"></p>
         </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 50px;">
-        <a href="team.html" class="btn" id="teamBtn" style="font-size: 1.1rem; padding: 15px 40px; box-shadow: 0 0 20px rgba(255,42,42,0.4);"><i class="fas fa-users" style="margin-right: 10px;"></i> MEET OUR TEAM</a>
-    </div>
-</section>
-
-<section id="why-us" style="background: rgba(6, 10, 19, 0.4);">
-    <h2 class="section-title" id="whyUsT">Why <span>Choose Us?</span></h2>
-    <div class="grid" id="whyUsG"></div>
-</section>
-
-<section id="what-is-aab" style="background-color: rgba(6, 10, 19, 0.8); border-top: 1px solid var(--ait-dark-blue); border-bottom: 1px solid var(--ait-dark-blue);">
-    <h2 class="section-title" id="trustT">What is <span>AAB?</span></h2>
-    
-    <div style="text-align: center; margin-bottom: 30px;">
-        <img src="aab.png" alt="AAB Logo" style="height: 450px; width: 100%; max-width: 800px; object-fit: contain; filter: drop-shadow(0 0 30px rgba(77,240,255,0.7)); margin-bottom: 15px;">
-        
-        <p id="proudMember" style="color: #fbbf24; font-size: 1.4rem; font-weight: bold; margin-bottom: 10px; letter-spacing: 1px;"></p>
-        
-        <h3 style="color: var(--text-white); font-family: 'Orbitron'; font-size: 2.2rem; margin-top: 0; letter-spacing: 1px; text-transform: uppercase;">Academic Association of Bhavnagar</h3>
-    </div>
-
-    <div style="max-width: 900px; margin: auto; background: var(--card-bg); padding: 40px; border-radius: 15px; border: 1px solid var(--ait-cyan); box-shadow: 0 10px 30px rgba(0,0,0,0.8); text-align: center;">
-        
-        <h4 id="shloka" style="color: #fbbf24; font-size: 1.4rem; font-weight: bold; margin-bottom: 10px;"></h4>
-        <p id="shlokaM" style="color: #a1a1a1; font-style: italic; margin-bottom: 30px; font-size: 1rem; border-bottom: 1px solid #333; padding-bottom: 20px;"></p>
-        
-        <p id="trustAAB" style="color: #d1d5db; font-size: 1.1rem; line-height: 1.8; text-align: justify; margin-bottom: 20px;"></p>
-        
-        <div style="background: rgba(255,42,42,0.1); border-left: 4px solid var(--ait-red); padding: 20px; text-align: left; margin-top: 30px; border-radius: 5px;">
-            <p id="trustFAA" style="color: #ccc; font-size: 1.05rem; line-height: 1.7;"></p>
-            <a href="https://www.faagujarat.com" target="_blank" style="color: var(--ait-cyan); text-decoration: none; margin-top: 15px; display: inline-block; font-weight: bold; font-size: 0.95rem; transition: 0.3s;">
-                <i class="fas fa-external-link-alt" style="margin-right: 5px;"></i> Visit FAA Gujarat Website
-            </a>
-        </div>
-
     </div>
 </section>
 
@@ -356,12 +290,6 @@
 </footer>
 
 <script>
-    /* --- Mobile Menu Toggle Script --- */
-    function toggleMenu() {
-        const menu = document.getElementById("navMenu");
-        menu.classList.toggle("active");
-    }
-
     /* --- FULL PAGE Particle Network Background Script --- */
     const canvas = document.getElementById("particleCanvas");
     const ctx = canvas.getContext("2d");
@@ -486,24 +414,6 @@
             missionC: "To empower students with practical training in next-gen technologies, making them employable from day one.",
             visionT: "Our Vision",
             visionC: "To establish Bhavnagar as a central hub for Cyber Security and advanced IT networking.",
-            teamBtn: "<i class='fas fa-users' style='margin-right: 10px;'></i> MEET OUR TEAM",
-            navTeamBtn: "OUR TEAM",
-            
-            whyUsT: "Why <span>Choose Us?</span>",
-            whyUsCards: [
-                {t: "Inspiring Instructors", d: "We have professional, good-natured, highly experienced, and most importantly, instructors of good character who treat teaching not as a profession but as a noble duty.", i: "fa-chalkboard-teacher"},
-                {t: "Joyful & Scientific Learning", d: "We provide education with fun, a scientific attitude, practical business knowledge, and foster an endless curiosity to learn new things.", i: "fa-flask"},
-                {t: "Digital Discipline", d: "We guide students on how to overcome unnecessary mobile and social media addiction by using technology with purpose and self-control.", i: "fa-mobile-alt"},
-                {t: "AI Opportunities", d: "We teach how to leverage Artificial Intelligence (AI) to unlock massive new career opportunities in the IT field.", i: "fa-brain"}
-            ],
-
-            trustT: "What is <span>AAB?</span>",
-            proudMember: "We are proud to be a member of AAB",
-            shloka: "ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै ।",
-            shlokaM: "(Meaning: May the Lord protect us both together, may He nourish us together, may we work together with great energy. May our study be vigorous and effective, and may we not hate each other.)",
-            trustAAB: "AAB (Academic Association of Bhavnagar) is an active platform of administrators of educational institutes associated with the education sector. The organization arranges various educational programs and activities to improve the quality of education, enhance cooperation among teachers, and foster student development. Currently, Shri Hemantsir Solanki is leading the organization as the President and is continuously striving to make AAB more active and inspiring. AAB is a continuously active association in Bhavnagar for over 25 years, with more than 90 educational institutes connected to it.",
-            trustFAA: "AIT is a proud member of AAB. Furthermore, AAB is a member of the state-level organization FAA (Federation of Academic Association, Gujarat), functioning since 2016. Therefore, you can trust us 100% without any worry.",
-
             courseT: "Advanced <span>Courses</span>",
             serviceT: "IT <span>Solutions</span>",
             faqT: "Frequently Asked <span>Questions</span>",
@@ -544,24 +454,6 @@
             missionC: "વિદ્યાર્થીઓને લેટેસ્ટ ટેકનોલોજીમાં પ્રેક્ટિકલ તાલીમ આપીને તેમને પહેલા જ દિવસથી નોકરી માટે સક્ષમ બનાવવા.",
             visionT: "અમારી દ્રષ્ટિ",
             visionC: "ભાવનગરને સાયબર સિક્યોરિટી અને એડવાન્સ્ડ IT નેટવર્કિંગનું મુખ્ય કેન્દ્ર બનાવવું.",
-            teamBtn: "<i class='fas fa-users' style='margin-right: 10px;'></i> અમારી ટીમ વિશે જાણો",
-            navTeamBtn: "અમારી ટીમ",
-
-            whyUsT: "શા માટે <span>અમને પસંદ કરવા?</span>",
-            whyUsCards: [
-                {t: "આદર્શ અને અનુભવી શિક્ષકો", d: "અમારી પાસે પ્રોફેશનલ, સારા સ્વભાવના, વધારે અનુભવ અને સૌથી અગત્યનું સારા ચરિત્રવાળા ઇન્સ્ટ્રક્ટર છે, જે શિક્ષણને વ્યવસાય તરીકે નહિ પણ એક પવિત્ર ફરજ તરીકે આપે છે.", i: "fa-chalkboard-teacher"},
-                {t: "આનંદ સાથે વૈજ્ઞાનિક શિક્ષણ", d: "દરેક વિદ્યાર્થીઓને જ્ઞાનની સાથે ગમ્મત, વૈજ્ઞાનિક અભિગમ, વ્યવસાયિક જ્ઞાન અને નવું શીખવાની જિજ્ઞાસા કેવી રીતે વધારવી તે શીખવવામાં આવે છે.", i: "fa-flask"},
-                {t: "ટેકનોલોજીનો સંયમ", d: "મોબાઇલ અને સોશિયલ મીડિયાની બિનજરૂરી લત દૂર કરવા માટે ટેકનોલોજીનો સંયમપૂર્વક અને સાચો ઉપયોગ કેવી રીતે કરી શકાય તેનું યોગ્ય માર્ગદર્શન આપીએ છીએ.", i: "fa-mobile-alt"},
-                {t: "AI અને ભવિષ્યની તકો", d: "IT ફિલ્ડમાં આધુનિક AI નો ઉપયોગ કરીને કેટલી અને કેવી નવી તકો મેળવી શકાય છે, તે દરેક બાબતનું પ્રેક્ટિકલ જ્ઞાન આપીએ છીએ.", i: "fa-brain"}
-            ],
-
-            trustT: "AAB <span>શું છે?</span>",
-            proudMember: "AAB નાં સભ્ય હોવાથી અમે ગર્વ અનુભવીએ છીએ",
-            shloka: "ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै ।",
-            shlokaM: "(અર્થ: ઈશ્વર આપણા બંને (ગુરુ અને શિષ્ય) નું સાથે રક્ષણ કરે, આપણું સાથે પોષણ કરે, આપણે સાથે મળીને જ્ઞાનરૂપી શક્તિ પ્રાપ્ત કરીએ. આપણું પ્રાપ્ત કરેલું જ્ઞાન તેજસ્વી બને અને આપણે ક્યારેય એકબીજાનો દ્વેષ ન કરીએ.)",
-            trustAAB: "AAB (Academic Association of Bhavnagar) શિક્ષણ ક્ષેત્ર સાથે જોડાયેલા શૈક્ષણિક સંસ્થા નાં સંચાલકોનું સક્રિય મંચ છે. સંસ્થા શિક્ષણની ગુણવત્તા સુધારવા, શિક્ષકો વચ્ચે સહકાર વધારવા અને વિદ્યાર્થીઓના વિકાસ માટે વિવિધ શૈક્ષણિક કાર્યક્રમો અને પ્રવૃત્તિઓનું આયોજન કરે છે. હાલમાં પ્રમુખ તરીકે શ્રી હેમંતસર સોલંકી સંસ્થાનું નેતૃત્વ કરી રહ્યા છે અને AAB ને વધુ સક્રિય અને પ્રેરણાદાયક બનાવવા માટે સતત પ્રયત્ન કરી રહ્યા છે. AAB એ ભાવનગરનું ૨૫ વર્ષ કરતા વધારે સમયથી એકધારું કાર્યરત એસોસિએશન છે, જેમાં ૯૦ કરતા વધારે શૈક્ષણિક સંસ્થાઓ જોડાયેલી છે.",
-            trustFAA: "AIT એ AAB નું ગૌરવશાળી સભ્ય છે. અને આ AAB એ પૂરા ગુજરાત લેવલના સૌથી મોટા સંગઠન FAA (Federation of Academic Association, Gujarat) નું સભ્ય છે, જે ૨૦૧૬ થી કાર્યરત છે. આથી તમે અમારા પર કોઈ પણ જાતની ચિંતા વગર 100% વિશ્વાસ કરી શકો છો.",
-
             courseT: "એડવાન્સ્ડ <span>કોર્સ</span>",
             serviceT: "આઈટી <span>સર્વિસ</span>",
             faqT: "સામાન્ય <span>પ્રશ્નો (FAQ)</span>",
@@ -602,24 +494,6 @@
             missionC: "छात्रों को नवीनतम तकनीकों में व्यावहारिक प्रशिक्षण के साथ सशक्त बनाना।",
             visionT: "हमारा दृष्टिकोण",
             visionC: "भावनगर को साइबर सुरक्षा और उन्नत आईटी नेटवर्किंग का प्रमुख केंद्र बनाना।",
-            teamBtn: "<i class='fas fa-users' style='margin-right: 10px;'></i> हमारी टीम से मिलें",
-            navTeamBtn: "हमारी टीम",
-
-            whyUsT: "हमें क्यों <span>चुनें?</span>",
-            whyUsCards: [
-                {t: "आदर्श और अनुभवी शिक्षक", d: "हमारे पास पेशेवर, अच्छे स्वभाव वाले, अत्यधिक अनुभवी और सबसे महत्वपूर्ण अच्छे चरित्र वाले प्रशिक्षक हैं, जो शिक्षा को एक पेशे के रूप में नहीं बल्कि एक कर्तव्य के रूप में लेते हैं।", i: "fa-chalkboard-teacher"},
-                {t: "आनंद के साथ वैज्ञानिक शिक्षा", d: "हम छात्रों को ज्ञान के साथ मज़ा, वैज्ञानिक दृष्टिकोण, व्यावहारिक व्यावसायिक ज्ञान और नई चीजें सीखने की जिज्ञासा कैसे बढ़ाएं, यह सिखाते हैं।", i: "fa-flask"},
-                {t: "तकनीक का संयम", d: "हम मोबाइल और सोशल मीडिया की अनावश्यक लत को दूर करने और तकनीक का सही और संयमपूर्वक उपयोग करने का मार्गदर्शन करते हैं।", i: "fa-mobile-alt"},
-                {t: "AI और भविष्य के अवसर", d: "IT क्षेत्र में AI का उपयोग करके कितने नए अवसर प्राप्त किए जा सकते हैं, हम इसका व्यावहारिक ज्ञान प्रदान करते हैं।", i: "fa-brain"}
-            ],
-
-            trustT: "AAB <span>क्या है?</span>",
-            proudMember: "AAB का सदस्य होने पर हमें गर्व है",
-            shloka: "ॐ सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै ।",
-            shlokaM: "(अर्थ: ईश्वर हम दोनों (गुरु और शिष्य) की साथ-साथ रक्षा करें, हम दोनों का साथ-साथ पोषण करें, हम साथ मिलकर शक्ति प्राप्त करें। हमारी प्राप्त की हुई विद्या तेजयुक्त हो और हम कभी एक-दूसरे से द्वेष न करें।)",
-            trustAAB: "AAB (Academic Association of Bhavnagar) शिक्षा क्षेत्र से जुड़े शैक्षणिक संस्थानों के संचालकों का एक सक्रिय मंच है। यह संस्था शिक्षा की गुणवत्ता में सुधार, शिक्षकों के बीच सहयोग बढ़ाने और छात्रों के विकास के लिए विभिन्न शैक्षिक कार्यक्रमों और गतिविधियों का आयोजन करती है। वर्तमान में, अध्यक्ष के रूप में श्री हेमंतसर सोलंकी संस्था का नेतृत्व कर रहे हैं और AAB को अधिक सक्रिय और प्रेरक बनाने के लिए निरंतर प्रयास कर रहे हैं। AAB भावनगर का 25 वर्षों से अधिक समय से लगातार सक्रिय संघ है, जिसमें 90 से अधिक शैक्षणिक संस्थान जुड़े हुए हैं।",
-            trustFAA: "AIT, AAB का एक गौरवान्वित सदस्य है। इसके अलावा, AAB पूरे गुजरात स्तर के सबसे बड़े संगठन FAA (Federation of Academic Association, Gujarat) का सदस्य है, जो 2016 से कार्यरत है। इसलिए, आप हम पर बिना किसी चिंता के 100% विश्वास कर सकते हैं।",
-
             courseT: "एडवांस्ड <span>पाठ्यक्रम</span>",
             serviceT: "आईटी <span>समाधान</span>",
             faqT: "सामान्य <span>प्रश्न (FAQ)</span>",
@@ -667,18 +541,6 @@
         document.getElementById('visionT').innerHTML = `<i class="fas fa-eye" style="margin-right: 10px; color: var(--ait-cyan);"></i>${data[lang].visionT}`;
         document.getElementById('visionC').innerText = data[lang].visionC;
         
-        document.getElementById('teamBtn').innerHTML = data[lang].teamBtn;
-        document.getElementById('navTeamBtn').innerText = data[lang].navTeamBtn;
-
-        document.getElementById('whyUsT').innerHTML = data[lang].whyUsT;
-        
-        document.getElementById('trustT').innerHTML = data[lang].trustT;
-        document.getElementById('proudMember').innerText = data[lang].proudMember;
-        document.getElementById('shloka').innerText = data[lang].shloka;
-        document.getElementById('shlokaM').innerText = data[lang].shlokaM;
-        document.getElementById('trustAAB').innerText = data[lang].trustAAB;
-        document.getElementById('trustFAA').innerText = data[lang].trustFAA;
-        
         document.getElementById('courseT').innerHTML = data[lang].courseT;
         document.getElementById('serviceT').innerHTML = data[lang].serviceT;
         document.getElementById('contactT').innerHTML = data[lang].contactT;
@@ -689,15 +551,12 @@
             items.forEach((item, index) => {
                 if(type === 'course') {
                     grid.innerHTML += `<div class="card" onclick="window.location.href='${item.link}'"><i class="fas ${item.i}"></i><h3>${item.t}</h3><p>${item.d}</p></div>`;
-                } else if(type === 'whyUs') {
-                    grid.innerHTML += `<div class="card no-hover" style="cursor: default; border-bottom: none;"><i class="fas ${item.i}" style="color: var(--ait-red);"></i><h3 style="color: var(--ait-cyan);">${item.t}</h3><p>${item.d}</p></div>`;
                 } else {
                     grid.innerHTML += `<div class="card" onclick="openModal('${type}', ${index})"><i class="fas ${item.i}"></i><h3>${item.t}</h3><p>${item.d}</p></div>`;
                 }
             });
         };
 
-        renderGrid('whyUsG', data[lang].whyUsCards, 'whyUs');
         renderGrid('courseG', data[lang].courses, 'course');
         renderGrid('serviceG', data[lang].services, 'service');
 

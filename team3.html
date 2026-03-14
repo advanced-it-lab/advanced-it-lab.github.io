@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | AIT Bhavnagar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- AIT Theme Core Variables --- */
+        :root { 
+            --bg-dark: #060a13; 
+            --ait-dark-blue: #09377a; 
+            --ait-red: #ff2a2a;      
+            --ait-cyan: #4df0ff;     
+            --text-white: #ffffff;
+            --card-bg: #0d131f; 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-white); line-height: 1.6; overflow-x: hidden; background-color: transparent; }
+
+        /* Background Canvas */
+        #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-color: var(--bg-dark); }
+
+        /* Navbar */
+        nav { background: rgba(6, 10, 19, 0.95); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--ait-red); box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .logo img { height: 50px; border-radius: 10px; }
+        
+        /* Mobile Menu Toggle Icon */
+        .menu-toggle { display: none; color: var(--text-white); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
+        .menu-toggle:hover { color: var(--ait-cyan); }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--ait-cyan); }
+
+        .lang-switcher { display: flex; gap: 8px; margin-left: 25px !important; border-left: 1px solid #333; padding-left: 25px; }
+        .lang-nav-btn { background: transparent; border: 1px solid var(--ait-cyan); color: var(--ait-cyan); padding: 5px 12px; font-size: 0.75rem; cursor: pointer; border-radius: 4px; transition: 0.3s; font-family: 'Orbitron'; font-weight: bold; }
+        .lang-nav-btn:hover { background: var(--ait-cyan); color: #000; box-shadow: 0 0 10px var(--ait-cyan); }
+
+        /* Section Styling */
+        section { padding: 120px 10% 60px; position: relative; z-index: 1; }
+        .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--text-white); margin-bottom: 60px; text-transform: uppercase; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .section-title span { color: var(--ait-red); }
+
+        /* Founder Card */
+        .founder-card { background: var(--card-bg); border: 2px solid var(--ait-cyan); border-radius: 15px; padding: 40px; display: flex; gap: 40px; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.8); max-width: 1000px; margin: 0 auto 50px; position: relative; }
+        .founder-card::before { content: ''; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border: 1px dashed var(--ait-dark-blue); border-radius: 20px; z-index: -1; }
+        .founder-img-box { flex-shrink: 0; width: 250px; height: 250px; border-radius: 50%; border: 4px solid var(--ait-red); overflow: hidden; box-shadow: 0 0 20px rgba(255, 42, 42, 0.4); }
+        .founder-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .founder-info { text-align: left; }
+        .founder-info h2 { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; color: var(--ait-cyan); margin-bottom: 5px; letter-spacing: 1px; }
+        .founder-info h4 { color: var(--ait-red); font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; }
+        .founder-desc { color: #d1d5db; font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; font-style: italic; border-left: 3px solid var(--ait-dark-blue); padding-left: 15px; }
+        .skills-container span { display: inline-block; background: rgba(77, 240, 255, 0.1); color: var(--ait-cyan); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; border: 1px solid var(--ait-cyan); margin: 5px 5px 0 0; }
+
+        /* Team Members Grid */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; max-width: 1200px; margin: auto; }
+        .team-card { background: var(--card-bg); border-top: 4px solid var(--ait-dark-blue); border-radius: 15px; padding: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.6); display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; }
+        .team-card:hover { border-top-color: var(--ait-cyan); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(77, 240, 255, 0.15); }
+        .team-img-box { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--ait-cyan); overflow: hidden; margin-bottom: 20px; }
+        .team-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .team-card h3 { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--text-white); margin-bottom: 5px; }
+        .team-card h5 { color: var(--ait-red); font-size: 1rem; margin-bottom: 15px; font-weight: 400; }
+        .team-desc { color: #a1a1a1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+
+        /* Footer */
+        footer { padding: 40px 10%; background: rgba(6, 10, 19, 0.95); color: #9ca3af; font-size: 0.9rem; border-top: 2px solid var(--ait-dark-blue); text-align: center; position: relative; z-index: 2; backdrop-filter: blur(5px); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .menu-toggle { display: block; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(6, 10, 19, 0.98); padding: 20px 0; border-bottom: 2px solid var(--ait-red); box-shadow: 0 10px 20px rgba(0,0,0,0.8); }
+            nav ul.active { display: flex; } 
+            nav ul li { margin: 15px 0; text-align: center; }
+            .lang-switcher { margin: 15px auto !important; border-left: none; padding-left: 0; justify-content: center; }
+            .founder-card { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .founder-desc { border-left: none; padding-left: 0; text-align: justify; }
+            .team-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<nav>
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="AIT Logo"></a>
+    </div>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul id="navMenu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="team.html" class="active" id="navTeamBtn">OUR TEAM</a></li>
+        <li><a href="index.html#courses">COURSES</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+        <li class="lang-switcher">
+            <button onclick="setLanguage('en')" class="lang-nav-btn">EN</button>
+            <button onclick="setLanguage('gu')" class="lang-nav-btn">GUJ</button>
+            <button onclick="setLanguage('hi')" class="lang-nav-btn">HIN</button>
+        </li>
+    </ul>
+</nav>
+
+<section id="team">
+    <h2 class="section-title" id="teamTitle">Meet Our <span>Experts</span></h2>
+
+    <div class="founder-card">
+        <div class="founder-img-box">
+            <img src="dipalsir.jpg" alt="Dipalsir Profile"> 
+        </div>
+        
+        <div class="founder-info">
+            <h2>Dipalsir</h2>
+            <h4 id="founderRole">Founder & Senior Cyber Security Faculty</h4>
+            
+            <div class="founder-desc" id="founderDesc"></div>
+
+            <div class="skills-container">
+                <span><i class="fas fa-shield-alt"></i> Ethical Hacking</span>
+                <span><i class="fas fa-network-wired"></i> Networking</span>
+                <span><i class="fas fa-microchip"></i> Hardware</span>
+                <span><i class="fas fa-server"></i> Server Admin</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-grid">
+        
+        <div class="team-card">
+            <div class="team-img-box"><img src="janamsir.jpg" alt="Janamsir"></div>
+            <h3>Janamsir</h3>
+            <h5 id="janamRole">Web Backend Developer</h5>
+            <div class="team-desc" id="janamDesc"></div>
+            <div class="skills-container">
+                <span>Node.js</span><span>JavaScript</span><span>MySQL</span><span>MongoDB</span><span>Socket.io</span><span>APIs</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-img-box"><img src="krunalsir.jpg" alt="Krunalsir"></div>
+            <h3>Krunalsir (Krunal Parmar)</h3>
+            <h5 id="krunalRole">Senior DevOps Engineer</h5>
+            <div class="team-desc" id="krunalDesc"></div>
+            <div class="skills-container">
+                <span>DevOps</span><span>Terraform</span><span>Ansible</span><span>Linux/Windows Server</span><span>Cloud Security</span><span>Ethical Hacking</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-img-box"><img src="kalpeshsir.jpg" alt="Kalpeshsir"></div>
+            <h3>Kalpeshsir</h3>
+            <h5 id="kalpeshRole">Professional Graphic Designer & Choreographer</h5>
+            <div class="team-desc" id="kalpeshDesc"></div>
+            <div class="skills-container">
+                <span>Graphic Design</span><span>Creative Arts</span><span>Dance Choreography</span>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-img-box"><img src="hitensir.jpg" alt="Hitensir"></div>
+            <h3>Hitensir</h3>
+            <h5 id="hitenRole">Photography & 3D Casting Artist</h5>
+            <div class="team-desc" id="hitenDesc"></div>
+            <div class="skills-container">
+                <span>Photography</span><span>Tattoo Art</span><span>3D Casting</span><span>Cinematography</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p style="color: var(--ait-cyan); font-family: 'Orbitron'; margin-bottom: 10px; font-weight: bold;">Dominating the Digital Frontier</p>
+    <p>© 2026 Advanced Information Technology (AIT). All Rights Reserved.</p>
+</footer>
+
+<script>
+    /* --- Mobile Menu Toggle --- */
+    function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        menu.classList.toggle("active");
+    }
+
+    /* --- Multi-Language Data & Logic --- */
+    const teamData = {
+        en: {
+            navTeamBtn: "OUR TEAM",
+            teamTitle: "Meet Our <span>Experts</span>",
+            
+            founderRole: "Founder & Senior Cyber Security Faculty",
+            founderDesc: `"For over 12 years (since 2012), I have guided thousands of students in computer hardware, networking, and cyber security. As a Faculty my main goal is not just to provide bookish knowledge, but to prepare you for the challenges of the IT industry by giving 100% practical training. Whether it's bug bounty hunting, server management, or system hacking, my effort is always to give you the full benefit of my field-level experience. Let's start your bright IT career together and create a new identity in the digital world."`,
+            
+            janamRole: "Web Backend Developer",
+            janamDesc: `"My passion lies in building the robust engines that power seamless web applications. With deep expertise in Node.js, JavaScript, MongoDB, and MySQL, I craft secure and high-performance APIs. Whether it's real-time communication using Socket.io or designing complex database architectures, I ensure that the backend is always fast, scalable, and rock-solid. Let's build the digital backbone of tomorrow!"`,
+            
+            krunalRole: "Senior DevOps Engineer",
+            krunalDesc: `"Over the last 10 years in the IT industry, I have specialized in cloud computing, infrastructure automation, and system security. Using tools like Terraform and Ansible, I focus on building highly scalable and secure environments. Beyond DevOps, my knowledge of ethical hacking and website penetration testing helps organizations identify vulnerabilities. My goal is to deliver automated, reliable, and high-performance infrastructure solutions."`,
+            
+            kalpeshRole: "Professional Graphic Designer & Choreographer",
+            kalpeshDesc: `"With a rich journey spanning 25 years, I blend creativity with precision. Visual storytelling is my forte, transforming abstract ideas into stunning digital realities as a Graphic Designer. But my passion for art doesn't stop at the screen; I am also a dedicated Dance Choreographer. I believe in expressing emotion, energy, and beauty through every medium of art."`,
+            
+            hitenRole: "Photography & 3D Casting Artist",
+            hitenDesc: `"Art is not just what I do; it's how I see the world. With over 10 years of experience, I capture life's most precious moments—from pre-weddings to newborn baby shoots. I also specialize in expressive Tattoo Art and precise 3D Casting for babies and couples, preserving memories in tangible forms. To me, every photo, every tattoo, and every cast is a unique masterpiece that tells your beautiful story."`
+        },
+        gu: {
+            navTeamBtn: "અમારી ટીમ",
+            teamTitle: "અમારા <span>નિષ્ણાતો</span>",
+            
+            founderRole: "સ્થાપક અને સિનિયર સાયબર સિક્યોરિટી ફેકલ્ટી",
+            founderDesc: `"છેલ્લા ૧૨ કરતાં વધુ વર્ષોથી (૨૦૧૨ થી), મેં કમ્પ્યુટર હાર્ડવેર, નેટવર્કિંગ અને સાયબર સિક્યોરિટીના ક્ષેત્રમાં હજારો વિદ્યાર્થીઓને માર્ગદર્શન આપ્યું છે. એક ફેકલ્ટી તરીકે, મારો મુખ્ય ઉદ્દેશ્ય માત્ર બુકીશ જ્ઞાન આપવાનો નથી, પરંતુ તમને ૧૦૦% પ્રેક્ટિકલ ટ્રેનિંગ આપીને IT ઇન્ડસ્ટ્રીના પડકારો માટે તૈયાર કરવાનો છે. હું માનું છું કે સાચું શિક્ષણ એ છે જે તમને નવી વસ્તુઓ શીખવા માટે પ્રેરિત કરે. તો ચાલો, સાથે મળીને તમારા ઉજ્જવળ IT કરિયરની શરૂઆત કરીએ."`,
+            
+            janamRole: "વેબ બેકએન્ડ ડેવલપર",
+            janamDesc: `"મારો જુસ્સો એવી પાવરફુલ બેકએન્ડ સિસ્ટમ બનાવવાનો છે જેના પર આખી વેબસાઈટ એકદમ સ્મૂથ ચાલે. Node.js, JavaScript, MongoDB, અને MySQL માં મારી વિશેષતા છે. હું સિક્યોર અને ફાસ્ટ APIs બનાવું છું. Socket.io થી રિયલ-ટાઇમ કમ્યુનિકેશન હોય કે જટિલ ડેટાબેઝ ડિઝાઇન, હું હંમેશા એ સુનિશ્ચિત કરું છું કે બેકએન્ડ ઝડપી અને સ્કેલેબલ રહે. તો ચાલો, મજબૂત ડિજિટલ ભવિષ્યનું નિર્માણ કરીએ!"`,
+            
+            krunalRole: "સિનિયર DevOps એન્જિનિયર",
+            krunalDesc: `"IT ઇન્ડસ્ટ્રીમાં મારા 10 વર્ષથી વધુના અનુભવ દરમિયાન, મેં ક્લાઉડ કમ્પ્યુટિંગ, ઇન્ફ્રાસ્ટ્રક્ચર ઓટોમેશન અને સિસ્ટમ સિક્યોરિટીમાં મહારત હાંસલ કરી છે. હું Terraform અને Ansible જેવા ટૂલ્સની મદદથી સ્કેલેબલ અને સિક્યોર એન્વાયર્નમેન્ટ બનાવું છું. DevOps ઉપરાંત, એથિકલ હેકિંગ અને વેબસાઇટ પેનિટ્રેશન ટેસ્ટિંગનું મારું જ્ઞાન સંસ્થાઓને તેમની સિસ્ટમ સુરક્ષિત રાખવામાં મદદ કરે છે. મારો ધ્યેય હંમેશા ઓટોમેટેડ અને હાઇ-પરફોર્મન્સ ઇન્ફ્રાસ્ટ્રક્ચર સોલ્યુશન્સ પ્રદાન કરવાનો છે."`,
+            
+            kalpeshRole: "પ્રોફેશનલ ગ્રાફિક ડિઝાઇનર અને કોરિયોગ્રાફર",
+            kalpeshDesc: `"છેલ્લા 25 વર્ષના મારા લાંબા અને રોમાંચક સફરમાં, મેં એક પ્રોફેશનલ ગ્રાફિક ડિઝાઇનર તરીકે કલા અને ચોકસાઈનો સુભગ સમન્વય કર્યો છે. અદભુત ડિઝાઇન્સ દ્વારા વિચારોને વાસ્તવિકતામાં બદલવા એ મારી વિશેષતા છે. પરંતુ મારો કલા પ્રત્યેનો પ્રેમ માત્ર કમ્પ્યુટર સ્ક્રીન પૂરતો સીમિત નથી; હું એક ડાન્સ કોરિયોગ્રાફર પણ છું. હું કલાના દરેક માધ્યમથી ઉર્જા અને ભાવનાઓ વ્યક્ત કરવામાં માનું છું."`,
+            
+            hitenRole: "ફોટોગ્રાફી અને 3D કાસ્ટિંગ આર્ટિસ્ટ",
+            hitenDesc: `"કલા એ માત્ર મારું કામ નથી, એ મારો દુનિયાને જોવાનો દ્રષ્ટિકોણ છે. 10 થી વધુ વર્ષના અનુભવ સાથે, હું પ્રી-વેડિંગથી લઈને ન્યૂબોર્ન બેબી શૂટ અને સિનેમેટોગ્રાફી દ્વારા જીવનની સૌથી અમૂલ્ય પળોને કેમેરામાં કેદ કરું છું. આ ઉપરાંત, હું ટેટૂ આર્ટ અને બેબી/કપલ 3D કાસ્ટિંગમાં પણ નિષ્ણાત છું, જે તમારી યાદોને જીવંત રાખે છે. મારા માટે દરેક ફોટો, દરેક ટેટૂ અને દરેક કાસ્ટિંગ એક અદભુત માસ્ટરપીસ છે."`
+        },
+        hi: {
+            navTeamBtn: "हमारी टीम",
+            teamTitle: "हमारे <span>विशेषज्ञों</span> से मिलें",
+            
+            founderRole: "संस्थापक और सीनियर साइबर सुरक्षा फैकल्टी",
+            founderDesc: `"12 से अधिक वर्षों से (2012 से), मैंने कंप्यूटर हार्डवेयर, नेटवर्किंग और साइबर सुरक्षा के क्षेत्र में हजारों छात्रों का मार्गदर्शन किया है। एक Faculty के रूप में, मेरा मुख्य उद्देश्य सिर्फ किताबी ज्ञान देना नहीं है, बल्कि 100% प्रैक्टिकल ट्रेनिंग देकर आपको IT इंडस्ट्री की चुनौतियों के लिए तैयार करना है। मेरा प्रयास हमेशा आपको मेरे फील्ड-स्तरीय अनुभव का पूरा लाभ देने का रहता है। आइए, मिलकर आपके उज्ज्वल IT करियर की शुरुआत करें।"`,
+            
+            janamRole: "वेब बैकएंड डेवलपर",
+            janamDesc: `"मेरा जुनून ऐसे पावरफुल बैकएंड इंजन बनाने में है जो वेब एप्लिकेशन को सुचारू रूप से चलाते हैं। Node.js, JavaScript, MongoDB और MySQL में मेरी गहरी विशेषज्ञता है, और मैं सुरक्षित और हाई-परफॉर्मेंस APIs बनाता हूँ। चाहे Socket.io के साथ रियल-टाइम कम्युनिकेशन हो या जटिल डेटाबेस आर्किटेक्चर डिज़ाइन करना, मैं हमेशा सुनिश्चित करता हूँ कि बैकएंड तेज़ और स्केलेबल रहे। आइए, कल का डिजिटल आधार बनाएं!"`,
+            
+            krunalRole: "सीनियर DevOps इंजीनियर",
+            krunalDesc: `"IT उद्योग में 10 से अधिक वर्षों के अनुभव के साथ, मैंने क्लाउड कंप्यूटिंग, इंफ्रास्ट्रक्चर ऑटोमेशन और सिस्टम सुरक्षा में विशेषज्ञता हासिल की है। Terraform और Ansible जैसे टूल्स का उपयोग करके, मैं अत्यधिक स्केलेबल और सुरक्षित वातावरण बनाने पर ध्यान केंद्रित करता हूँ। DevOps के अलावा, एथिकल हैकिंग और वेबसाइट पेनेट्रेशन टेस्टिंग का मेरा ज्ञान संगठनों को सुरक्षित रहने में मदद करता है।"`,
+            
+            kalpeshRole: "प्रोफेशनल ग्राफिक डिज़ाइनर और कोरियोग्राफर",
+            kalpeshDesc: `"25 वर्षों की अपनी शानदार यात्रा में, मैंने एक पेशेवर ग्राफिक डिज़ाइनर के रूप में रचनात्मकता और सटीकता को जोड़ा है। अद्भुत डिज़ाइनों के माध्यम से विचारों को वास्तविकता में बदलना मेरी विशेषता है। लेकिन कला के प्रति मेरा जुनून केवल कंप्यूटर स्क्रीन तक सीमित नहीं है; मैं एक डांस कोरियोग्राफर भी हूँ। मैं कला के हर माध्यम से भावनाओं और ऊर्जा को व्यक्त करने में विश्वास करता हूँ।"`,
+            
+            hitenRole: "फोटोग्राफी और 3D कास्टिंग आर्टिस्ट",
+            hitenDesc: `"कला केवल मेरा काम नहीं है, यह दुनिया को देखने का मेरा नज़रिया है। 10 से अधिक वर्षों के अनुभव के साथ, मैं फोटोग्राफी के माध्यम से जीवन के सबसे कीमती पलों को कैद करता हूँ—प्री-वेडिंग से लेकर न्यूबोर्न बेबी शूट तक। इसके अलावा, मैं टैटू आर्ट और 3D कास्टिंग में भी विशेषज्ञ हूँ, जो यादों को एक ठोस रूप में संजोता है। मेरे लिए हर तस्वीर, हर टैटू और हर कास्टिंग एक मास्टरपीस है जो आपकी कहानी बयां करता है।"`
+        }
+    };
+
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.getElementById('navTeamBtn').innerText = teamData[lang].navTeamBtn;
+        document.getElementById('teamTitle').innerHTML = teamData[lang].teamTitle;
+        
+        document.getElementById('founderRole').innerText = teamData[lang].founderRole;
+        document.getElementById('founderDesc').innerText = teamData[lang].founderDesc;
+        
+        document.getElementById('janamRole').innerText = teamData[lang].janamRole;
+        document.getElementById('janamDesc').innerText = teamData[lang].janamDesc;
+        
+        document.getElementById('krunalRole').innerText = teamData[lang].krunalRole;
+        document.getElementById('krunalDesc').innerText = teamData[lang].krunalDesc;
+        
+        document.getElementById('kalpeshRole').innerText = teamData[lang].kalpeshRole;
+        document.getElementById('kalpeshDesc').innerText = teamData[lang].kalpeshDesc;
+        
+        document.getElementById('hitenRole').innerText = teamData[lang].hitenRole;
+        document.getElementById('hitenDesc').innerText = teamData[lang].hitenDesc;
+    }
+
+    window.onload = function() {
+        setLanguage('en');
+    };
+
+    /* --- Particle Background Animation --- */
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    
+    function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    setCanvasSize();
+
+    let particlesArray = [];
+    
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color;
+        }
+        draw() {
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color; ctx.fill();
+        }
+        update() {
+            if(this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+            if(this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+            this.x += this.directionX; this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    function initParticles() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        if(window.innerWidth < 768) numberOfParticles = 35; 
+        
+        for(let i=0; i<numberOfParticles; i++) {
+            let size = (Math.random() * 2) + 1;
+            let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * 1.5) - 0.75;
+            let directionY = (Math.random() * 1.5) - 0.75;
+            let color = (Math.random() > 0.5) ? '#4df0ff' : '#ff2a2a'; 
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    function connectParticles() {
+        for(let a=0; a<particlesArray.length; a++) {
+            for(let b=a; b<particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if(distance < (canvas.width/7) * (canvas.height/7)) {
+                    let opacityValue = 1 - (distance/20000);
+                    ctx.strokeStyle = 'rgba(77, 240, 255,' + opacityValue + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        for(let i=0; i<particlesArray.length; i++){
+            particlesArray[i].update();
+        }
+        connectParticles();
+    }
+
+    window.addEventListener('resize', function(){
+        setCanvasSize();
+        initParticles();
+    });
+    
+    initParticles();
+    animateParticles();
+</script>
+
+</body>
+</html>
