@@ -1,0 +1,38 @@
+{
+  "name": "Advanced Information Technology (AIT)",
+  "short_name": "AIT",
+  "description": "Professional IT Training Institute in Bhavnagar offering MS Office with AI, Computer Hardware, Computer Networking, Cisco CCNA, Microsoft Server, AWS Cloud, Cyber Security, Ethical Hacking, DevOps and Node.js Backend Development.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#030712",
+  "background_color": "#030712",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "technology",
+    "training",
+    "computer"
+  ],
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

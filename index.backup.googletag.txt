@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- === TECHNICAL SEO & META TAGS === -->
-    <meta name="description" content="AIT is Bhavnagar's practical IT training institute for Ethical Hacking, Cyber Security, CCNA, Cloud Computing, DevOps, and Node.js training.">
+    <meta name="description" content="AIT (Advanced Information Technology) is Bhavnagar's top institute for 100% practical training in Ethical Hacking, Cyber Security, CCNA, Cloud Computing, DevOps, and NodeJS.">
     <meta name="keywords" content="Best computer training institute in Bhavnagar, Ethical Hacking course Bhavnagar, Cyber security classes Bhavnagar, Hardware and Networking course, CCNA training Gujarat, Microsoft Server setup, Cloud Computing AWS training, CCC and MS Office classes, NodeJS backend development, DevOps training Bhavnagar, Data recovery service, Enterprise Networking, AIT Lab Bhavnagar, Advanced Information Technology, 100% Practical Training">
     <meta name="author" content="Dipalsir - Advanced Information Technology (AIT)">
     <meta name="robots" content="index, follow">
@@ -17,31 +17,26 @@
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://advanced-it-lab.github.io/">
-    <meta property="og:site_name" content="Advanced Information Technology (AIT)">
-    <meta property="og:title" content="AIT | IT Training Institute & Tech Services in Bhavnagar">
-    <meta property="og:description" content="AIT is Bhavnagar's practical IT training institute for Ethical Hacking, Cyber Security, CCNA, Cloud Computing, DevOps, and Node.js training.">
-    <meta property="og:image" content="https://advanced-it-lab.github.io/og-image.jpg">
-    <meta property="og:image:width" content="1279">
-    <meta property="og:image:height" content="682">
-    <meta property="og:image:alt" content="Advanced Information Technology (AIT) IT training institute in Bhavnagar">
+    <meta property="og:title" content="AIT | Premium IT Training Institute & Tech Services">
+    <meta property="og:description" content="Bhavnagar's top institute for 100% practical training in Ethical Hacking, Cyber Security, CCNA, Cloud Computing, and DevOps.">
+    <meta property="og:image" content="https://advanced-it-lab.github.io/logo.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://advanced-it-lab.github.io/">
-    <meta name="twitter:title" content="AIT | IT Training Institute & Tech Services in Bhavnagar">
-    <meta name="twitter:description" content="AIT is Bhavnagar's practical IT training institute for Ethical Hacking, Cyber Security, CCNA, Cloud Computing, DevOps, and Node.js training.">
-    <meta name="twitter:image" content="https://advanced-it-lab.github.io/og-image.jpg">
-    <meta name="twitter:image:alt" content="Advanced Information Technology (AIT) IT training institute in Bhavnagar">
+    <meta name="twitter:title" content="AIT | Premium IT Training Institute & Tech Services">
+    <meta name="twitter:description" content="Bhavnagar's top institute for 100% practical training in Ethical Hacking, Cyber Security, CCNA, Cloud Computing, and DevOps.">
+    <meta name="twitter:image" content="https://advanced-it-lab.github.io/logo.png">
 
     <!-- Google Search Console Verification Placeholder -->
-    
+    <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_TAG_HERE">
 
     <!-- Web App Manifest & Apple Touch Icon -->
-    
-    
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo.png">
 
-    <title>AIT | IT Training Institute & Tech Services in Bhavnagar</title>
-    
+    <title>AIT | Premium IT Training Institute & Tech Services</title>
+    <link rel="icon" type="image/png" href="logo.png">
 
     <!-- === PERFORMANCE OPTIMIZATION (Preconnect & Preload) === -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -239,9 +234,7 @@
             position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
             padding: 120px 8% 60px 8%; overflow: hidden;
         }
-        .hero-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1400px; gap: 50px; z-index: 2; flex-grow: 1; position: relative; }
-        .hero-watermark { position: absolute; top: 50%; left: 25%; width: 310px; height: auto; transform: translate(-50%, -50%); opacity: 0.135; filter: drop-shadow(0 0 24px rgba(255,255,255,0.72)) blur(0.25px); pointer-events: none; z-index: 0; animation: heroWatermarkFade 0.7s ease-out both; }
-        @keyframes heroWatermarkFade { from { opacity: 0; } to { opacity: 0.135; } }
+        .hero-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1400px; gap: 50px; z-index: 2; flex-grow: 1; }
         
         .hero-left { flex: 1; max-width: 650px; }
         .hero-badge { 
@@ -502,7 +495,6 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero-watermark { left: 35%; width: 220px; }
             .hero-container { flex-direction: column; text-align: center; justify-content: center; }
             .hero-left { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
             .hero-right { display: none; } 
@@ -521,23 +513,11 @@
             .lang-switcher { border-left: none; padding-left: 0; margin-left: 0; justify-content: center; }
         }
         @media (max-width: 600px) {
-            .hero-watermark { left: 50%; width: 150px; }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; text-align: center; }
             .benefits-grid { grid-template-columns: 1fr; }
         }
-        @media (max-width: 768px) {
-            .bg-blob { display: none; }
-            .grid-cards, .grid-cards[style] { grid-template-columns: minmax(0, 1fr) !important; }
-            .text-gradient-red { overflow-wrap: anywhere; }
-        }
     </style>
-
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
@@ -573,7 +553,7 @@
             <button onclick="setLanguage('hi')" class="lang-nav-btn" id="btn-hi" aria-label="Switch to Hindi">HI</button>
         </div>
 
-        <div class="menu-toggle" onclick="toggleMenu()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleMenu(); }" role="button" tabindex="0" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <div class="menu-toggle" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Navigation Menu" aria-expanded="false">
             <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
     </div>
@@ -582,7 +562,6 @@
 <main>
     <!-- Hero Section -->
     <header id="home">
-        <img class="hero-watermark" src="logo.png" alt="" aria-hidden="true" width="240" height="72" loading="eager" decoding="async">
         <div class="hero-container">
             <div class="hero-left reveal">
                 <div class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true" style="margin-right: 8px;"></i> Premium Tech Education</div>
@@ -591,7 +570,7 @@
                 
                 <div class="hero-buttons">
                     <a href="#courses" class="btn">Explore Courses</a>
-                    <a href="ait-training-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download Brochure</a>
+                    <a href="AIT-Training-Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download Brochure</a>
                     <a href="https://forms.gle/GZJFc5wbzRfU7sJ96" target="_blank" rel="noopener noreferrer" class="btn btn-red" style="border-color: var(--accent-red);"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Free Demo</a>
                 </div>
                 
@@ -816,8 +795,8 @@
                 </div>
                 
                 <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
-                    <a href="visit.html" class="btn btn-outline" style="justify-content: center;"><i class="fas fa-walking" aria-hidden="true"></i> More Ways to Connect with AIT</a>
-                    <a href="https://forms.gle/GZJFc5wbzRfU7sJ96" target="_blank" rel="noopener noreferrer" class="btn" style="justify-content: center;"><i class="fas fa-file-alt" aria-hidden="true"></i> Fill Inquiry Form & Book Demo</a>
+                    <a href="visit.html" class="btn btn-outline" style="justify-content: center;"><i class="fas fa-walking" aria-hidden="true"></i> Visit Our Hub</a>
+                    <a href="https://forms.gle/GZJFc5wbzRfU7sJ96" target="_blank" rel="noopener noreferrer" class="btn" style="justify-content: center;"><i class="fas fa-file-alt" aria-hidden="true"></i> Fill Inquiry Form</a>
                     <a href="https://wa.me/919327736999" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="justify-content: center; border-color: #10B981; color: #10B981;"><i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.2rem;"></i> WhatsApp Chat</a>
                 </div>
             </div>
@@ -851,7 +830,7 @@
                 <li><a href="#solutions">Our Solutions</a></li>
                 <li><a href="#admission-policy">Admission Process</a></li>
                 <li><a href="team.html">Our Team</a></li>
-                <li><a href="ait-training-brochure.pdf" target="_blank" rel="noopener noreferrer">Download Brochure</a></li>
+                <li><a href="AIT-Training-Brochure.pdf" target="_blank" rel="noopener noreferrer">Download Brochure</a></li>
             </ul>
         </div>
         
@@ -953,8 +932,8 @@
             const toggleFAQ = () => {
                 const parent = item.parentElement;
                 const isActive = parent.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(child => { child.classList.remove('active'); const question = child.querySelector('.faq-question'); if (question) question.setAttribute('aria-expanded', 'false'); });
-                if (!isActive) { parent.classList.add('active'); item.setAttribute('aria-expanded', 'true'); }
+                document.querySelectorAll('.faq-item').forEach(child => child.classList.remove('active'));
+                if (!isActive) parent.classList.add('active');
             };
 
             item.addEventListener('click', toggleFAQ);
@@ -1068,7 +1047,7 @@
                 {q: "Who will teach the courses?", a: "All main technical courses are led by our founder, Dipalsir, who brings 14+ years of real industry experience."},
                 {q: "Are there physical labs available?", a: "Yes, we have dedicated hardware, networking, and server labs where students perform tasks on real physical devices."},
                 {q: "Do you offer online classes?", a: "We strongly believe IT skills are built practically. Therefore, our focus is entirely on offline, in-person lab training."},
-                {q: "How do I book a demo lecture?", a: "You can click on 'Fill Inquiry Form & Book Demo' or simply message us on WhatsApp to schedule your free practical demo."}
+                {q: "How do I book a demo lecture?", a: "You can click on 'Fill Inquiry Form' or simply message us on WhatsApp to schedule your free practical demo."}
             ],
             
             ftLinksTitle: "Quick Links",
@@ -1172,7 +1151,7 @@
                 {q: "કોર્સ કોણ શીખવશે?", a: "તમામ મુખ્ય કોર્સ દીપલસર દ્વારા ચલાવવામાં આવે છે, જેઓ ઇન્ડસ્ટ્રીનો 14+ વર્ષનો અનુભવ ધરાવે છે."},
                 {q: "શું પ્રેક્ટિસ માટે લેબ ઉપલબ્ધ છે?", a: "હા, અમારી પાસે હાર્ડવેર, નેટવર્કિંગ અને સર્વર લેબ છે જ્યાં રિયલ ડિવાઇસ પર કામ થાય છે."},
                 {q: "શું તમે ઓનલાઈન ક્લાસ આપો છો?", a: "અમે માનીએ છીએ કે IT સ્કીલ્સ પ્રેક્ટિકલી જ શીખી શકાય. તેથી અમે માત્ર ઓફલાઈન તાલીમ આપીએ છીએ."},
-                {q: "ડેમો લેક્ચર કેવી રીતે બુક કરવો?", a: "તમે 'Fill Inquiry Form & Book Demo' પર ક્લિક કરી શકો છો અથવા અમને WhatsApp પર મેસેજ કરી શકો છો."}
+                {q: "ડેમો લેક્ચર કેવી રીતે બુક કરવો?", a: "તમે 'Fill Inquiry Form' પર ક્લિક કરી શકો છો અથવા અમને WhatsApp પર મેસેજ કરી શકો છો."}
             ],
             
             ftLinksTitle: "ક્વિક લિંક્સ",
@@ -1276,7 +1255,7 @@
                 {q: "पाठ्यक्रम कौन पढ़ाएगा?", a: "सभी मुख्य तकनीकी पाठ्यक्रम हमारे संस्थापक दीपलसर द्वारा संचालित किए जाते हैं।"},
                 {q: "क्या अभ्यास के लिए लैब उपलब्ध हैं?", a: "हां, हमारे पास हार्डवेयर, नेटवर्किंग और सर्वर लैब हैं।"},
                 {q: "क्या आप ऑनलाइन कक्षाएं प्रदान करते हैं?", a: "हम मानते हैं कि आईटी कौशल व्यावहारिक रूप से सीखे जाते हैं। इसलिए हमारा ध्यान केवल ऑफलाइन लैब प्रशिक्षण पर है।"},
-                {q: "मैं डेमो लेक्चर कैसे बुक करूं?", a: "आप 'Fill Inquiry Form & Book Demo' पर क्लिक कर सकते हैं या हमें व्हाट्सएप पर संदेश भेज सकते हैं।"}
+                {q: "मैं डेमो लेक्चर कैसे बुक करूं?", a: "आप 'Fill Inquiry Form' पर क्लिक कर सकते हैं या हमें व्हाट्सएप पर संदेश भेज सकते हैं।"}
             ],
             
             ftLinksTitle: "त्वरित लिंक",
@@ -1287,7 +1266,6 @@
 
     function setLanguage(lang) {
         currentLang = lang;
-        document.documentElement.lang = lang;
         
         // Safety wrapper to prevent JS crashes if an element is missing
         setEl('heroText', data[lang].hero);
@@ -1432,8 +1410,8 @@
         const faqGrid = document.getElementById('faqG');
         if(faqGrid) {
             faqGrid.innerHTML = '';
-            data[lang].faq.forEach((f, index) => {
-                faqGrid.innerHTML += `<div class="faq-item"><div class="faq-question" id="faq-question-${index}" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-${index}"><span>${f.q}</span><i class="fas fa-chevron-down" aria-hidden="true"></i></div><div class="faq-answer" id="faq-answer-${index}" aria-labelledby="faq-question-${index}"><p>${f.a}</p></div></div>`;
+            data[lang].faq.forEach(f => {
+                faqGrid.innerHTML += `<div class="faq-item"><div class="faq-question"><span>${f.q}</span><i class="fas fa-chevron-down" aria-hidden="true"></i></div><div class="faq-answer"><p>${f.a}</p></div></div>`;
             });
             initFAQ();
         }

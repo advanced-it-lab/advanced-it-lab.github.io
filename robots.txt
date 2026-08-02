@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://advanced-it-lab.github.io/sitemap.xml

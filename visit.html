@@ -1,338 +1,1034 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIT Premium Digital Card</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- === SEO & META TAGS (Production Ready) === -->
+    <title>AIT | Premium Digital Profile & Institute Hub</title>
+    <meta name="description" content="Advanced Information Technology (AIT) Digital Profile. Bhavnagar's premium institute for 100% practical IT training, Cyber Security, CCNA, and Cloud Computing.">
+    <meta name="keywords" content="AIT Bhavnagar, Digital Business Card, Digital Hub, IT Training Institute, Ethical Hacking, Cyber Security, CCNA, Cloud Computing, Dipalsir">
+    <meta name="author" content="Dipalsir - Advanced Information Technology (AIT)">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#030712">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://advanced-it-lab.github.io/visit.html">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://advanced-it-lab.github.io/visit.html">
+    <meta property="og:title" content="AIT | Premium Digital Profile & Institute Hub">
+    <meta property="og:description" content="Connect with AIT Bhavnagar. 14+ Years of excellence in practical IT & Cyber Security training.">
+    <meta property="og:image" content="https://advanced-it-lab.github.io/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Advanced Information Technology (AIT) - Premium IT Training Institute in Bhavnagar">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://advanced-it-lab.github.io/visit.html">
+    <meta name="twitter:title" content="AIT | Premium Digital Profile">
+    <meta name="twitter:description" content="Connect with AIT Bhavnagar. 14+ Years of excellence in practical IT training.">
+    <meta name="twitter:image" content="https://advanced-it-lab.github.io/og-image.jpg">
+
+    <!-- Favicon & Touch Icons -->
+    
+    
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
+    <!-- === STRUCTURED DATA (JSON-LD) === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://advanced-it-lab.github.io/visit.html",
+          "url": "https://advanced-it-lab.github.io/visit.html",
+          "name": "AIT Digital Profile",
+          "description": "Digital contact and primary hub for Advanced Information Technology (AIT)."
+        },
+        {
+          "@type": ["EducationalOrganization", "LocalBusiness", "Organization"],
+          "@id": "https://advanced-it-lab.github.io/#organization",
+          "name": "Advanced Information Technology (AIT)",
+          "url": "https://advanced-it-lab.github.io/",
+          "logo": "https://advanced-it-lab.github.io/logo.png",
+          "image": "https://advanced-it-lab.github.io/og-image.jpg",
+          "description": "Premium IT Training Institute & Tech Services in Bhavnagar.",
+          "telephone": "+919327736999",
+          "email": "aitconnectone@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. 90, 2nd Floor, Arav Complex, Opp. Rammantra Mandir",
+            "addressLocality": "Bhavnagar",
+            "addressRegion": "Gujarat",
+            "postalCode": "364001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 21.745689,
+            "longitude": 72.145831
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        }
+      ]
+    }
+    </script>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* === PREMIUM ENTERPRISE THEME === */
+        :root { 
+            --bg-base: #030712; 
+            --bg-surface: rgba(15, 23, 42, 0.65); 
+            
+            --text-primary: #F8FAFC; 
+            --text-secondary: #94A3B8; 
+            --text-tertiary: #64748B;
+            
+            --accent-cyan: #00D9FF; 
+            --accent-red: #FF2A2A;  
+            --primary-blue: #3B82F6; 
+            --success: #10B981;
+            
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.12);
+            --shadow-glass: 0 10px 30px rgba(0, 0, 0, 0.4);
+            
+            --cx: 50vw;
+            --cy: 50vh;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         
         body { 
-            font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #060a13, #09377a);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px 15px;
+            font-family: 'Inter', sans-serif; 
+            color: var(--text-primary); 
+            line-height: 1.5; 
+            background-color: var(--bg-base); 
+            overflow-x: hidden; 
+            -webkit-tap-highlight-color: transparent;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        :focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: 4px; border-radius: 4px; }
+        h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; letter-spacing: 0.5px; }
+
+        /* Visually hide H1 for SEO */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+        /* === 1. GLOBAL CURSOR & ENTERPRISE BACKGROUND === */
+        .cursor-glow {
+            position: fixed; top: 0; left: 0; width: 600px; height: 600px;
+            background: radial-gradient(circle closest-side, rgba(0, 217, 255, 0.05), transparent);
+            transform: translate(calc(var(--cx) - 300px), calc(var(--cy) - 300px));
+            border-radius: 50%; pointer-events: none; z-index: -2; transition: transform 0.1s ease-out;
         }
 
-        .vcard-container {
-            width: 100%;
-            max-width: 420px; 
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            background-color: rgba(17, 25, 40, 0.75);
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.125);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .profile-header {
-            text-align: center;
-            padding: 40px 20px 25px;
-            position: relative;
-        }
-
-        .profile-img-box {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 15px;
-        }
-
-        .profile-img-box::before {
-            content: '';
-            position: absolute;
-            top: -5px; left: -5px; right: -5px; bottom: -5px;
-            background: linear-gradient(45deg, #4df0ff, #ff2a2a, #fbbf24, #4df0ff);
-            border-radius: 50%;
-            z-index: -1;
-            animation: spinGlow 4s linear infinite;
-        }
-
-        @keyframes spinGlow { 100% { transform: rotate(360deg); } }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid #0d131f;
-            object-fit: contain;
-            background: #fff;
-        }
-
-        .profile-header h1 { 
-            font-family: 'Orbitron'; 
-            background: linear-gradient(to right, #4df0ff, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.6rem; 
-            margin-bottom: 5px; 
-            letter-spacing: 1px;
-        }
+        .bg-layer { position: fixed; inset: 0; z-index: -5; overflow: hidden; pointer-events: none; }
         
-        .profile-header p { 
-            color: #b3b9c5; 
-            font-size: 0.95rem; 
-            font-weight: 300;
+        .grid-bg { 
+            position: absolute; inset: 0; 
+            background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px); 
+            background-size: 40px 40px; animation: gridMove 30s linear infinite; 
+        }
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 0 40px; } }
+
+        /* Aurora Orbs */
+        .orb { position: absolute; filter: blur(140px); border-radius: 50%; animation: floatOrb 25s infinite alternate ease-in-out; opacity: 0.2; }
+        .orb-1 { top: -10%; left: -10%; width: 45vw; height: 45vw; background: var(--primary-blue); }
+        .orb-2 { bottom: -10%; right: -10%; width: 55vw; height: 55vw; background: var(--accent-cyan); animation-delay: -5s; opacity: 0.15; }
+        @keyframes floatOrb { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(5vw, 5vh) scale(1.05); } }
+
+        /* SVG Technology Lines (Enterprise Style) */
+        .tech-lines { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; opacity: 0.35; }
+        .tech-line { fill: none; stroke: var(--accent-cyan); stroke-width: 1; stroke-dasharray: 100 300; animation: dashAnim 15s linear infinite; }
+        .tech-line.blue { stroke: var(--primary-blue); animation-duration: 20s; }
+        .tech-node { fill: var(--accent-cyan); animation: pulseNode 3s infinite alternate; }
+        .tech-node.blue { fill: var(--primary-blue); animation-delay: 1.5s; }
+        @keyframes dashAnim { 0% { stroke-dashoffset: 400; } 100% { stroke-dashoffset: 0; } }
+        @keyframes pulseNode { 0% { r: 1.5; opacity: 0.5; box-shadow: 0 0 5px currentColor; } 100% { r: 3; opacity: 1; box-shadow: 0 0 15px currentColor; } }
+
+        /* === 2. STICKY NAVIGATION === */
+        nav { 
+            background: rgba(3, 7, 18, 0.85); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; 
+            position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--glass-border); 
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+        }
+        .logo img { height: 32px; border-radius: 6px; background: rgba(255,255,255,0.95); padding: 2px; transition: 0.3s; }
+        .logo:hover img { transform: scale(1.05); }
+        
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .menu-toggle { display: none; color: var(--text-primary); font-size: 1.4rem; cursor: pointer; }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 20px; position: relative; }
+        nav ul li a { text-decoration: none; color: var(--text-secondary); font-size: 0.75rem; font-family: 'Montserrat'; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; padding: 5px 0; }
+        nav ul li a:hover { color: var(--text-primary); }
+
+        .lang-switcher { display: flex; gap: 5px; border-left: 1px solid var(--glass-border); padding-left: 15px; }
+        .lang-nav-btn { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); color: var(--text-secondary); padding: 4px 8px; font-size: 0.65rem; cursor: pointer; border-radius: 6px; transition: 0.3s; font-family: 'Orbitron'; }
+        .lang-nav-btn:hover, .lang-nav-btn.active-lang { background: rgba(0, 217, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+        @media (max-width: 1024px) {
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(3, 7, 18, 0.98); padding: 15px 0; border-bottom: 1px solid var(--glass-border); backdrop-filter: blur(20px); }
+            nav ul.active { display: flex; } 
+            nav ul li { margin: 12px 0; }
+            .menu-toggle { display: block; }
+            .lang-switcher { border-left: none; padding-left: 0; justify-content: center; margin-top: 10px; }
         }
 
-        .quick-actions {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 15px 10px 25px;
+        /* === 3. MAIN COMPACT CONTAINER === */
+        main {
+            width: 100%; max-width: 800px; margin: 0 auto; padding: 75px 12px 20px;
+            display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1;
         }
 
-        .action-btn {
+        .glass-panel { 
+            background: var(--bg-surface); border: 1px solid var(--glass-border); 
+            border-top: 1px solid var(--glass-highlight); border-left: 1px solid var(--glass-highlight); 
+            border-radius: 20px; padding: 24px; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); 
+            box-shadow: var(--shadow-glass); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @media (max-width: 480px) { .glass-panel { padding: 18px 14px; border-radius: 16px; } }
+        .glass-panel:hover { border-color: rgba(0, 217, 255, 0.2); box-shadow: 0 10px 40px rgba(0, 217, 255, 0.08); }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* === 4. ENTERPRISE DIGITAL CARD HERO (Cleaned Up CSS) === */
+        .hero-hub-panel {
+            padding: 24px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-decoration: none;
-            color: #fff;
-            gap: 10px;
-            transition: 0.4s;
+            text-align: center;
+        }
+        
+        .hero-logo-img {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 12px;
+            background: rgba(255,255,255,0.95);
+            padding: 8px 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            transition: 0.3s;
+        }
+        .hero-logo-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,217,255,0.3);
         }
 
-        .action-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 16px;
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 400px) { .hero-mini-grid { gap: 6px; } }
+        
+        .hero-mini-btn {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            gap: 8px;
+            padding: 12px 5px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
             transition: 0.4s;
             position: relative;
             overflow: hidden;
         }
-
-        .action-btn span { font-size: 0.75rem; font-family: 'Orbitron'; font-weight: 600; letter-spacing: 0.5px;}
+        .hero-mini-btn::before {
+            content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: 0.3s;
+            background: radial-gradient(100px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.1), transparent 40%); pointer-events: none;
+        }
+        .hero-mini-btn:hover::before { opacity: 1; }
+        .hero-mini-btn i { font-size: 1.4rem; color: var(--accent-cyan); transition: 0.4s; position: relative; z-index: 2; }
+        .hero-mini-btn span { font-size: 0.7rem; font-family: 'Inter'; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; position: relative; z-index: 2; transition: 0.4s;}
         
-        .bg-call { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-        .bg-wa { background: linear-gradient(135deg, #11998e, #38ef7d); }
-        .bg-map { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
-        .bg-web { background: linear-gradient(135deg, #f7b733, #fc4a1a); }
-
-        .action-btn:hover .action-icon { 
-            transform: translateY(-8px) scale(1.05); 
-            box-shadow: 0 15px 25px rgba(255,255,255,0.2); 
-            border-radius: 50%;
-        }
-
-        .location-section {
-            padding: 30px 20px;
-            background: rgba(255,255,255,0.03);
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .section-title { 
-            font-family: 'Orbitron'; 
-            color: #fff; 
-            font-size: 1.1rem; 
-            margin-bottom: 20px; 
-            text-align: center;
-            letter-spacing: 1px;
-        }
+        .hero-mini-btn:hover { background: rgba(0, 217, 255, 0.05); border-color: var(--accent-cyan); transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 217, 255, 0.15); color: var(--text-primary); }
+        .hero-mini-btn:hover span { color: var(--text-primary); }
+        .hero-mini-btn:hover i { transform: scale(1.15) rotate(5deg); }
         
-        .section-title i { color: #ff2a2a; margin-right: 8px;}
+        .hero-mini-btn.wa-btn:hover { border-color: var(--success); background: rgba(16, 185, 129, 0.05); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15); }
+        .hero-mini-btn.wa-btn:hover i { color: var(--success); }
+        .hero-mini-btn.call-btn:hover { border-color: var(--primary-blue); background: rgba(59, 130, 246, 0.05); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15); }
+        .hero-mini-btn.call-btn:hover i { color: var(--primary-blue); }
 
-        .map-box {
-            width: 100%;
-            height: 220px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 2px solid rgba(77, 240, 255, 0.5);
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(77, 240, 255, 0.15);
-        }
-
-        .address-box {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 18px;
-            border-radius: 12px;
-            border-left: 4px solid #4df0ff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .address-box p {
-            font-size: 0.95rem;
-            color: #e2e8f0;
-            line-height: 1.7;
-        }
-
-        .btn-navigate {
-            display: flex;
-            align-items: center;
+        .hero-loc-header {
             justify-content: center;
             width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #ff2a2a, #990000);
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Orbitron';
-            border-radius: 12px;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 15px;
             font-size: 1.1rem;
-            box-shadow: 0 8px 20px rgba(255, 42, 42, 0.4);
-            transition: 0.3s;
-            border: 1px solid #ff4d4d;
-        }
-        
-        .btn-navigate:hover { background: linear-gradient(135deg, #ff4d4d, #cc0000); transform: scale(1.03); }
-
-        .services-section { padding: 30px 20px; }
-        
-        .service-item {
+            color: var(--text-primary);
+            font-family: 'Orbitron';
+            text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 16px;
-            border-radius: 14px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
-            text-decoration: none; 
-            color: inherit; 
+            gap: 10px;
+            position: relative;
+            z-index: 2;
         }
+
+        /* Unified Map Container Styling */
+        .map-container {
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            filter: grayscale(80%) invert(100%) contrast(85%);
+            transition: 0.5s;
+            position: relative;
+            z-index: 2;
+        }
+        .map-container:hover {
+            filter: grayscale(20%) invert(100%) contrast(100%);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0,217,255,0.2);
+        }
+        .map-hero { height: 280px; border-radius: 16px; margin-bottom: 20px; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); }
+        @media (min-width: 768px) { .map-hero { height: 320px; } }
+        .map-compact { height: 130px; border-radius: 12px; margin-bottom: 12px; box-shadow: none; }
+        .map-compact:hover { box-shadow: var(--shadow-glow-cyan); }
+
+        .hero-address-box { text-align: center; margin-bottom: 15px; position: relative; z-index: 2; }
+        .hero-address { font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); font-family: 'Inter'; margin-bottom: 12px; font-style: normal; }
+        .hero-phone { display: inline-block; font-size: 1.3rem; font-weight: 700; color: var(--text-primary); text-decoration: none; transition: 0.3s; letter-spacing: 1px; margin-bottom: 20px; }
+        .hero-phone:hover { color: var(--accent-cyan); transform: scale(1.05); text-shadow: 0 0 15px rgba(0, 217, 255, 0.4); }
+
+        .hero-dir-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+            padding: 16px; background: rgba(0, 217, 255, 0.1); color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan); font-family: 'Inter'; font-weight: 700; 
+            font-size: 1.05rem; border-radius: 12px; text-decoration: none; position: relative; 
+            overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.15); text-transform: uppercase; letter-spacing: 1px;
+            z-index: 2;
+        }
+        .hero-dir-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transform: skewX(-20deg); transition: 0.6s; }
+        .hero-dir-btn:hover::before { left: 150%; }
+        .hero-dir-btn:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4); transform: translateY(-3px); }
+
+        /* === 4.1 AUTO SCROLLING COURSE RIBBON === */
+        .marquee-wrapper { width: 100%; overflow: hidden; background: rgba(0, 217, 255, 0.02); border-radius: 12px; border: 1px solid var(--glass-border); padding: 12px 0; margin-bottom: 0; position: relative; z-index: 2; box-shadow: inset 0 0 15px rgba(0,0,0,0.3); }
+        .marquee-content { display: flex; width: max-content; animation: marqueeScroll 30s linear infinite; }
+        .marquee-wrapper:hover .marquee-content, .marquee-wrapper:active .marquee-content { animation-play-state: paused; }
+        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        .service-item:hover { background: rgba(255, 255, 255, 0.1); transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .marquee-item { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; margin: 0 6px; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary); text-decoration: none; font-size: 0.8rem; font-family: 'Montserrat'; font-weight: 600; transition: 0.3s; cursor: pointer; position: relative; overflow: hidden;}
+        .marquee-item i { font-size: 0.75rem; color: var(--accent-cyan); transition: 0.3s; }
+        .marquee-item:hover { color: var(--text-primary); background: rgba(0, 217, 255, 0.1); border-color: var(--accent-cyan); transform: scale(1.05); box-shadow: 0 0 15px rgba(0, 217, 255, 0.2); }
+        .marquee-item:hover i { transform: translateX(3px); color: var(--text-primary); }
 
-        .service-icon {
-            width: 45px; height: 45px;
-            border-radius: 10px;
-            background: rgba(77, 240, 255, 0.1);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; color: #4df0ff;
+        /* === 5. PREMIUM ACTION CARDS (Adaptive Grid 4-3-2) === */
+        .action-hub-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 12px; 
+            perspective: 1000px;
+        }
+        .card-primary { grid-column: span 2; }
+        
+        @media (min-width: 650px) { 
+            .action-hub-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } 
+            .card-primary { grid-column: span 3; } 
+        }
+        @media (min-width: 900px) { 
+            .action-hub-grid { grid-template-columns: repeat(4, 1fr); } 
+            .card-primary { grid-column: span 2; } 
         }
 
-        .gold-theme { 
-            border: 1px solid rgba(251, 191, 36, 0.4); 
-            background: linear-gradient(135deg, rgba(251,191,36,0.05), rgba(0,0,0,0));
+        .premium-action {
+            display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; 
+            padding: 16px; gap: 12px; min-height: 100px;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 16px;
+            text-decoration: none; position: relative; overflow: hidden; 
+            transition: transform 0.1s linear, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+            transform-style: preserve-3d; will-change: transform; cursor: pointer;
         }
-        .gold-theme .service-icon { 
-            background: rgba(251, 191, 36, 0.15); 
-            color: #fbbf24; 
+        .premium-action.leave { transition: transform 0.5s ease-out, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease; }
+        
+        .action-top { display: flex; justify-content: space-between; width: 100%; align-items: center; pointer-events: none; }
+        
+        /* Advanced Hover Effects */
+        .premium-action::before {
+            content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: 0.3s;
+            background: radial-gradient(200px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.08), transparent 40%); pointer-events: none;
         }
-        .gold-theme h4 { 
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .premium-action:hover::before { opacity: 1; }
+        
+        .premium-action::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+            transform: skewX(-20deg); transition: 0.6s; z-index: 1; pointer-events: none;
         }
+        .premium-action:hover::after { left: 150%; }
 
-        .service-info h4 { font-size: 1rem; margin-bottom: 4px; letter-spacing: 0.5px; color: #fff;}
-        .service-info p { font-size: 0.8rem; color: #9ca3af; }
+        .border-glow { position: absolute; inset: 0; border-radius: 16px; padding: 1px; background: conic-gradient(from 0deg, transparent, rgba(0, 217, 255, 0.6), transparent); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: 0.4s; pointer-events: none; }
+        .premium-action:hover .border-glow { opacity: 1; animation: spinBorder 4s linear infinite; }
 
-        footer { 
-            text-align: center; 
-            padding: 25px; 
-            font-size: 0.8rem; 
-            color: #64748b; 
-            font-family: 'Orbitron';
-            border-top: 1px solid rgba(255,255,255,0.05);
+        .premium-action:hover { background: rgba(0, 217, 255, 0.02); border-color: transparent; box-shadow: 0 15px 35px rgba(0, 217, 255, 0.12), inset 0 0 15px rgba(0, 217, 255, 0.02); }
+        
+        .action-icon { font-size: 1.6rem; color: var(--text-secondary); transition: 0.4s; position: relative; z-index: 2; pointer-events: none; }
+        .action-arrow { font-size: 1rem; color: var(--text-tertiary); transition: 0.4s; position: relative; z-index: 2; opacity: 0.5; pointer-events: none;}
+        
+        .action-text { display: flex; flex-direction: column; position: relative; z-index: 2; width: 100%; pointer-events: none; }
+        .action-title { font-size: 0.95rem; font-family: 'Inter'; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; transition: 0.3s;}
+        
+        .action-bottom { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 2px; transition: 0.3s; pointer-events: none; }
+        .action-subtitle { font-size: 0.7rem; color: var(--text-tertiary); font-family: 'Montserrat'; font-weight: 500; letter-spacing: 0.5px;}
+        
+        .premium-action:hover .action-icon { color: var(--accent-cyan); transform: scale(1.15) rotate(5deg) translateZ(10px); }
+        .premium-action:hover .action-title { color: var(--accent-cyan); transform: translateZ(5px); }
+        .premium-action:hover .action-bottom { color: var(--text-primary); transform: translateZ(5px); }
+        .premium-action:hover .action-subtitle { color: var(--text-primary); }
+        .premium-action:hover .action-arrow { color: var(--accent-cyan); transform: translateX(4px); opacity: 1; }
+
+        /* Brand Colors Overrides */
+        .card-wa:hover .border-glow { background: conic-gradient(from 0deg, transparent, var(--success), transparent); }
+        .card-wa:hover { background: rgba(16, 185, 129, 0.02); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12); }
+        .card-wa:hover .action-icon, .card-wa:hover .action-title, .card-wa:hover .action-arrow { color: var(--success); }
+
+        .card-call:hover .border-glow { background: conic-gradient(from 0deg, transparent, var(--primary-blue), transparent); }
+        .card-call:hover { background: rgba(59, 130, 246, 0.02); box-shadow: 0 15px 35px rgba(59, 130, 246, 0.12); }
+        .card-call:hover .action-icon, .card-call:hover .action-title, .card-call:hover .action-arrow { color: var(--primary-blue); }
+
+        /* === 6. LOCATION & GOOGLE BUSINESS (Compact) === */
+        .section-header-left { font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--text-primary); font-family: 'Orbitron'; text-transform: uppercase;}
+        .section-header-left i { color: var(--accent-cyan); }
+
+        .compact-action-grid { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 2;}
+        .compact-btn { 
+            flex: 1 1 calc(33.333% - 10px); display: flex; align-items: center; justify-content: center; gap: 8px; 
+            padding: 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 12px; 
+            text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; font-family: 'Inter';
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
         }
+        @media (max-width: 480px) { .compact-btn { flex: 1 1 100%; } }
+        .compact-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent); transform: skewX(-20deg); transition: 0.6s; z-index: 1; pointer-events: none; }
+        .compact-btn:hover::before { left: 150%; }
+        .compact-btn i { font-size: 1.1rem; transition: 0.3s; position: relative; z-index: 2;}
+        .compact-btn span { position: relative; z-index: 2; }
+        .compact-btn:hover { background: rgba(0, 217, 255, 0.05); border-color: var(--accent-cyan); color: var(--text-primary); transform: translateY(-3px) scale(1.02); box-shadow: 0 5px 15px rgba(0, 217, 255, 0.1); }
+        .compact-btn:hover i { color: var(--accent-cyan); transform: scale(1.1); }
+
+        /* === 7. CONNECT WITH US (Social) === */
+        .social-grid { display: flex; gap: 10px; position: relative; z-index: 2;}
+        .social-btn {
+            flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 5px;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 14px;
+            color: var(--text-secondary); text-decoration: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; overflow: hidden;
+        }
+        .social-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transform: skewX(-20deg); transition: 0.6s; z-index: 1; pointer-events: none; }
+        .social-btn:hover::before { left: 150%; }
+        .social-btn i { font-size: 1.5rem; transition: 0.3s; position: relative; z-index: 2;}
+        .social-btn span { font-size: 0.75rem; font-family: 'Inter'; font-weight: 500; position: relative; z-index: 2;}
+        
+        .social-btn:hover { transform: translateY(-4px) scale(1.02); color: var(--text-primary); }
+        .social-btn.ig:hover { border-color: #E1306C; background: rgba(225, 48, 108, 0.05); box-shadow: 0 8px 20px rgba(225, 48, 108, 0.2); }
+        .social-btn.ig:hover i { color: #E1306C; transform: scale(1.15); }
+        .social-btn.fb:hover { border-color: #1877F2; background: rgba(24, 119, 242, 0.05); box-shadow: 0 8px 20px rgba(24, 119, 242, 0.2); }
+        .social-btn.fb:hover i { color: #1877F2; transform: scale(1.15); }
+        .social-btn.yt:hover { border-color: #FF0000; background: rgba(255, 0, 0, 0.05); box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2); }
+        .social-btn.yt:hover i { color: #FF0000; transform: scale(1.15); }
+
+        /* === 8. ABOUT (Highlights Only) === */
+        .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; position: relative; z-index: 2;}
+        .highlight-item { display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255,255,255,0.01); border: 1px solid var(--glass-border); border-radius: 8px; transition: 0.3s; }
+        .highlight-item:hover { border-color: var(--accent-cyan); background: rgba(0, 217, 255, 0.03); transform: translateX(3px); }
+        .highlight-item i { color: var(--accent-cyan); font-size: 0.9rem; }
+        .highlight-item span { font-size: 0.75rem; font-family: 'Montserrat'; font-weight: 600; color: var(--text-secondary); }
+        
+        .learn-more { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; text-align: center; padding: 14px; background: transparent; border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-primary); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: 0.4s; position: relative; overflow: hidden; z-index: 2;}
+        .learn-more::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transform: skewX(-20deg); transition: 0.6s; z-index: 1; pointer-events: none; }
+        .learn-more:hover::before { left: 150%; }
+        .learn-more:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); background: rgba(0,217,255,0.05); box-shadow: var(--shadow-glow-cyan); transform: translateY(-2px); }
+        .learn-more:hover i { transform: translateX(4px); transition: 0.3s; }
+
+        /* === 9. FOOTER === */
+        footer { text-align: center; padding-top: 15px; font-size: 0.75rem; color: var(--text-tertiary); border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 2;}
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 8px; transition: 0.3s; display: inline-block; margin-bottom: 6px; font-weight: 500;}
+        footer a:hover { color: var(--accent-cyan); }
+        .footer-copy { margin-top: 4px; }
+
+        /* Toast */
+        #toast {
+            visibility: hidden; min-width: 250px; background-color: var(--success); color: #fff;
+            text-align: center; border-radius: 8px; padding: 14px; position: fixed; z-index: 2000;
+            left: 50%; bottom: 30px; transform: translateX(-50%); font-weight: 600; font-size: 0.85rem;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4); opacity: 0; transition: 0.3s;
+        }
+        #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
     </style>
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
-<div class="vcard-container">
+<!-- === 1. ENTERPRISE BACKGROUND === -->
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="bg-layer" aria-hidden="true">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
     
-    <div class="profile-header">
-        <div class="profile-img-box">
-            <img src="logo.png" alt="AIT Logo" class="profile-img">
-        </div>
-        <h1>ADVANCE IT (AIT)</h1>
-        <p>Premium IT & Financial Solutions</p>
-    </div>
-
-    <div class="quick-actions">
-        <a href="tel:+919327736999" class="action-btn">
-            <div class="action-icon bg-call"><i class="fas fa-phone-alt"></i></div>
-            <span>CALL</span>
-        </a>
-        <a href="https://wa.me/919327736999" class="action-btn">
-            <div class="action-icon bg-wa"><i class="fab fa-whatsapp"></i></div>
-            <span>WHATSAPP</span>
-        </a>
-        <a href="https://maps.app.goo.gl/Pik1RSHCkjVrX4Xc9" target="_blank" class="action-btn">
-            <div class="action-icon bg-map"><i class="fas fa-map-marker-alt"></i></div>
-            <span>NAVIGATE</span>
-        </a>
-        <a href="https://advanced-it-lab.github.io/" target="_blank" class="action-btn">
-            <div class="action-icon bg-web"><i class="fas fa-globe"></i></div>
-            <span style="color: #f7b733;">WEBSITE</span>
-        </a>
-    </div>
-
-    <div class="location-section">
-        <h3 class="section-title"><i class="fas fa-map-pin"></i> OUR LIVE LOCATION</h3>
+    <!-- SVG Technology Lines & Nodes -->
+    <svg class="tech-lines" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+        <path class="tech-line" d="M -100,200 L 300,200 L 400,300 L 1100,300" />
+        <path class="tech-line blue" d="M -100,600 L 200,600 L 350,450 L 1100,450" />
+        <path class="tech-line" d="M 800,-100 L 800,250 L 600,450 L 600,1100" />
+        <path class="tech-line blue" d="M 200,1100 L 200,800 L 400,600 L 1100,600" />
         
-        <div class="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.9015531797513!2d72.14600471000888!3d21.745341980006383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f5bc5fa507169%3A0x17b41a0e5362b74f!2sAdvance%20Information%20Technology!5e0!3m2!1sen!2sin!4v1773312410164!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <circle class="tech-node" cx="300" cy="200" r="2" />
+        <circle class="tech-node" cx="400" cy="300" r="2" />
+        <circle class="tech-node blue" cx="200" cy="600" r="2" />
+        <circle class="tech-node blue" cx="350" cy="450" r="2" />
+        <circle class="tech-node" cx="800" cy="250" r="2" />
+        <circle class="tech-node" cx="600" cy="450" r="2" />
+        <circle class="tech-node blue" cx="200" cy="800" r="2" />
+        <circle class="tech-node blue" cx="400" cy="600" r="2" />
+    </svg>
+</div>
+
+<!-- === 2. STICKY NAVIGATION === -->
+<nav aria-label="Main Navigation">
+    <div class="logo">
+        <a href="index.html" aria-label="AIT Homepage">
+            <img src="logo.png" alt="AIT Logo" height="32" width="106" loading="eager" decoding="async" style="width: auto;">
+        </a>
+    </div>
+    
+    <div class="nav-right">
+        <ul id="navMenu">
+            <li><a href="index.html" id="navHome">Home</a></li>
+            <li><a href="index.html#about" id="navAbout">About</a></li>
+            <li><a href="index.html#courses" id="navCourses">Courses</a></li>
+            <li><a href="index.html#solutions" id="navSolutions">Solutions</a></li>
+            <li><a href="index.html#admission-policy" id="navAdmission">Admission</a></li>
+            <li><a href="index.html#faq" id="navFAQ">FAQ</a></li>
+            <li><a href="index.html#contact" id="navContact">Contact</a></li>
+        </ul>
+        <div class="lang-switcher" aria-label="Language Options">
+            <button class="lang-nav-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            <button class="lang-nav-btn" id="btn-gu" onclick="setLanguage('gu')">GU</button>
+            <button class="lang-nav-btn" id="btn-hi" onclick="setLanguage('hi')">HI</button>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleMenu(); }" role="button" tabindex="0" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- === 3. COMPACT MAIN CONTAINER === -->
+<main>
+
+    <!-- === 4. ENTERPRISE DIGITAL CARD HERO === -->
+    <div class="glass-panel reveal hero-hub-panel">
+        <h1 class="sr-only">AIT Digital Profile & Institute Hub</h1>
+        <img src="logo.png" alt="AIT Premium Digital Profile Logo" class="hero-logo-img" loading="eager" decoding="async">
+        
+        <h2 class="hero-subtitle" id="heroSubtitle">Training • Services • Solutions • Cyber Security</h2>
+        
+        <div class="hero-mini-grid">
+            <a href="tel:+919327736999" class="hero-mini-btn call-btn" aria-label="Call">
+                <i class="fas fa-phone-alt"></i>
+                <span id="btnHeroCall">Call</span>
+            </a>
+            <a href="https://wa.me/919327736999" target="_blank" rel="noopener noreferrer" class="hero-mini-btn wa-btn" aria-label="WhatsApp Chat">
+                <i class="fab fa-whatsapp"></i>
+                <span id="btnHeroWa">WhatsApp</span>
+            </a>
+            <a href="https://maps.app.goo.gl/X8B5VERsqgkuM4ML8" target="_blank" rel="noopener noreferrer" class="hero-mini-btn nav-btn" aria-label="Navigate">
+                <i class="fas fa-location-arrow"></i>
+                <span id="btnHeroNav">Navigate</span>
+            </a>
+            <a href="https://advanced-it-lab.github.io/" target="_blank" rel="noopener noreferrer" class="hero-mini-btn web-btn" aria-label="Official Website">
+                <i class="fas fa-globe"></i>
+                <span id="btnHeroWeb">Website</span>
+            </a>
         </div>
 
-        <div class="address-box">
-            <p><strong>AIT Hub & Office</strong><br>
-               Plot No. 90, 2nd Floor, Arav Complex,<br>
-               Opp. Rammantra Mandir, Bhavnagar</p>
+        <h3 class="hero-loc-header">
+            <i class="fas fa-map-marker-alt" style="color: var(--accent-cyan);"></i> <span id="heroLocTitle">Our Live Location</span>
+        </h3>
+
+        <div class="map-container map-hero">
+            <iframe title="AIT Google Maps Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.8925880697225!2d72.14583140982356!3d21.745689480006078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f5a70aec00001%3A0x5150eeb629edd975!2sAIT%20Bhavnagar!5e0!3m2!1sen!2sin!4v1785331854560!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <a href="https://maps.app.goo.gl/Pik1RSHCkjVrX4Xc9" target="_blank" class="btn-navigate">
-            <i class="fas fa-location-arrow" style="margin-right: 10px;"></i> GET DIRECTIONS
+        <div class="hero-address-box">
+            <p class="hero-address" id="heroAddr">
+                Plot No. 90, 2nd Floor, Arav Complex,<br>
+                Opp. Rammantra Mandir, Bhavnagar – 364001
+            </p>
+            <a href="tel:+919327736999" class="hero-phone" id="heroPhone">📞 +91 93277 36999</a>
+        </div>
+
+        <a href="https://maps.app.goo.gl/X8B5VERsqgkuM4ML8" target="_blank" rel="noopener noreferrer" class="hero-dir-btn" id="heroDirBtn">
+            <i class="fas fa-directions"></i> <span id="heroDirTxt">Get Directions</span>
         </a>
     </div>
 
-    <div class="services-section">
-        <h3 class="section-title"><i class="fas fa-gem" style="color: #4df0ff;"></i> OUR EXPERTISE</h3>
+    <!-- === 4.1 AUTO SCROLLING COURSE RIBBON === -->
+    <div class="marquee-wrapper reveal">
+        <div class="marquee-content" id="marqueeText">
+            <a href="index.html#courses" class="marquee-item">Cyber Security <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Ethical Hacking <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">CCNA <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Networking <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Microsoft Server <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Cloud Computing <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">DevOps <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">AI Tools <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Hardware <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#solutions" class="marquee-item">Software <i class="fas fa-arrow-right"></i></a>
+            
+            <!-- Duplicated for Loop -->
+            <a href="index.html#courses" class="marquee-item">Cyber Security <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Ethical Hacking <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">CCNA <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Networking <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Microsoft Server <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Cloud Computing <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">DevOps <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">AI Tools <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#courses" class="marquee-item">Hardware <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html#solutions" class="marquee-item">Software <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- === 5. ⭐⭐⭐ PREMIUM QUICK ACTIONS ⭐⭐⭐ === -->
+    <div class="action-hub-grid reveal">
         
-        <a href="https://advanced-it-lab.github.io/#courses" target="_blank" class="service-item">
-            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-            <div class="service-info">
-                <h4>IT Education & Training</h4>
-                <p>Cyber Security, Networking, Hacking</p>
+        <a href="https://advanced-it-lab.github.io/" target="_blank" rel="noopener noreferrer" class="premium-action card-primary leave" aria-label="Official Website">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-globe action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnWeb">Website</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actWeb">Explore</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
             </div>
         </a>
-        
-        <a href="https://advanced-it-lab.github.io/#services" target="_blank" class="service-item">
-            <div class="service-icon"><i class="fas fa-tools"></i></div>
-            <div class="service-info">
-                <h4>Technical Solutions</h4>
-                <p>Chip-Level Repair & Data Recovery</p>
+
+        <a href="https://forms.gle/GZJFc5wbzRfU7sJ96" target="_blank" rel="noopener noreferrer" class="premium-action leave" aria-label="Admission Inquiry">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-clipboard-list action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnInq">Inquiry Now</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actInq">Book Free Demo</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
             </div>
         </a>
-        
-        <a href="https://dipalbhaichhaganbhaiboricha.tataaiapartner.com/site/" target="_blank" class="service-item gold-theme">
-            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="service-info">
-                <h4>Financial & Life Insurance</h4>
-                <p>Authorized TATA AIA Advisor</p>
+
+        <a href="https://wa.me/919327736999" target="_blank" rel="noopener noreferrer" class="premium-action card-wa leave" aria-label="WhatsApp Chat">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fab fa-whatsapp action-icon"></i>
             </div>
+            <div class="action-text">
+                <span class="action-title" id="btnWa">WhatsApp</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actWa">Chat Now</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="tel:+919327736999" class="premium-action card-call leave" aria-label="Call Office">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-phone-alt action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnCall">Call</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actCall">Tap to Connect</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://maps.app.goo.gl/X8B5VERsqgkuM4ML8" target="_blank" rel="noopener noreferrer" class="premium-action leave" aria-label="Location">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-map-marker-alt action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnLoc">Location</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actLoc">Navigate</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="ait-training-brochure.pdf" target="_blank" rel="noopener noreferrer" class="premium-action leave" aria-label="Download Brochure">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-file-pdf action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnBrochure">Brochure</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actBrochure">Download</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="downloadVCard(); return false;" class="premium-action leave" aria-label="Save Contact">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-address-book action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnSave">Save Contact</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actSave">Save</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="shareProfile(); return false;" class="premium-action leave" aria-label="Share">
+            <div class="border-glow"></div>
+            <div class="action-top">
+                <i class="fas fa-share-alt action-icon"></i>
+            </div>
+            <div class="action-text">
+                <span class="action-title" id="btnShare">Share Profile</span>
+                <div class="action-bottom">
+                    <span class="action-subtitle" id="actShare">Share</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- === 6. LOCATION & GOOGLE BUSINESS (Compact) === -->
+    <div class="glass-panel reveal">
+        <h3 class="section-header-left" style="font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--text-primary); font-family: 'Orbitron'; text-transform: uppercase;"><i class="fas fa-building" style="color: var(--accent-cyan);"></i> <span id="gbTitle">Google Business</span></h3>
+        
+        <div class="compact-action-grid">
+            <a href="https://g.page/r/CXXZ7Sm27lBREBM/review" target="_blank" rel="noopener noreferrer" class="compact-btn" aria-label="Business Profile"><i class="fas fa-store"></i> <span id="btnProfile">Profile</span></a>
+            <a href="https://g.page/r/CXXZ7Sm27lBREBM/review" target="_blank" rel="noopener noreferrer" class="compact-btn" aria-label="Google Reviews"><i class="fas fa-star"></i> <span id="btnReview">Reviews</span></a>
+            <a href="mailto:aitconnectone@gmail.com" class="compact-btn" aria-label="Email Us"><i class="fas fa-envelope"></i> <span id="btnEmail">Email HQ</span></a>
+        </div>
+    </div>
+
+    <!-- === 7. CONNECT WITH US (Social) === -->
+    <div class="glass-panel reveal">
+        <h3 class="section-header-left" style="font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--text-primary); font-family: 'Orbitron'; text-transform: uppercase;"><i class="fas fa-hashtag" style="color: var(--accent-cyan);"></i> <span id="socialTitle">Social Media</span></h3>
+        <div class="social-grid">
+            <a href="https://www.instagram.com/aitbhavnagar/" target="_blank" rel="noopener noreferrer" class="social-btn ig" aria-label="Instagram">
+                <i class="fab fa-instagram"></i><span id="btnIg">Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/aitbvn" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i><span id="btnFb">Facebook</span>
+            </a>
+            <a href="https://www.youtube.com/@ait-lab" target="_blank" rel="noopener noreferrer" class="social-btn yt" aria-label="YouTube">
+                <i class="fab fa-youtube"></i><span id="btnYt">YouTube</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- === 8. ABOUT AIT (Compact Highlights) === -->
+    <div class="glass-panel reveal">
+        <h3 class="section-header-left" style="font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--text-primary); font-family: 'Orbitron'; text-transform: uppercase;"><i class="fas fa-info-circle" style="color: var(--accent-cyan);"></i> <span id="aboutTitle">About AIT</span></h3>
+        <div class="highlight-grid">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i><span id="about1">14+ Years Experience</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i><span id="about2">100% Practical Training</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i><span id="about3">Industry Ready</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i><span id="about4">Bhavnagar</span></div>
+        </div>
+        <a href="index.html" class="learn-more" aria-label="Learn More">
+            <span id="btnLearnMore">Learn More</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
     </div>
 
-    <footer>
-        © 2026 AIT | BHAVNAGAR
+    <!-- === 9. FOOTER === -->
+    <footer class="reveal">
+        <p>
+            <a href="index.html" id="ftHome">Back to Website</a> | 
+            <a href="index.html#courses" id="ftCourses">All Courses</a> | 
+            <a href="privacy-terms.html" id="ftTerms">Privacy & Terms</a>
+        </p>
+        <p class="footer-copy" id="ftRights">© 2026 Advanced Information Technology (AIT). All Rights Reserved.</p>
     </footer>
 
-</div>
+</main>
+
+<!-- Toast Notification -->
+<div id="toast" aria-live="polite"><i class="fas fa-check-circle" style="margin-right: 8px;"></i> Action Completed!</div>
+
+<script>
+    // === LANGUAGE SUPPORT (EN, GU, HI) ===
+    const i18n = {
+        en: {
+            navHome: "Home", navAbout: "About", navCourses: "Courses", navSolutions: "Solutions", navAdmission: "Admission", navFAQ: "FAQ", navContact: "Contact",
+            heroSubtitle: "Training • Services • Solutions • Cyber Security",
+            heroLocTitle: "Our Live Location", heroDirTxt: "Get Directions",
+            btnHeroCall: "Call", btnHeroWa: "WhatsApp", btnHeroNav: "Navigate", btnHeroWeb: "Website",
+            
+            btnInq: "Inquiry Now", actInq: "Book Free Demo",
+            btnWa: "WhatsApp", actWa: "Chat Now",
+            btnCall: "Call", actCall: "Tap to Connect",
+            btnLoc: "Location", actLoc: "Navigate",
+            btnBrochure: "Brochure", actBrochure: "Download",
+            btnSave: "Save Contact", actSave: "Save",
+            btnShare: "Share Profile", actShare: "Share",
+            btnWeb: "Website", actWeb: "Explore",
+            
+            gbTitle: "Google Business",
+            btnMap: "Open Maps", btnDir: "Directions", btnProfile: "Profile", btnReview: "Reviews", btnEmail: "Email AIT HQ",
+            socialTitle: "Social Media",
+            btnIg: "Instagram", btnFb: "Facebook", btnYt: "YouTube",
+            aboutTitle: "About AIT", about1: "14+ Years Experience", about2: "100% Practical Training", about3: "Industry Ready", about4: "Bhavnagar",
+            btnLearnMore: "Learn More",
+            ftHome: "Back to Website", ftCourses: "All Courses", ftTerms: "Privacy & Terms", ftRights: "© 2026 Advanced Information Technology (AIT). All Rights Reserved."
+        },
+        gu: {
+            navHome: "હોમ", navAbout: "અમારા વિશે", navCourses: "કોર્સીસ", navSolutions: "સોલ્યુશન્સ", navAdmission: "એડમિશન", navFAQ: "પ્રશ્નો", navContact: "સંપર્ક",
+            heroSubtitle: "ટ્રેનિંગ • સર્વિસીસ • સોલ્યુશન્સ • સાયબર સિક્યોરિટી",
+            heroLocTitle: "અમારું લાઈવ લોકેશન", heroDirTxt: "દિશા નિર્દેશો મેળવો",
+            btnHeroCall: "કૉલ", btnHeroWa: "વોટ્સએપ", btnHeroNav: "નેવિગેટ", btnHeroWeb: "વેબસાઇટ",
+            
+            btnInq: "ઇન્ક્વાયરી કરો", actInq: "મફત ડેમો બુક કરો",
+            btnWa: "વોટ્સએપ", actWa: "ચેટ કરો",
+            btnCall: "કૉલ કરો", actCall: "કનેક્ટ કરવા ટેપ કરો",
+            btnLoc: "લોકેશન", actLoc: "નેવિગેટ કરો",
+            btnBrochure: "બ્રોશર", actBrochure: "ડાઉનલોડ કરો",
+            btnSave: "સંપર્ક સેવ", actSave: "સેવ કરો",
+            btnShare: "શેર પ્રોફાઇલ", actShare: "શેર કરો",
+            btnWeb: "વેબસાઇટ", actWeb: "માહિતી જુઓ",
+            
+            gbTitle: "ગુગલ બિઝનેસ",
+            btnMap: "ગુગલ મેપ", btnDir: "દિશા નિર્દેશો", btnProfile: "પ્રોફાઇલ", btnReview: "રિવ્યુ", btnEmail: "ઇમેઇલ",
+            socialTitle: "અમારી સાથે જોડાઓ",
+            btnIg: "ઇન્સ્ટાગ્રામ", btnFb: "ફેસબુક", btnYt: "યુટ્યુબ",
+            aboutTitle: "AIT વિશે", about1: "૧૪+ વર્ષનો અનુભવ", about2: "૧૦૦% પ્રેક્ટિકલ તાલીમ", about3: "ઇન્ડસ્ટ્રી રેડી", about4: "ભાવનગર",
+            btnLearnMore: "વધુ જાણો",
+            ftHome: "વેબસાઇટ પર પાછા ફરો", ftCourses: "તમામ કોર્સીસ", ftTerms: "પ્રાઇવેસી અને નિયમો", ftRights: "© ૨૦૨૬ એડવાન્સ્ડ ઇન્ફોર્મેશન ટેકનોલોજી (AIT). સર્વાધિકાર સુરક્ષિત."
+        },
+        hi: {
+            navHome: "होम", navAbout: "हमारे बारे में", navCourses: "कोर्सेज", navSolutions: "समाधान", navAdmission: "प्रवेश", navFAQ: "सामान्य प्रश्न", navContact: "संपर्क",
+            heroSubtitle: "ट्रेनिंग • सर्विसेज • सॉल्यूशंस • साइबर सुरक्षा",
+            heroLocTitle: "हमारा लाइव लोकेशन", heroDirTxt: "दिशा निर्देश प्राप्त करें",
+            btnHeroCall: "कॉल", btnHeroWa: "व्हाट्सएप", btnHeroNav: "नेविगेट", btnHeroWeb: "वेबसाइट",
+            
+            btnInq: "पूछताछ करें", actInq: "निःशुल्क डेमो बुक करें",
+            btnWa: "व्हाट्सएप", actWa: "चैट करें",
+            btnCall: "कॉल करें", actCall: "कनेक्ट करने के लिए टैप करें",
+            btnLoc: "स्थान", actLoc: "नेविगेट करें",
+            btnBrochure: "ब्रोशर", actBrochure: "डाउनलोड करें",
+            btnSave: "संपर्क सेव", actSave: "सेव करें",
+            btnShare: "शेयर प्रोफाइल", actShare: "साझा करें",
+            btnWeb: "वेबसाइट", actWeb: "जानकारी देखें",
+            
+            gbTitle: "गूगल बिजनेस",
+            btnMap: "गूगल मैप्स", btnDir: "दिशा निर्देश", btnProfile: "प्रोफाइल", btnReview: "समीक्षा", btnEmail: "ईमेल",
+            socialTitle: "हमसे जुड़ें",
+            btnIg: "इंस्टाग्राम", btnFb: "फेसबुक", btnYt: "यूट्यूब",
+            aboutTitle: "AIT के बारे में", about1: "14+ वर्षों का अनुभव", about2: "100% प्रैक्टिकल ट्रेनिंग", about3: "इंडस्ट्री रेडी", about4: "भावनगर",
+            btnLearnMore: "अधिक जानें",
+            ftHome: "वेबसाइट पर वापस जाएं", ftCourses: "सभी कोर्सेज", ftTerms: "गोपनीयता और नियम", ftRights: "© 2026 एडवांस्ड इंफॉर्मेशन टेक्नोलॉजी (AIT). सर्वाधिकार सुरक्षित।"
+        }
+    };
+
+    function setLanguage(lang) {
+        localStorage.setItem('ait_lang', lang);
+        
+        document.querySelectorAll('.lang-nav-btn').forEach(btn => btn.classList.remove('active-lang'));
+        const activeBtn = document.getElementById('btn-' + lang);
+        if(activeBtn) activeBtn.classList.add('active-lang');
+
+        const keys = Object.keys(i18n[lang]);
+        keys.forEach(key => {
+            const el = document.getElementById(key);
+            if(el) el.innerHTML = i18n[lang][key];
+        });
+    }
+
+    // === MOBILE MENU TOGGLE ===
+    function toggleMenu() { 
+        const menu = document.getElementById("navMenu");
+        const toggleBtn = document.querySelector(".menu-toggle");
+        menu.classList.toggle("active"); 
+        const isActive = menu.classList.contains("active");
+        toggleBtn.setAttribute("aria-expanded", isActive);
+    }
+    document.querySelectorAll('#navMenu li a').forEach(link => { 
+        link.addEventListener('click', () => { 
+            document.getElementById("navMenu").classList.remove("active"); 
+            document.querySelector(".menu-toggle").setAttribute("aria-expanded", "false");
+        }); 
+    });
+
+    // === SCROLL REVEAL ANIMATIONS ===
+    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -20px 0px" };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Init Language
+        const savedLang = localStorage.getItem('ait_lang') || 'en';
+        setLanguage(savedLang);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // === GLOBAL CURSOR & 3D TILT INTERACTION (Premium) ===
+        const cursorGlow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            document.documentElement.style.setProperty('--cx', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cy', e.clientY + 'px');
+        });
+
+        // Setup 3D Tilt for Premium Action Cards
+        document.querySelectorAll('.premium-action, .hero-mini-btn').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                card.classList.remove('leave');
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+
+                if (card.classList.contains('premium-action')) {
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -10; 
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.classList.add('leave');
+                if (card.classList.contains('premium-action')) {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                }
+            });
+        });
+    });
+
+    // === SAVE CONTACT (vCard) LOGIC ===
+    function downloadVCard() {
+        const vcard = "BEGIN:VCARD\nVERSION:3.0\nN:AIT;;;\nFN:Advanced Information Technology (AIT)\nORG:Advanced Information Technology\nTEL;TYPE=WORK,VOICE:+919327736999\nEND:VCARD";
+        const blob = new Blob([vcard], { type: "text/vcard" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "AIT_Contact.vcf";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast("Contact downloaded successfully!");
+    }
+
+    // === SHARE PAGE LOGIC (Web Share API / Fallback) ===
+    async function shareProfile() {
+        const shareData = {
+            title: 'AIT - Advanced Information Technology',
+            text: 'Connect with AIT Bhavnagar - Premium IT Training & Cyber Security Institute.',
+            url: 'https://advanced-it-lab.github.io/visit.html'
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                await navigator.clipboard.writeText(shareData.url);
+                showToast("Digital Profile copied to clipboard!");
+            }
+        } catch (err) {
+            if (err.name !== 'AbortError') {
+                fallbackCopyTextToClipboard(shareData.url);
+            }
+        }
+    }
+
+    function fallbackCopyTextToClipboard(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showToast("Digital Profile copied to clipboard!");
+        } catch (err) {}
+        document.body.removeChild(textArea);
+    }
+
+    function showToast(message) {
+        var toast = document.getElementById("toast");
+        if(message) toast.innerHTML = `<i class="fas fa-check-circle" style="margin-right: 8px;"></i> ${message}`;
+        toast.className = "show";
+        setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    }
+</script>
 
 </body>
 </html>

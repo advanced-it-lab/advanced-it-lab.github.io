@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- === TECHNICAL SEO & META TAGS === -->
+    <meta name="description" content="Privacy Policy & Terms of Conditions for AIT - Advanced Information Technology, Bhavnagar.">
+    <meta name="author" content="Dipalsir - Advanced Information Technology (AIT)">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#030712">
+
+    <title>Privacy Policy & Terms of Conditions | AIT</title>
+    
+    <!-- === PERFORMANCE OPTIMIZATION (Preconnect & Preload) === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* === PREMIUM CORPORATE TECHNOLOGY THEME === */
+        :root { 
+            --bg-base: #030712; 
+            --bg-surface: rgba(15, 23, 42, 0.75); 
+            --bg-surface-alt: rgba(30, 41, 59, 0.5);
+            
+            --text-primary: #F8FAFC; 
+            --text-secondary: #94A3B8; 
+            --text-tertiary: #64748B;
+            
+            --accent-cyan: #00D9FF; 
+            --accent-red: #FF2A2A;  
+            --primary-blue: #3B82F6; 
+            
+            --success: #10B981;
+            
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
+            
+            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            --shadow-glow-cyan: 0 0 30px rgba(0, 217, 255, 0.25);
+            --shadow-glow-red: 0 0 30px rgba(255, 42, 42, 0.2);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); line-height: 1.7; overflow-x: hidden; background-color: var(--bg-base); }
+
+        :focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: 4px; border-radius: 4px; }
+
+        /* === DEPTH: MESH GRADIENT & DIGITAL BACKGROUND === */
+        body::before {
+            content: ''; position: fixed; inset: 0;
+            background: 
+                radial-gradient(circle at 15% 40%, rgba(0, 217, 255, 0.05), transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(255, 42, 42, 0.04), transparent 40%),
+                radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.05), transparent 50%);
+            z-index: -3; pointer-events: none;
+        }
+        body::after {
+            content: ''; position: fixed; inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px; z-index: -4; pointer-events: none;
+        }
+
+        .bg-blob { position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0; opacity: 0.4; pointer-events: none; }
+        .blob-1 { top: 15%; left: -5%; width: 400px; height: 400px; background: var(--primary-blue); }
+        .blob-2 { top: 60%; right: -5%; width: 500px; height: 500px; background: var(--accent-cyan); opacity: 0.2; }
+
+        #particleCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; opacity: 0.9; }
+
+        /* Typography */
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+        h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+        .text-gradient-cyan { background: linear-gradient(90deg, #FFFFFF, var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* === PREMIUM STICKY NAVIGATION === */
+        nav { 
+            background: rgba(3, 7, 18, 0.8); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--glass-border); 
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); transition: all 0.4s ease;
+        }
+        .logo img { height: 45px; border-radius: 6px; background: rgba(255,255,255,0.95); padding: 3px; transition: 0.3s; }
+        .logo:hover img { transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+        
+        .nav-right { display: flex; align-items: center; gap: 30px; }
+        .menu-toggle { display: none; color: var(--text-primary); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 25px; position: relative; }
+        nav ul li a { 
+            text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; 
+            font-family: 'Montserrat'; font-weight: 600; text-transform: uppercase; 
+            letter-spacing: 1px; transition: all 0.3s ease; padding: 5px 0;
+        }
+        nav ul li a::after { 
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; 
+            background: var(--accent-cyan); transition: width 0.3s ease; border-radius: 2px;
+        }
+        nav ul li a:hover, nav ul li a.active { color: var(--text-primary); }
+        nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+
+        .lang-switcher { display: flex; gap: 10px; border-left: 1px solid var(--glass-border); padding-left: 25px; }
+        .lang-nav-btn { 
+            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); 
+            color: var(--text-secondary); padding: 6px 14px; font-size: 0.75rem; 
+            cursor: pointer; border-radius: 8px; transition: all 0.3s; font-family: 'Orbitron'; font-weight: 500; 
+        }
+        .lang-nav-btn:hover, .lang-nav-btn.active-lang { 
+            background: rgba(0, 217, 255, 0.1); border-color: var(--accent-cyan); 
+            color: var(--accent-cyan); box-shadow: inset 0 0 10px rgba(0, 217, 255, 0.1); 
+        }
+
+        /* === LEGAL PAGE SPECIFIC STYLES === */
+        header.legal-hero {
+            padding: 150px 8% 60px 8%; text-align: center; position: relative; z-index: 2;
+        }
+        
+        .legal-hero h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .legal-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+
+        .legal-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            padding: 40px 8% 100px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            align-items: start;
+        }
+
+        /* Table of Contents */
+        .toc-panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px 20px;
+            position: sticky;
+            top: 100px;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: var(--shadow-glass);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        /* Custom Scrollbar for TOC */
+        .toc-panel::-webkit-scrollbar { width: 6px; }
+        .toc-panel::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
+        .toc-panel::-webkit-scrollbar-thumb { background: rgba(0, 217, 255, 0.3); border-radius: 10px; }
+        
+        .toc-panel h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-primary); border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; }
+        .toc-list { list-style: none; margin: 0; padding: 0; }
+        .toc-list li { margin-bottom: 10px; }
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .toc-list a:hover, .toc-list a.active {
+            background: rgba(0, 217, 255, 0.1);
+            color: var(--accent-cyan);
+            padding-left: 20px;
+        }
+
+        /* Policy Accordions */
+        .policies-wrapper { display: flex; flex-direction: column; gap: 25px; }
+        
+        .policy-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: var(--shadow-glass);
+            transition: all 0.4s ease;
+        }
+        .policy-card:hover { border-color: rgba(255,255,255,0.3); box-shadow: 0 10px 40px rgba(0, 217, 255, 0.1); }
+        
+        .policy-header {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .policy-header h3 { font-size: 1.2rem; margin: 0; color: var(--text-primary); font-family: 'Inter'; font-weight: 600; display: flex; align-items: center; gap: 15px; }
+        .policy-header h3 i { color: var(--accent-cyan); width: 25px; text-align: center; }
+        .policy-icon-toggle { color: var(--text-secondary); transition: transform 0.3s; }
+        
+        .policy-body {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .policy-card.active { border-color: var(--accent-cyan); }
+        .policy-card.active .policy-header { border-bottom: 1px solid var(--glass-border); }
+        .policy-card.active .policy-icon-toggle { transform: rotate(180deg); color: var(--accent-cyan); }
+        .policy-card.active .policy-body { padding: 25px 30px; max-height: 2000px; }
+
+        .policy-body p { margin-bottom: 15px; }
+        .policy-body p:last-child { margin-bottom: 0; }
+
+        /* === PREMIUM RICH FOOTER === */
+        footer { background: #010205; padding: 80px 8% 30px 8%; border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 10; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1.2fr 1.2fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+        .footer-brand img { height: 45px; background: #fff; padding: 2px; border-radius: 4px; margin-bottom: 20px; }
+        .footer-brand p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px; max-width: 300px; }
+        
+        .social-links { display: flex; gap: 15px; }
+        .social-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--text-secondary); font-size: 1.1rem; transition: all 0.3s ease; text-decoration: none; }
+        .social-btn:hover { transform: translateY(-4px); color: #ffffff; }
+        .social-btn.youtube:hover { background: #FF0000; border-color: #FF0000; }
+        .social-btn.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%); border-color: transparent; }
+        .social-btn.facebook:hover { background: #1877F2; border-color: #1877F2; }
+
+        .footer-title { color: var(--text-primary); font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 25px; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--accent-cyan); padding-left: 5px; }
+
+        .footer-contact p { color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem; display: flex; gap: 10px; }
+        .footer-contact i { color: var(--accent-cyan); margin-top: 5px; }
+
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary); font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .footer-bottom a { color: var(--accent-cyan); text-decoration: none; }
+
+        /* Scroll Reveal */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            nav ul li { margin-left: 15px; }
+            .lang-switcher { padding-left: 15px; }
+        }
+        @media (max-width: 1024px) {
+            .legal-container { grid-template-columns: 1fr; padding: 20px 5% 80px 5%; }
+            .toc-panel { position: relative; top: 0; margin-bottom: 30px; max-height: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(3, 7, 18, 0.98); padding: 20px 0; border-bottom: 1px solid var(--glass-border); backdrop-filter: blur(20px); }
+            nav ul.active { display: flex; } 
+            nav ul li { margin: 15px 0; }
+            .menu-toggle { display: block; }
+            .lang-switcher { border-left: none; padding-left: 0; margin-left: 0; justify-content: center; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 768px) {
+            .bg-blob { display: none; }
+        }
+    </style>
+    <link rel="canonical" href="https://advanced-it-lab.github.io/privacy-terms.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://advanced-it-lab.github.io/privacy-terms.html">
+    <meta property="og:site_name" content="Advanced Information Technology (AIT)">
+    <meta property="og:title" content="Privacy Policy & Terms of Conditions | AIT">
+    <meta property="og:description" content="Privacy Policy & Terms of Conditions for AIT - Advanced Information Technology, Bhavnagar.">
+    <meta property="og:image" content="https://advanced-it-lab.github.io/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy & Terms of Conditions | AIT">
+    <meta name="twitter:description" content="Privacy Policy & Terms of Conditions for AIT - Advanced Information Technology, Bhavnagar.">
+    <meta name="twitter:image" content="https://advanced-it-lab.github.io/og-image.jpg">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://advanced-it-lab.github.io/privacy-terms.html","url":"https://advanced-it-lab.github.io/privacy-terms.html","name":"Privacy Policy & Terms of Conditions | AIT","description":"Privacy Policy & Terms of Conditions for AIT - Advanced Information Technology, Bhavnagar.","isPartOf":{"@id":"https://advanced-it-lab.github.io/#website"}}</script>
+</head>
+<body>
+
+<!-- Animated Depth Backgrounds -->
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+<!-- Premium Navigation -->
+<nav aria-label="Main Navigation">
+    <div class="logo">
+        <a href="index.html" aria-label="AIT Homepage">
+            <img src="logo.png" alt="AIT Logo" height="45" width="150" loading="eager" decoding="async" style="width: auto;">
+        </a>
+    </div>
+    
+    <div class="nav-right">
+        <ul id="navMenu">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#solutions">Solutions</a></li>
+            <li><a href="index.html#admission-policy">Admission</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="lang-switcher" aria-label="Language Switcher">
+            <button onclick="setLanguage('en')" class="lang-nav-btn active-lang" id="btn-en" aria-label="Switch to English">EN</button>
+            <button onclick="setLanguage('gu')" class="lang-nav-btn" id="btn-gu" aria-label="Switch to Gujarati">GU</button>
+            <button onclick="setLanguage('hi')" class="lang-nav-btn" id="btn-hi" aria-label="Switch to Hindi">HI</button>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleMenu(); }" role="button" tabindex="0" aria-label="Toggle Navigation Menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header class="legal-hero reveal">
+        <h1 id="pageTitle">Privacy Policy & <span class="text-gradient-cyan">Terms</span></h1>
+        <p id="pageSub">Professional legal information for students, parents, and website visitors.</p>
+    </header>
+
+    <div class="legal-container">
+        <!-- Table of Contents Sidebar -->
+        <aside class="toc-panel reveal">
+            <h3 id="tocTitle">Table of Contents</h3>
+            <ul class="toc-list" id="tocListContainer">
+                <!-- TOC items generated via JS -->
+            </ul>
+        </aside>
+
+        <!-- Policies Content (All 19 Sections) -->
+        <div class="policies-wrapper" id="policiesContainer">
+            <!-- Policy Cards generated via JS -->
+        </div>
+    </div>
+</main>
+
+<!-- Premium Rich Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <img src="logo.png" alt="AIT Footer Logo" height="45" width="150" loading="lazy" decoding="async" style="width: auto;">
+            <p>Empowering the next generation of IT and Cyber Security professionals with 100% practical training.</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@ait-lab" target="_blank" rel="noopener noreferrer" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/aitbhavnagar/" target="_blank" rel="noopener noreferrer" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/aitbvn" target="_blank" rel="noopener noreferrer" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div>
+            <h4 class="footer-title" id="ftLinksTitle">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#courses">All 10 Courses</a></li>
+                <li><a href="index.html#admission-policy">Admission Process</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4 class="footer-title" id="ftCoursesTitle">Popular Courses</h4>
+            <ul class="footer-links">
+                <li><a href="ethical-hacking.html">Ethical Hacking</a></li>
+                <li><a href="cyber-security.html">Cyber Security</a></li>
+                <li><a href="cisco-ccna.html">Cisco CCNA</a></li>
+                <li><a href="aws-cloud.html">AWS Cloud</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-contact">
+            <h4 class="footer-title">Contact</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Bhavnagar, Gujarat, India</p>
+            <p><i class="fas fa-phone-alt"></i> +91 93277 36999</p>
+            <p><i class="fas fa-envelope"></i> aitconnectone@gmail.com</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Advanced Information Technology (AIT). All Rights Reserved.</p>
+        <a href="privacy-terms.html" id="termsLink">Terms & Conditions</a>
+    </div>
+</footer>
+
+<script>
+    /* === MOBILE MENU === */
+    function toggleMenu() { 
+        const menu = document.getElementById("navMenu");
+        menu.classList.toggle("active"); 
+    }
+
+    /* === ACCORDION TOGGLE === */
+    function togglePolicy(headerElement) {
+        const card = headerElement.parentElement;
+        const isActive = card.classList.contains('active');
+        
+        // Close all cards
+        document.querySelectorAll('.policy-card').forEach(c => c.classList.remove('active'));
+        
+        // Open clicked card if it wasn't already active
+        if (!isActive) {
+            card.classList.add('active');
+            
+            // Smooth scroll to the opened card slightly offset for sticky header
+            setTimeout(() => {
+                const y = card.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }, 300);
+        }
+    }
+
+    /* === SCROLL REVEAL === */
+    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    /* === MULTI-LANGUAGE DATA FOR 19 SECTIONS === */
+    const icons = [
+        "fa-file-contract", "fa-user-graduate", "fa-wallet", "fa-undo-alt", "fa-clock",
+        "fa-calendar-check", "fa-certificate", "fa-users", "fa-exchange-alt", "fa-shield-alt",
+        "fa-comments", "fa-user-shield", "fa-globe", "fa-briefcase", "fa-envelope",
+        "fa-copyright", "fa-video", "fa-bolt", "fa-gavel"
+    ];
+
+    const legalData = {
+        en: {
+            pageTitle: "Privacy Policy & <span class='text-gradient-cyan'>Terms</span>",
+            pageSub: "Professional legal information for students, parents, and website visitors.",
+            tocTitle: "Table of Contents",
+            ftLinksTitle: "Quick Links",
+            ftCoursesTitle: "Popular Courses",
+            termsLink: "Terms & Conditions",
+            sections: [
+                {t: "1. Terms & Conditions", d: "Welcome to AIT (Advanced Information Technology). Before using our website or enrolling in any course, please read the following terms and conditions carefully. Taking admission implies that you accept all these conditions."},
+                {t: "2. Admission Policy", d: "Before admission, comprehensive counseling and, where necessary, demo sessions are provided. Course selection by the student is considered final. Providing correct information is mandatory; false information can lead to admission cancellation. Consent of parents/guardians is required for students under 18. AIT reserves the right to accept or reject any admission."},
+                {t: "3. Fees & Payment Policy", d: "Course fees can be paid via One-Time payment or structured EMI methods. Students are responsible for maintaining their official payment receipts. The institute reserves the right to modify course fees or scholarship offers, but such changes will not apply retroactively to already enrolled students. Timely payment of pending installments is mandatory."},
+                {t: "4. Refund & Cancellation Policy", d: "Refunds are processed based on a pro-rata calculation of services utilized and administrative charges. A minimum 15-day prior written notice via official email is required for cancellation. 100% fee refund is not applicable under any circumstances. Refund processing typically takes 15 to 30 working days via bank transfer. Long absences without notice will void refund eligibility."},
+                {t: "5. Batch & Course Duration Policy", d: "Course duration is decided based on the syllabus and industry standards. The institute may change batch timings, faculty, or schedules as necessary. It will not be possible to change batch timings every time for individual student convenience. Students must choose training time separate from their school/college hours."},
+                {t: "6. Attendance Policy", d: "Regular attendance is the student's responsibility. The institute is not entirely responsible for completing the syllabus missed due to excessive absenteeism. Students may have to wait for a new batch. Extra fees may apply for special backup lectures."},
+                {t: "7. Examination, Result & Certificate Policy", d: "Completing required exams, practicals, and assignments is mandatory. Students absent for exams must pay applicable re-examination fees. Certificates are usually issued within 45 days after result declaration, provided all fees are cleared and attendance/practicals are complete. Duplicate certificates incur extra charges."},
+                {t: "8. Student Code of Conduct", d: "Mobile phones/laptops should only be used for educational purposes during class. Disciplined behavior with faculty and peers is mandatory. Abusive language, threats, or harassment are unacceptable. Costs for damaging lab equipment will be recovered from the student. Serious indiscipline leads to immediate admission cancellation without refund."},
+                {t: "9. Course Upgrade & Transfer Policy", d: "Students can upgrade their course by paying the applicable fee difference. However, fees once paid cannot be transferred to any other student's name under any circumstances."},
+                {t: "10. Cyber Security & Ethical Hacking Disclaimer", d: "Ethical Hacking and Cyber Security are taught strictly for educational and defensive purposes to build industry professionals. Students are personally and legally responsible for their actions. AIT assumes zero liability for any unauthorized access, cybercrimes, or misuse of knowledge by any student."},
+                {t: "11. Grievance Policy", d: "Students can register complaints via written application or official email. The institute will endeavor to resolve the grievance within a reasonable timeframe."},
+                {t: "12. Privacy Policy", d: "AIT collects necessary personal information (Name, Contact, Education) solely for admission, batch management, and certification processes. We do not sell your personal data to any third parties. For security purposes, CCTV surveillance is active on the campus. Event photographs/videos may be used for promotional purposes unless objected to in writing during admission."},
+                {t: "13. Website Terms of Use", d: "All information on the website is for informational and educational purposes. Logos, designs, course content, and brochures are the intellectual property of AIT. Unauthorized copying, modification, or commercial use of website content is prohibited. Course structures and offers may change periodically."},
+                {t: "14. Placement Assistance Disclaimer", d: "AIT strives to provide career guidance, resume assistance, and placement assistance. However, the institute does not guarantee any student a job, a specific salary, or 100% placement. Getting a job depends entirely on the student's skills and hard work."},
+                {t: "15. Digital Communication Policy", d: "Course, batch, exam, fee, and other necessary information may be sent to the mobile number, WhatsApp, and email provided by the student. The student must immediately inform the institute if contact details change."},
+                {t: "16. Intellectual Property", d: "All provided study materials, including practical files, videos, presentations, and website content, are the intellectual property of AIT. These materials are strictly for the personal study of enrolled students. Unauthorized copying, sharing, uploading, or commercial selling of our intellectual property is strictly prohibited."},
+                {t: "17. CCTV & Photography Policy", d: "CCTV surveillance is installed in the training center for the safety of students and the institute. Photographs or videos taken during seminars or events may be used for promotional material. Objections must be provided in writing at the time of admission."},
+                {t: "18. Force Majeure", d: "Changes to batches, exams, or schedules may occur due to natural disasters, heavy rain, government orders, power outages, internet issues, pandemics, or other unforeseen circumstances. The institute will not be held liable for such situations."},
+                {t: "19. General Terms", d: "The institute reserves the right to modify these terms and conditions periodically. New rules apply once published. Taking admission implies full acceptance of these terms. These rules shall be interpreted according to Indian law, and the competent courts of Bhavnagar, Gujarat, shall have jurisdiction over any disputes."}
+            ]
+        },
+        gu: {
+            pageTitle: "પ્રાઇવસી પોલિસી અને <span class='text-gradient-cyan'>નિયમો (Terms)</span>",
+            pageSub: "વિદ્યાર્થીઓ, વાલીઓ અને વેબસાઇટ મુલાકાતીઓ માટે વ્યવસાયિક કાનૂની માહિતી.",
+            tocTitle: "અનુક્રમણિકા",
+            ftLinksTitle: "ક્વિક લિંક્સ",
+            ftCoursesTitle: "લોકપ્રિય કોર્સ",
+            termsLink: "નિયમો અને શરતો (Terms)",
+            sections: [
+                {t: "1. નિયમો અને શરતો (Terms & Conditions)", d: "AIT (Advanced Information Technology) માં આપનું સ્વાગત છે. અમારી વેબસાઇટનો ઉપયોગ કરતા પહેલા અથવા કોઈપણ કોર્સમાં પ્રવેશ લેતા પહેલા કૃપા કરીને નીચે આપેલા નિયમો અને શરતો ધ્યાનથી વાંચો. એડમિશન લેવા પર એવું માનવામાં આવશે કે તમે આ તમામ શરતો સ્વીકારી છે."},
+                {t: "2. પ્રવેશ નીતિ (Admission Policy)", d: "AIT ખાતે પ્રવેશ પહેલાં વિદ્યાર્થીને સંપૂર્ણ માર્ગદર્શન અને જરૂરી હોય ત્યાં Demo Session આપવામાં આવે છે. ખોટી માહિતી આપવાથી પ્રવેશ રદ થઈ શકે છે. 18 વર્ષથી ઓછી ઉંમરના વિદ્યાર્થીઓ માટે વાલીની સંમતિ આવશ્યક છે. સંસ્થાને યોગ્ય કારણસર કોઈપણ પ્રવેશ સ્વીકારવાનો કે નામંજૂર કરવાનો અધિકાર છે."},
+                {t: "3. ફી અને ચુકવણી નીતિ (Fees & Payment)", d: "કોર્સ ફી One-Time અથવા EMI પદ્ધતિથી ભરી શકાશે. ફી ભર્યાની અધિકૃત રસીદ સાચવી રાખવી વિદ્યાર્થીની જવાબદારી છે. બાકી રહેલી ફી સમયસર ભરવી ફરજિયાત રહેશે. સંસ્થા ફી માં ફેરફાર કરી શકે છે, જે અગાઉ પ્રવેશ લીધેલા વિદ્યાર્થીઓ પર લાગુ પડશે નહીં."},
+                {t: "4. રિફંડ અને કોર્સ રદ કરવાની નીતિ", d: "રિફંડની કાર્યવાહી સંસ્થાની Refund Policy અને Pro-Rata ગણતરીના આધારે થશે. કોર્સ રદ કરાવવા માટે 15 દિવસ પહેલાં લેખિત/ઈમેલ દ્વારા જાણ કરવી ફરજિયાત છે. સંપૂર્ણ કોર્સ ફી (100%) કોઈપણ સંજોગોમાં પરત મળવાપાત્ર રહેશે નહીં. લાંબા સમય સુધી ગેરહાજર રહીને રિફંડ માંગનારની અરજી માન્ય રહેશે નહીં."},
+                {t: "5. બેચ અને કોર્સ સમયગાળો", d: "દરેક કોર્સનો સમયગાળો તેના અભ્યાસક્રમ મુજબ નક્કી કરવામાં આવે છે. સંસ્થા જરૂરિયાત મુજબ બેચના સમય અથવા ફેકલ્ટીમાં ફેરફાર કરી શકે છે. વિદ્યાર્થીએ પોતાની શાળા કે કોલેજના સમયને બાધિત ન કરે તે રીતે તાલીમનો સમય પસંદ કરવાનો રહેશે."},
+                {t: "6. હાજરી નીતિ (Attendance Policy)", d: "નિયમિત હાજરી વિદ્યાર્થીની જવાબદારી છે. વધુ પડતી ગેરહાજરીને કારણે રહી ગયેલો અભ્યાસ પૂર્ણ કરાવવા માટે સંસ્થા બંધાયેલી નથી. જરૂરી હોય તો વિદ્યાર્થીને નવી Batch શરૂ થાય ત્યાં સુધી રાહ જોવી પડી શકે છે."},
+                {t: "7. પરીક્ષા અને પ્રમાણપત્ર (Exam & Certificate)", d: "કોર્સ પૂરો થયા બાદ પરીક્ષાઓ અને પ્રોજેક્ટ્સ પૂર્ણ કરવા ફરજિયાત છે. પરીક્ષામાં ગેરહાજર રહેનાર વિદ્યાર્થીએ Re-Examination ફી ભરવાની રહેશે. તમામ ફી અને હાજરી પૂર્ણ કર્યા બાદ જ 45 દિવસની અંદર સર્ટિફિકેટ આપવામાં આવશે."},
+                {t: "8. વિદ્યાર્થી આચારસંહિતા (Code of Conduct)", d: "ક્લાસ દરમિયાન મોબાઈલ કે લેપટોપનો ઉપયોગ માત્ર અભ્યાસ હેતુથી જ કરવાનો રહેશે. અન્ય વિદ્યાર્થીઓ કે ફેકલ્ટી સાથે અસભ્ય વર્તન ચલાવી લેવામાં આવશે નહીં. લેબના સાધનોને નુકસાન પહોંચાડવાના કિસ્સામાં દંડ વસૂલવામાં આવશે."},
+                {t: "9. કોર્સ અપગ્રેડ અને ટ્રાન્સફર", d: "વિદ્યાર્થી પોતાની ઈચ્છા મુજબ Course Upgrade કરી શકે છે, જેના માટે ફી નો તફાવત ભરવો ફરજિયાત રહેશે. ભરેલી ફી અન્ય કોઈપણ વિદ્યાર્થીના નામે Transfer કરી શકાશે નહીં."},
+                {t: "10. સાયબર સિક્યુરિટી ડિસ્ક્લેમર", d: "એથિકલ હેકિંગ અને સાયબર સિક્યુરિટી જેવા વિષયો માત્ર શૈક્ષણિક અને સુરક્ષાના હેતુ માટે શીખવવામાં આવે છે. વિદ્યાર્થી દ્વારા કરાયેલ કોઈપણ ગેરકાયદેસર પ્રવૃત્તિ કે સાયબર ક્રાઈમ માટે તે વ્યક્તિગત રીતે જવાબદાર રહેશે."},
+                {t: "11. ફરિયાદ નિવારણ (Grievance Policy)", d: "વિદ્યાર્થી લેખિત અરજી અથવા અધિકૃત Email દ્વારા ફરિયાદ નોંધાવી શકે છે. સંસ્થા યોગ્ય સમયમર્યાદામાં ફરિયાદનો ઉકેલ લાવવાનો પૂરતો પ્રયત્ન કરશે."},
+                {t: "12. ગોપનીયતા નીતિ (Privacy Policy)", d: "એડમિશન અને વહીવટી પ્રક્રિયા માટે સંસ્થા વિદ્યાર્થીની અંગત માહિતી એકત્રિત કરે છે. કોઈપણ તૃતીય પક્ષ (Third Party) ને આ માહિતી વેચવામાં આવશે નહીં (કાનૂની માંગણી સિવાય)."},
+                {t: "13. વેબસાઇટ ઉપયોગના નિયમો (Website Terms)", d: "વેબસાઇટ પર ઉપલબ્ધ તમામ માહિતી માત્ર શૈક્ષણિક હેતુ માટે છે. વેબસાઇટ પર દર્શાવેલ Logo, Design અને Course Content AIT ની બૌદ્ધિક સંપત્તિ છે. લેખિત મંજૂરી વિના તેનો વ્યાવસાયિક ઉપયોગ કરવો માન્ય રહેશે નહીં."},
+                {t: "14. પ્લેસમેન્ટ આસિસ્ટન્સ ડિસ્ક્લેમર", d: "AIT વિદ્યાર્થીઓને કરિયર ગાઇડન્સ અને પ્લેસમેન્ટ સહાય પૂરી પાડવા માટે કટિબદ્ધ છે. જોકે, સંસ્થા નોકરી કે ચોક્કસ પગારની 100% 'ગેરંટી' આપતી નથી. નોકરી મેળવવી એ વિદ્યાર્થીની પોતાની આવડત પર આધારિત છે."},
+                {t: "15. ડિજિટલ સંચાર નીતિ", d: "વિદ્યાર્થી દ્વારા આપવામાં આવેલ મોબાઈલ નંબર, WhatsApp તથા Email પર કોર્સ અને બેચ અંગેની માહિતી મોકલવામાં આવશે. સંપર્ક વિગતો બદલાય તો વિદ્યાર્થીએ તરત સંસ્થાને જાણ કરવી ફરજિયાત રહેશે."},
+                {t: "16. બૌદ્ધિક સંપત્તિ (Intellectual Property)", d: "સંસ્થા દ્વારા આપવામાં આવેલ Notes, Practical Files અને વિડિયો માત્ર વિદ્યાર્થીના વ્યક્તિગત અભ્યાસ માટે છે. સંસ્થાની મંજૂરી વિના આ સામગ્રીની નકલ (Copy) કે વેચાણ કરવું એ કાનૂની ગુનો ગણાશે."},
+                {t: "17. CCTV અને ફોટોગ્રાફી નીતિ", d: "સુરક્ષા માટે કેમ્પસમાં CCTV કેમેરા લગાવવામાં આવ્યા છે. સંસ્થાના ઈવેન્ટ્સ દરમિયાન લેવાયેલા ફોટો/વિડિયોનો ઉપયોગ પ્રમોશન માટે થઈ શકે છે. (વાંધો હોય તો પ્રવેશ સમયે લેખિતમાં જાણ કરવાની રહેશે)."},
+                {t: "18. ફોર્સ મેજ્યોર (Force Majeure)", d: "કુદરતી આફતો, મહામારી, સરકારી આદેશો, વીજ કાપ કે ઇન્ટરનેટ સેવા ખોરવાઈ જવા જેવી અણધારી પરિસ્થિતિઓમાં સંસ્થાની કામગીરી કે બેચના સમયમાં ફેરફાર થઈ શકે છે. આ માટે સંસ્થા જવાબદાર ગણાશે નહીં."},
+                {t: "19. સામાન્ય નિયમો (General Terms)", d: "સંસ્થાને સમયાંતરે આ નિયમોમાં ફેરફાર કરવાનો અધિકાર રહેશે. કોઈપણ સંજોગોમાં AIT પ્રત્યક્ષ કે પરોક્ષ ડેટા લોસ માટે જવાબદાર રહેશે નહીં. કોઈપણ વિવાદ માટે ભાવનગર, ગુજરાતની સક્ષમ અદાલતોને અધિકારક્ષેત્ર રહેશે."}
+            ]
+        },
+        hi: {
+            pageTitle: "गोपनीयता नीति और <span class='text-gradient-cyan'>नियम (Terms)</span>",
+            pageSub: "छात्रों, अभिभावकों और वेबसाइट आगंतुकों के लिए व्यावसायिक कानूनी जानकारी।",
+            tocTitle: "विषय सूची",
+            ftLinksTitle: "त्वरित लिंक",
+            ftCoursesTitle: "लोकप्रिय कोर्स",
+            termsLink: "नियम और शर्तें (Terms)",
+            sections: [
+                {t: "1. नियम और शर्तें (Terms & Conditions)", d: "AIT में आपका स्वागत है। हमारी वेबसाइट का उपयोग करने या किसी भी कोर्स में प्रवेश लेने से पहले कृपया निम्नलिखित नियमों और शर्तों को ध्यान से पढ़ें।"},
+                {t: "2. प्रवेश नीति (Admission Policy)", d: "प्रवेश से पहले उचित मार्गदर्शन और डेमो सत्र प्रदान किए जाते हैं। 18 वर्ष से कम आयु के छात्रों के लिए अभिभावक की सहमति आवश्यक है। संस्थान के पास प्रवेश स्वीकार या अस्वीकार करने का अधिकार सुरक्षित है।"},
+                {t: "3. शुल्क और भुगतान नीति", d: "कोर्स की फीस वन-टाइम या EMI के माध्यम से दी जा सकती है। आधिकारिक भुगतान रसीद संभाल कर रखना छात्र की जिम्मेदारी है। फीस में होने वाले बदलाव पहले से नामांकित छात्रों पर लागू नहीं होंगे।"},
+                {t: "4. रिफंड और रद्दीकरण नीति", d: "रिफंड की गणना उपयोग की गई सेवाओं और प्रशासनिक शुल्क में कटौती के बाद की जाती है। रद्दीकरण के लिए 15 दिन पूर्व लिखित सूचना अनिवार्य है। किसी भी परिस्थिति में 100% रिफंड नहीं दिया जाएगा।"},
+                {t: "5. बैच और कोर्स अवधि", d: "पाठ्यक्रम की अवधि सिलेबस के आधार पर तय की जाती है। संस्थान आवश्यकतानुसार बैच का समय या फैकल्टी बदल सकता है। छात्रों को स्कूल/कॉलेज के समय के अलावा प्रशिक्षण का समय चुनना होगा।"},
+                {t: "6. उपस्थिति नीति (Attendance Policy)", d: "नियमित उपस्थिति छात्र की जिम्मेदारी है। अत्यधिक अनुपस्थिति के कारण छूटे हुए पाठ्यक्रम को पूरा करने के लिए संस्थान बाध्य नहीं है।"},
+                {t: "7. परीक्षा और प्रमाणपत्र", d: "कोर्स पूरा होने के बाद परीक्षा और प्रोजेक्ट पूरा करना अनिवार्य है। परीक्षा में अनुपस्थित रहने वाले छात्रों को Re-Exam फीस देनी होगी। सभी फीस चुकाने के बाद ही सर्टिफिकेट जारी किया जाएगा।"},
+                {t: "8. छात्र आचार संहिता", d: "कक्षा के दौरान मोबाइल/लैपटॉप का उपयोग केवल पढ़ाई के लिए करें। किसी भी प्रकार का दुर्व्यवहार या अनुशासनहीनता बर्दाश्त नहीं की जाएगी। लैब उपकरण को नुकसान पहुंचाने पर जुर्माना देना होगा।"},
+                {t: "9. कोर्स अपग्रेड और ट्रांसफर", d: "छात्र लागू शुल्क अंतर का भुगतान करके कोर्स अपग्रेड कर सकते हैं। लेकिन एक बार जमा की गई फीस किसी अन्य छात्र के नाम पर ट्रांसफर नहीं की जा सकती।"},
+                {t: "10. साइबर सुरक्षा डिस्क्लेमर", d: "एथिकल हैकिंग और साइबर सुरक्षा केवल शैक्षिक और रक्षात्मक उद्देश्यों के लिए सिखाई जाती है। छात्र अपने कार्यों के लिए व्यक्तिगत और कानूनी रूप से जिम्मेदार हैं। संस्थान किसी भी अवैध गतिविधि के लिए जिम्मेदार नहीं है।"},
+                {t: "11. शिकायत नीति (Grievance Policy)", d: "छात्र लिखित आवेदन या आधिकारिक ईमेल के माध्यम से शिकायत दर्ज कर सकते हैं। संस्थान उचित समय सीमा में शिकायत का समाधान करने का प्रयास करेगा।"},
+                {t: "12. गोपनीयता नीति (Privacy Policy)", d: "AIT केवल प्रशासनिक और शैक्षणिक उद्देश्यों के लिए व्यक्तिगत जानकारी एकत्र करता है। हम आपका डेटा किसी तीसरे पक्ष को नहीं बेचते हैं।"},
+                {t: "13. वेबसाइट उपयोग के नियम", d: "वेबसाइट पर उपलब्ध सभी जानकारी शैक्षिक उद्देश्यों के लिए है। लोगो, डिज़ाइन और कोर्स सामग्री AIT की बौद्धिक संपदा है। इसका व्यावसायिक उपयोग सख्त वर्जित है।"},
+                {t: "14. प्लेसमेंट सहायता डिस्क्लेमर", d: "AIT छात्रों को करियर मार्गदर्शन और प्लेसमेंट सहायता प्रदान करता है। हालांकि, संस्थान 100% नौकरी की गारंटी नहीं देता है। नौकरी मिलना पूरी तरह से छात्र के कौशल पर निर्भर है।"},
+                {t: "15. डिजिटल संचार नीति", d: "छात्र द्वारा प्रदान किए गए मोबाइल नंबर, WhatsApp और ईमेल पर कोर्स और बैच से संबंधित जानकारी भेजी जाएगी। संपर्क विवरण बदलने पर संस्थान को तुरंत सूचित करना अनिवार्य है।"},
+                {t: "16. बौद्धिक संपदा (Intellectual Property)", d: "संस्थान द्वारा प्रदान किए गए सभी नोट्स, व्यावहारिक फाइलें और वीडियो केवल व्यक्तिगत अध्ययन के लिए हैं। इसका अनधिकृत साझाकरण, प्रतिलिपि बनाना या बेचना सख्त वर्जित है।"},
+                {t: "17. सीसीटीवी और फोटोग्राफी नीति", d: "सुरक्षा उद्देश्यों के लिए परिसर में सीसीटीवी निगरानी सक्रिय है। इवेंट के दौरान ली गई तस्वीरों का उपयोग प्रचार के लिए किया जा सकता है।"},
+                {t: "18. अप्रत्याशित घटनाएं (Force Majeure)", d: "प्राकृतिक आपदाओं, महामारी, सरकारी आदेशों या बिजली/इंटरनेट की विफलता जैसी अप्रत्याशित स्थितियों में बैच के समय में बदलाव हो सकता है। इसके लिए संस्थान जिम्मेदार नहीं होगा।"},
+                {t: "19. सामान्य नियम (General Terms)", d: "संस्थान इन नियमों को समय-समय पर संशोधित कर सकता है। किसी भी विवाद के मामले में केवल भावनगर, गुजरात की अदालतों का अधिकार क्षेत्र होगा।"}
+            ]
+        }
+    };
+
+    function setElHTML(id, content) {
+        const el = document.getElementById(id);
+        if(el) el.innerHTML = content;
+    }
+
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        const data = legalData[lang];
+
+        setElHTML('pageTitle', data.pageTitle);
+        setElHTML('pageSub', data.pageSub);
+        setElHTML('tocTitle', data.tocTitle);
+        
+        // Generate TOC and Accordions dynamically for 19 Sections
+        const tocContainer = document.getElementById('tocListContainer');
+        const policiesContainer = document.getElementById('policiesContainer');
+        
+        tocContainer.innerHTML = '';
+        policiesContainer.innerHTML = '';
+
+        data.sections.forEach((sec, index) => {
+            const sectionId = `section-${index + 1}`;
+            const icon = icons[index] || 'fa-info-circle';
+            const isActive = index === 0 ? 'active' : '';
+            
+            // Add to TOC
+            tocContainer.innerHTML += `
+                <li><a href="#${sectionId}" class="toc-link ${isActive}" onclick="openSpecificPolicy(${index})">${sec.t}</a></li>
+            `;
+            
+            // Add to Policies
+            policiesContainer.innerHTML += `
+                <div class="policy-card reveal ${isActive}" id="${sectionId}">
+                    <div class="policy-header" onclick="togglePolicy(this)">
+                        <h3><i class="fas ${icon}"></i> <span>${sec.t}</span></h3>
+                        <i class="fas fa-chevron-down policy-icon-toggle"></i>
+                    </div>
+                    <div class="policy-body">
+                        <p>${sec.d}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        setElHTML('ftLinksTitle', data.ftLinksTitle);
+        setElHTML('ftCoursesTitle', data.ftCoursesTitle);
+        setElHTML('termsLink', data.termsLink);
+
+        // Update active button styling
+        document.querySelectorAll('.lang-nav-btn').forEach(btn => btn.classList.remove('active-lang'));
+        const activeBtn = document.getElementById('btn-' + lang);
+        if(activeBtn) activeBtn.classList.add('active-lang');
+
+        // Re-observe newly created elements for scroll animation
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    /* Helper to open policy from TOC */
+    function openSpecificPolicy(index) {
+        const cards = document.querySelectorAll('.policy-card');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        
+        cards.forEach(c => c.classList.remove('active'));
+        tocLinks.forEach(l => l.classList.remove('active'));
+        
+        if(cards[index]) {
+            cards[index].classList.add('active');
+            tocLinks[index].classList.add('active');
+        }
+    }
+
+    /* === HIGH PERFORMANCE CANVAS PARTICLES === */
+    const canvas = document.getElementById("particleCanvas");
+    const ctx = canvas.getContext("2d");
+    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    setCanvasSize();
+
+    let particlesArray;
+    let mouse = { x: null, y: null, radius: 150 };
+
+    window.addEventListener('mousemove', (event) => { mouse.x = event.clientX; mouse.y = event.clientY; });
+    window.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
+
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY;
+            this.size = size; this.color = color;
+        }
+        draw() {
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color; ctx.fill();
+        }
+        update() {
+            if(this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+            if(this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+            this.x += this.directionX; this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    function initParticles() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 9000; 
+        if(window.innerWidth < 768) numberOfParticles = 35; 
+        for(let i=0; i<numberOfParticles; i++) {
+            let size = (Math.random() * 1.5) + 0.5;
+            let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * 0.5) - 0.25; 
+            let directionY = (Math.random() * 0.5) - 0.25;
+            let color = (Math.random() > 0.5) ? 'rgba(0, 217, 255, 0.6)' : 'rgba(59, 130, 246, 0.5)'; 
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    function connectParticles() {
+        for(let a=0; a<particlesArray.length; a++) {
+            for(let b=a; b<particlesArray.length; b++) {
+                let dx = particlesArray[a].x - particlesArray[b].x;
+                let dy = particlesArray[a].y - particlesArray[b].y;
+                let distance = (dx * dx) + (dy * dy);
+                if(distance < (canvas.width/10) * (canvas.height/10)) {
+                    let opacityValue = 1 - (distance/20000);
+                    ctx.strokeStyle = `rgba(0, 217, 255, ${opacityValue * 0.2})`; 
+                    ctx.lineWidth = 1.0;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        for(let i=0; i<particlesArray.length; i++){ particlesArray[i].update(); }
+        connectParticles();
+    }
+
+    window.addEventListener('resize', function(){ setCanvasSize(); initParticles(); });
+    
+    // Initialization (Set Default Language to English)
+    window.onload = function() { 
+        initParticles(); 
+        animateParticles();
+        setLanguage('en'); 
+    }; 
+</script>
+
+</body>
+</html>
