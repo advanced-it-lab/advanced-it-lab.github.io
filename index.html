@@ -239,9 +239,7 @@
             position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
             padding: 120px 8% 60px 8%; overflow: hidden;
         }
-        .hero-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1400px; gap: 50px; z-index: 2; flex-grow: 1; position: relative; }
-        .hero-watermark { position: absolute; top: 50%; left: 25%; width: 310px; height: auto; transform: translate(-50%, -50%); opacity: 0.135; filter: drop-shadow(0 0 24px rgba(255,255,255,0.72)) blur(0.25px); pointer-events: none; z-index: 0; animation: heroWatermarkFade 0.7s ease-out both; }
-        @keyframes heroWatermarkFade { from { opacity: 0; } to { opacity: 0.135; } }
+        .hero-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1400px; gap: 50px; z-index: 2; flex-grow: 1; }
         
         .hero-left { flex: 1; max-width: 650px; }
         .hero-badge { 
@@ -502,10 +500,10 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero-watermark { left: 35%; width: 220px; }
             .hero-container { flex-direction: column; text-align: center; justify-content: center; }
             .hero-left { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
-            .hero-right { display: none; } 
+            .hero-right { display: flex; flex: none; height: 240px; margin-top: 20px; }
+            .orb-container { width: 220px; height: 220px; transform: scale(0.458333); }
             .trust-row { justify-content: center; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .journey-wrapper { flex-direction: column; gap: 15px; }
@@ -521,7 +519,8 @@
             .lang-switcher { border-left: none; padding-left: 0; margin-left: 0; justify-content: center; }
         }
         @media (max-width: 600px) {
-            .hero-watermark { left: 50%; width: 150px; }
+            .hero-right { height: 200px; margin-top: 15px; }
+            .orb-container { width: 180px; height: 180px; transform: scale(0.375); }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; text-align: center; }
             .benefits-grid { grid-template-columns: 1fr; }
@@ -582,7 +581,6 @@
 <main>
     <!-- Hero Section -->
     <header id="home">
-        <img class="hero-watermark" src="logo.png" alt="" aria-hidden="true" width="240" height="72" loading="eager" decoding="async">
         <div class="hero-container">
             <div class="hero-left reveal">
                 <div class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true" style="margin-right: 8px;"></i> Premium Tech Education</div>
